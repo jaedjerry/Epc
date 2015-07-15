@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:contex=".actividad2"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:id="@+id/contenedorActividad2">
+    <include layout="@layout/app_bar"
+        android:id="@+id/appbar2" />
+    <View
+        android:id="@+id/toolbar_shadow1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_shadow"
+        android:layout_below="@id/appbar2"
+        android:background="@drawable/toolbar_dropshadow" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCalificar2"
+        android:text="Calificar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+    <android.support.design.widget.FloatingActionButton
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/btnLimpiar"
+        app:borderWidth="0dp"
+        app:fabSize="normal"
+        android:src="@mipmap/ic_borrar"
+        android:layout_marginBottom="54dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginEnd="42dp"
+        android:layout_above="@+id/btnCalificar2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+    </android.support.design.widget.FloatingActionButton>
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnDeshacer"
+        app:borderWidth="0dp"
+        app:fabSize="normal"
+        android:src="@mipmap/ic_deshacer"
+        android:layout_alignTop="@+id/btnLimpiar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="54dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginStart="42dp"/>
+
+</RelativeLayout>

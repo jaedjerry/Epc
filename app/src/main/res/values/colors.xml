@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_bar_fondo">#2196F3</color>
+    <color name="app_bar_dark">#1976d2</color>
+    <color name="accent">#e91e63</color>
+    <color name="calificarFonfo">#009688</color>
+    <color name="fondo_toast">#3f51b5</color>
+    <color name="rojo">@android:color/holo_red_light</color>
+    <color name="negro">@android:color/black</color>
+    <color name="fondoPalabrasActividad3">#795548</color>
+    <color name="fondoPalabrasBActividad3">#ff5722</color>
+
+</resources>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Epc</string>
+    <string name="app_title">El perro del ciego</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="pregunta1Sub">Selecciona una opción</string>
+    <string name="preguntauno">¿Qué hacia Paco con los niños menores?</string>
+    <string name="preguntados">¿Qué hacia Paco con los niños grandes?</string>
+    <string name="preguntatres">¿Qué hacia Paco con los pajaritos?</string>
+    <string name="preguntacuatro">¿Qué hizo Paco con el gato?</string>
+    <string name="preguntacinco">El perro del ciego se llamaba:</string>
+</resources>

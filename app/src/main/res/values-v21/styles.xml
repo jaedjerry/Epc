@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorPrimary">@color/app_bar_fondo</item>
+        <item name="android:colorPrimaryDark">@color/app_bar_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
+        <item name="toolbarNavigationButtonStyle">@style/buttonToolbar</item>
+    </style>
+    <style name="estilo_preguntas">
+        <item name="android:textSize">25dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="estilo_preguntas_sub">
+        <item name="android:textSize">15dp</item>
+    </style>
+</resources>
