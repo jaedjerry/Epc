@@ -10,6 +10,28 @@
         android:layout_height="@dimen/toolbar_shadow"
         android:layout_below="@id/appbar3"
         android:background="@drawable/toolbar_dropshadow" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar_shadow2"
+        android:text="A"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="70dp"
+        android:layout_marginStart="70dp"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="B"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/toolbar_shadow2"
+        android:layout_marginRight="60dp"
+        android:layout_marginEnd="60dp"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,7 +46,8 @@
         android:layout_below="@+id/toolbar_shadow2"
         android:background="@color/fondoPalabrasBActividad3"
         android:paddingTop="7dp"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        android:layout_marginTop="22dp"/>
     <TextView
         android:layout_width="127dp"
         android:layout_height="40dp"
@@ -32,7 +55,7 @@
         android:id="@+id/perro"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="140dp"
         android:textSize="17sp"
         android:background="@color/fondoPalabrasBActividad3"
         android:textColor="@android:color/white" />
@@ -47,13 +70,14 @@
         android:layout_alignParentStart="true"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
-        android:paddingTop="7dp"/>
+        android:paddingTop="7dp"
+        android:layout_marginTop="22dp"/>
     <TextView
         android:layout_width="165dp"
         android:layout_height="40dp"
         android:text="Personaje Principal"
         android:textSize="17sp"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="140dp"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
         android:paddingTop="7dp"

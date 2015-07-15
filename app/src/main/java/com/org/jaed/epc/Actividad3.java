@@ -35,7 +35,9 @@ public class Actividad3 extends AppCompatActivity {
         toolbar = (Toolbar)findViewById(R.id.appbar3);
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
         toolbar.setNavigationIcon(R.mipmap.ic_atras);
+        getSupportActionBar().setTitle("Arrastra de A a B");
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,9 +89,6 @@ public class Actividad3 extends AppCompatActivity {
                             txt2.setVisibility(View.GONE);
                             txt1.setX(txt2.getX()-50);
                             txt1.setY(txt2.getY());
-                            txt2.setX(txt2Xo);
-                            txt2.setY(txt2Yo);
-                            txt1.setBackgroundDrawable(original1);
                         }
                         break;
 
