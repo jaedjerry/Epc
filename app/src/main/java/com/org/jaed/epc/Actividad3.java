@@ -95,7 +95,6 @@ public class Actividad3 extends AppCompatActivity {
                     case MotionEvent.ACTION_UP:
                         txt1.setBackgroundDrawable(original1);
                         if(x > (int)txt2.getX() - 70 && y > (int) txt2.getY() && y < txt2.getY() + 110){
-                            //Log.e("entre", "entre en action up");
                             txt2.setVisibility(View.GONE);
                             txt1.setX(txt2.getX()-50);
                             txt1.setY(txt2.getY());
