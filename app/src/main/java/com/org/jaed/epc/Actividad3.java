@@ -100,7 +100,7 @@ public class Actividad3 extends AppCompatActivity {
                             txt1.setY(txt2.getY());
                         }
                         if(x>(int)txt3.getX() - 70 && y > (int)txt3.getY() && y < txt3.getY() + 110) {
-                            Log.e("up", "entre en up de la condición 2");
+                            Log.e("up", "entre en up de la condicion 2");
                             txt3.setVisibility(View.GONE);
                             txt1.setX(txt3.getX()-60);
                             txt1.setY(txt3.getY());
