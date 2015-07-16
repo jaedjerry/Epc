@@ -51,6 +51,7 @@ public class Actividad3 extends AppCompatActivity {
         final Drawable original = txt2.getBackground();
         final Drawable original1 = txt1.getBackground();
         final Drawable original2 = txt3.getBackground();
+        final RelativeLayout.LayoutParams paramsOriginalestxt1 = (RelativeLayout.LayoutParams)txt1.getLayoutParams();
         final float txt2Xo = txt2.getX(), txt2Yo = txt2.getY();
         context = this;
         txt1.setOnTouchListener(new View.OnTouchListener() {
@@ -61,7 +62,6 @@ public class Actividad3 extends AppCompatActivity {
                 switch (event.getAction() & MotionEvent.ACTION_MASK){
                     case MotionEvent.ACTION_DOWN:
                         txt1.setBackgroundResource(R.drawable.background_al_tocar_actividad3);
-                        txt1.setHeight(200);
                         RelativeLayout.LayoutParams Params =
                                 (RelativeLayout.LayoutParams) v.getLayoutParams();
                         xDelta = x - Params.leftMargin;
@@ -70,6 +70,7 @@ public class Actividad3 extends AppCompatActivity {
                     case MotionEvent.ACTION_MOVE:
                         txt2.setVisibility(View.VISIBLE);
                         txt3.setVisibility(View.VISIBLE);
+                        txt1.setLayoutParams(paramsOriginalestxt1);
                         RelativeLayout.LayoutParams layoutParams =
                                 (RelativeLayout.LayoutParams) v.getLayoutParams();
                         layoutParams.leftMargin = x - xDelta;
@@ -77,14 +78,14 @@ public class Actividad3 extends AppCompatActivity {
                         layoutParams.rightMargin = -50;
                         layoutParams.bottomMargin = -50;
                         v.setLayoutParams(layoutParams);
-                        if(x > (int)txt2.getX() - 70 && y > (int) txt2.getY() && y < txt2.getY() + 110){
+                        if(y > (int) txt2.getY() && y < txt2.getY() + 75){
                             txt2.setBackgroundResource(R.drawable.borde);
                             //Log.e("move", "posicion en x del target: "+String.valueOf(txt2.getX())+", "+"posicion en x del arrastre"+String.valueOf(x));
                         }else{
                             txt2.setBackgroundDrawable(original);
                             //Log.e("falle en move","posicion en x del target"+String.valueOf(txt2.getX())+", "+"posicion en x del arrastre" + String.valueOf(x));
                         }
-                        if(x>(int)txt3.getX() - 70 && y > (int)txt3.getY() && y < txt3.getY() + 110){
+                        if(y > (int)txt3.getY() && y < txt3.getY() + 75){
                             txt3.setBackgroundResource(R.drawable.borde);
                             Log.e("move", "condicion 2 posicion en x del target: " + String.valueOf(txt3.getX()) + ", " + "posicion en x del arrastre" + String.valueOf(x));
                         }else{
@@ -94,16 +95,20 @@ public class Actividad3 extends AppCompatActivity {
                         break;
                     case MotionEvent.ACTION_UP:
                         txt1.setBackgroundDrawable(original1);
-                        if(x > (int)txt2.getX() - 70 && y > (int) txt2.getY() && y < txt2.getY() + 110){
+                        if(y > (int) txt2.getY() && y < txt2.getY() + 75){
                             txt2.setVisibility(View.GONE);
-                            txt1.setX(txt2.getX()-50);
-                            txt1.setY(txt2.getY());
+                            RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt2.getLayoutParams();
+                            txt1.setLayoutParams(txtparams);
+                            //txt1.setX(txt2.getX());
+                            //txt1.setY(txt2.getY());
                         }
-                        if(x>(int)txt3.getX() - 70 && y > (int)txt3.getY() && y < txt3.getY() + 110) {
+                        if(y > (int)txt3.getY() && y < txt3.getY() + 75) {
                             Log.e("up", "entre en up de la condicion 2");
                             txt3.setVisibility(View.GONE);
-                            txt1.setX(txt3.getX()-60);
-                            txt1.setY(txt3.getY());
+                            RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt3.getLayoutParams();
+                            txt1.setLayoutParams(txtparams);
+                            //txt1.setX(txt3.getX());
+                            //txt1.setY(txt3.getY());
                         }
                         break;
 

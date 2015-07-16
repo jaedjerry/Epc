@@ -10,6 +10,7 @@
             <padding android:left="7dp" android:top="7dp"
                 android:right="7dp" android:bottom="7dp" />
             <corners android:radius="2dp" />
+            <solid android:color="@android:color/transparent" />
         </shape>
     </item>
 </layer-list>
