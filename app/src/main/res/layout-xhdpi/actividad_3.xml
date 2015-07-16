@@ -43,6 +43,16 @@
         android:paddingTop="7dp"
         android:paddingLeft="100dp"/>
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="El ciego: Dueño del perro"
+        android:layout_marginTop="220dp"
+        android:background="@color/fondoPalabrasBActividad3"
+        android:textColor="@android:color/white"
+        android:paddingTop="7dp"
+        android:paddingLeft="118dp"
+        android:id="@+id/ciego"/>
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:text="Personaje antagónico"
@@ -79,5 +89,11 @@
         android:layout_marginStart="283dp"
         android:textSize="15sp"
         />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calificar"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btnCalificar3"/>
 
 </RelativeLayout>
