@@ -30,6 +30,12 @@
             android:configChanges="orientation|keyboardHidden">
 
         </activity>
+        <activity android:name=".actividad4"
+            android:label="@string/app_title"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden">
+
+        </activity>
     </application>
 
 </manifest>
