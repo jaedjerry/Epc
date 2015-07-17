@@ -316,7 +316,7 @@ public class Actividad3 extends AppCompatActivity {
                 txtAcierto.setText(String.valueOf(df.format(miNota))+ "%");//establece el texto de txtAcierto y formatea cantidadCorrectas para que solo muestre un decimal
                 t.setDuration(Toast.LENGTH_LONG);//tiempo que estará visible el toast
                 t.setView(toast);//estable la vista del toast, recibe el layout inflado
-                t.setGravity(Gravity.CENTER_VERTICAL, 0, 0);//posición del toast en la pantalla, Center_Vertical es para decir al centro
+                t.setGravity(Gravity.CENTER_VERTICAL, 0, 0);//posicion del toast en la pantalla, Center_Vertical es para decir al centro
                 t.show();//se muestra el Toast
             }
         });
