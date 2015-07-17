@@ -123,16 +123,16 @@ public class Actividad3 extends AppCompatActivity {
                             txt2.setVisibility(View.GONE);
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt2.getLayoutParams();
                             txt1.setLayoutParams(txtparams);
-                            if(miNota != 0){
-                                miNota = miNota - (double)100/3;
-                            }
+                            miNota = miNota + (double) 100/3;
                         }
                         if(y > (int)txt3.getY() && y < txt3.getY() + txt3.getHeight()) {
                             Log.e("up", "entre en up de la condicion 2");
                             txt3.setVisibility(View.GONE);
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt3.getLayoutParams();
                             txt1.setLayoutParams(txtparams);
-                            miNota = miNota + (double) 100/3;
+                            if(miNota != 0){
+                                miNota = miNota - (double)100/3;
+                            }
                         }
                         if(y>(int)txtCiego.getY() && y < txtCiego.getY() + txtCiego.getHeight()){
                             txtCiego.setVisibility(View.GONE);
@@ -196,16 +196,17 @@ public class Actividad3 extends AppCompatActivity {
                             txt2.setVisibility(View.GONE);
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt2.getLayoutParams();
                             txtPrincipal.setLayoutParams(txtparams);
-                            miNota = miNota + (double) 100/3;
+                            if(miNota != 0){
+                                miNota = miNota - (double)100/3;
+                            }
                         }
                         if(y > (int)txt3.getY() && y < txt3.getY() + txt3.getHeight()) {
                             Log.e("up", "entre en up de la condicion 2");
                             txt3.setVisibility(View.GONE);
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt3.getLayoutParams();
                             txtPrincipal.setLayoutParams(txtparams);
-                            if(miNota != 0){
-                                miNota = miNota - (double)100/3;
-                            }
+
+                            miNota = miNota + (double) 100/3;
                         }
                         if(y>(int)txtCiego.getY() && y < txtCiego.getY() + txtCiego.getHeight()){
                             txtCiego.setVisibility(View.GONE);
