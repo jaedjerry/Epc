@@ -14,4 +14,9 @@
     <style name="estilo_preguntas_sub">
         <item name="android:textSize">15dp</item>
     </style>
+    <style name="buttonToolbar" parent="@style/Widget.AppCompat.Toolbar.Button.Navigation">
+        <item name="android:minWidth">0dp</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
 </resources>
