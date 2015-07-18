@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton opcion2Pregunta5;
     private RadioButton opcion3Pregunta5;
     private RadioButton opcion4Pregunta5;
-    private int porcentajaAcierto;
+    private int intentos, cantidadCorrectas;
     private TextView pregunta1;
     private TextView pregunta2;
     private TextView pregunta3;
@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
     private ColorStateList colordefecto;
     private Handler handler = new Handler();
     private Toolbar toolbar;
+    private View child;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -137,32 +138,67 @@ public class MainActivity extends AppCompatActivity {
             //color sin animación
             calificar.setBackgroundColor(getResources().getColor(R.color.btn_calificar_presionado));
         }
+        child = getLayoutInflater().inflate(R.layout.card_resultados, contenedor, false);
+        contenedor.addView(child);
+        child.setVisibility(View.GONE);
         calificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                intentos++;
                 //items pregunta 1
                 if(opcion1Pregunta1.isChecked()){
-                    porcentajaAcierto = 20;
+                    cantidadCorrectas++;
                 }
                 //items pregunta 2
                 if(opcion2Pregunta2.isChecked()){
-                    porcentajaAcierto = porcentajaAcierto + 20;
+                    cantidadCorrectas++;
                 }
                 //items pregunta 3
                 if(opcion3Pregunta3.isChecked()){
-                    porcentajaAcierto = porcentajaAcierto +20;
+                    cantidadCorrectas++;
                 }
                 //items pregunta 4
                 if(opcion4Pregunta4.isChecked()){
-                    porcentajaAcierto = porcentajaAcierto + 20;
+                    cantidadCorrectas++;
                 }
                 //items pregunta 5
                 if(opcion4Pregunta5.isChecked()){
-                    porcentajaAcierto = porcentajaAcierto + 20;
+                    cantidadCorrectas++;
                 }
-                View child = getLayoutInflater().inflate(R.layout.card_resultados, contenedor, false);
-
-                contenedor.addView(child);
+                TextView txtFallastes, txtloLograstes;
+                txtFallastes = (TextView)child.findViewById(R.id.fallastes);
+                txtloLograstes = (TextView)child.findViewById(R.id.felicidades);
+                if(cantidadCorrectas == 5){
+                    txtFallastes.setVisibility(View.GONE);
+                    txtloLograstes.setVisibility(View.VISIBLE);
+                }else{
+                    txtloLograstes.setVisibility(View.GONE);
+                    txtFallastes.setVisibility(View.VISIBLE);
+                }
+                TextView txtIntentos = (TextView)child.findViewById(R.id.cantidadIntentos);
+                txtIntentos.setText("Intento " + String.valueOf(intentos) + "/" + String.valueOf(3));
+                TextView txtAciertos = (TextView)child.findViewById(R.id.respuestas_correctas);
+                txtAciertos.setText( "Acertastes " + String.valueOf(cantidadCorrectas) + "/" + String.valueOf(5));
+                Button volver =  (Button)child.findViewById(R.id.card_btn_volver);
+                if(Build.VERSION.SDK_INT >= 21) {
+                    volver.setBackgroundTintList(getResources().getColorStateList(R.color.btn_calificar_presionado));
+                }else{
+                    //color sin animación
+                    volver.setBackgroundColor(getResources().getColor(R.color.btn_calificar_presionado));
+                }
+                volver.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        calificar.setEnabled(true);
+                        Animation salida = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.card_out);
+                        child.startAnimation(salida);
+                        child.setVisibility(View.GONE);
+                    }
+                });
+                if(cantidadCorrectas == 5){
+                    cantidadCorrectas = 0;
+                }
+                child.setVisibility(View.VISIBLE);
                 Animation entrada;
                 entrada = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.card_in);
                 child.startAnimation(entrada);
