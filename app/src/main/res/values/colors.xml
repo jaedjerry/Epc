@@ -5,9 +5,10 @@
     <color name="accent">#e91e63</color>
     <color name="calificarFonfo">#009688</color>
     <color name="fondo_toast">#3f51b5</color>
-    <color name="rojo">@android:color/holo_red_light</color>
+    <color name="rojo">#f44336</color>
     <color name="negro">@android:color/black</color>
     <color name="fondoPalabrasActividad3">#795548</color>
     <color name="fondoPalabrasBActividad3">#ff5722</color>
+    <color name="title_card">#673ab7</color>
 
 </resources>

@@ -1,14 +1,20 @@
 package com.org.jaed.epc;
 
+import android.animation.Animator;
+import android.animation.AnimatorInflater;
+import android.animation.StateListAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.graphics.Rect;
+import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
@@ -17,19 +23,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
     private Button calificar;
-    private ViewGroup contenedor;
+    private ViewGroup contenedor, preguntas, contenedorPreguntas;
+    private ScrollView scroll;
     private RadioButton opcion1Pregunta1;
     private RadioButton opcion2Pregunta1;
     private RadioButton opcion3Pregunta1;
@@ -67,9 +78,11 @@ public class MainActivity extends AppCompatActivity {
         //inicialización de la barra de tareas
         toolbar = (Toolbar)findViewById(R.id.appbar);
         //inicializar varaibles
-        contenedor = (RelativeLayout)findViewById(R.id.contenedor);
         calificar = (Button)findViewById(R.id.buttonCalificar);
         contenedor = (ViewGroup)findViewById(R.id.contenedor);
+        preguntas = (ViewGroup)findViewById(R.id.preguntas);
+        scroll = (ScrollView)preguntas.findViewById(R.id.scroll);
+        contenedorPreguntas = (ViewGroup)scroll.findViewById(R.id.contenedorPreguntas);
         //inicialización items pregunta 1
         opcion1Pregunta1 = (RadioButton)findViewById(R.id.opcion1Pregunta1);
         opcion2Pregunta1 = (RadioButton)findViewById(R.id.opcion2Pregunta1);
@@ -129,107 +142,47 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 //items pregunta 1
                 if(opcion1Pregunta1.isChecked()){
-                    pregunta1.setTextColor(colordefecto);
                     porcentajaAcierto = 20;
                 }
-                if(opcion2Pregunta1.isChecked()){
-                    //establece el color de la pregunta en rojo para indicar que en esta pregunta es el error
-                    pregunta1.setTextColor(context.getResources().getColor(R.color.rojo));
-                }
-                if(opcion3Pregunta1.isChecked()){
-                    pregunta1.setTextColor(context.getResources().getColor(R.color.rojo));
-                }
-                if(opcion4Pregunta1.isChecked()){
-                    pregunta1.setTextColor(context.getResources().getColor(R.color.rojo));
-                }
                 //items pregunta 2
-                if(opcion1Pregunta2.isChecked()){
-                    pregunta2.setTextColor(context.getResources().getColor(R.color.rojo));
-                }
                 if(opcion2Pregunta2.isChecked()){
-                    pregunta2.setTextColor(colordefecto);
                     porcentajaAcierto = porcentajaAcierto + 20;
                 }
-                if(opcion3Pregunta2.isChecked()){
-                    pregunta2.setTextColor(context.getResources().getColor(R.color.rojo));
-                }
-                if(opcion4Pregunta2.isChecked()){
-                    pregunta2.setTextColor(context.getResources().getColor(R.color.rojo));
-                }
                 //items pregunta 3
-                if(opcion1Pregunta3.isChecked()){
-                    pregunta3.setTextColor(context.getResources().getColor(R.color.rojo));
-
-                }
-                if(opcion2Pregunta3.isChecked()){
-                    pregunta3.setTextColor(context.getResources().getColor(R.color.rojo));
-
-                }
                 if(opcion3Pregunta3.isChecked()){
-                    pregunta3.setTextColor(colordefecto);
                     porcentajaAcierto = porcentajaAcierto +20;
                 }
-                if(opcion4Pregunta3.isChecked()){
-                    pregunta3.setTextColor(context.getResources().getColor(R.color.rojo));
-                }
                 //items pregunta 4
-                if(opcion1Pregunta4.isChecked()){
-                    pregunta4.setTextColor(context.getResources().getColor(R.color.rojo));
-                }
-                if(opcion2Pregunta4.isChecked()){
-                    pregunta4.setTextColor(context.getResources().getColor(R.color.rojo));
-                }
-                if(opcion3Pregunta4.isChecked()){
-                    pregunta4.setTextColor(context.getResources().getColor(R.color.rojo));
-                }
                 if(opcion4Pregunta4.isChecked()){
-                    pregunta4.setTextColor(colordefecto);
                     porcentajaAcierto = porcentajaAcierto + 20;
                 }
                 //items pregunta 5
-                if(opcion1Pregunta5.isChecked()){
-                    pregunta5.setTextColor(context.getResources().getColor(R.color.rojo));
-                }
-                if(opcion2Pregunta5.isChecked()){
-                    pregunta5.setTextColor(context.getResources().getColor(R.color.rojo));
-                }
-                if(opcion3Pregunta5.isChecked()){
-                    pregunta5.setTextColor(context.getResources().getColor(R.color.rojo));
-                }
                 if(opcion4Pregunta5.isChecked()){
-                    pregunta5.setTextColor(colordefecto);
                     porcentajaAcierto = porcentajaAcierto + 20;
                 }
-                //se encargará de inflar el toast personalizado
-                LayoutInflater inflater = getLayoutInflater();
-                //infla el layout del toast, el primer parametro es el id del layout, el segundo es el id que se establece en el xml toast_personalizado
-                View toast = inflater.inflate(R.layout.toast_personalizado, (ViewGroup) findViewById(R.id.toast));
-                //instancia del toast, recibe el contextp de la app (donde se va a ejecutar)
-                Toast t = new Toast(getApplicationContext());
-                TextView txtFallo = (TextView) toast.findViewById(R.id.txtFallo);
-                TextView txtCorrecto = (TextView) toast.findViewById(R.id.txtCorrecto);
-                TextView txtAcierto = (TextView)toast.findViewById(R.id.txtAcierto);
-                //si el porcentaje es igual a 100, muestra el texto de correcto, y oculta el de fallo, de lo contrario realiza lo inverso
-                //View.VISIBLE, es para indicar que el control se mostrará
-                //View.GONE, es para ocultar el control sin ocupar espacio en pantalla
-                if(porcentajaAcierto == 100){
-                    txtCorrecto.setVisibility(View.VISIBLE);
-                    txtFallo.setVisibility(View.GONE);
-                }else{
-                    txtCorrecto.setVisibility(View.GONE);
-                    txtFallo.setVisibility(View.VISIBLE);
+                View child = getLayoutInflater().inflate(R.layout.card_resultados, contenedor, false);
+
+                contenedor.addView(child);
+                Animation entrada;
+                entrada = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.card_in);
+                child.startAnimation(entrada);
+                for(int i = 0; i<contenedor.getChildCount(); i++){
+                    View hijo = contenedor.getChildAt(i);
+                    hijo.setEnabled(false);
                 }
-                txtAcierto.setText(String.valueOf(porcentajaAcierto) + " %");
-                //Duracion del toast
-                t.setDuration(Toast.LENGTH_LONG);
-                //establece lo que va a contener el toast, en este caso es el layout que se infló (toast)
-                t.setView(toast);
-                //establece la posición en pantalla donde se mostrará el toast
-                t.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
-                porcentajaAcierto = 0;
-                //muestra el toast
-                t.show();
-                cambiarColorPreguntas();
+                /*for (int i = 0; i<contenedorPreguntas.getChildCount(); i++){
+                    View hijo = contenedorPreguntas.getChildAt(i);
+                    Log.e("mis hijos", hijo.toString());
+                    if(hijo instanceof RadioGroup){
+                        RadioGroup rg = (RadioGroup) hijo;
+                        for(int j = 0; j<rg.getChildCount(); j++){
+                            rg.getChildAt(j).setEnabled(false);
+                        }
+                    }else{
+                        Log.e("falle", "jamas entre");
+                    }
+                }*/
+                //cambiarColorPreguntas();
 
             }
         });

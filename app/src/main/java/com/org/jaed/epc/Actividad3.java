@@ -299,9 +299,9 @@ public class Actividad3 extends AppCompatActivity {
         calificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LayoutInflater inflater = getLayoutInflater();//mediante esta clase se inflará el toast
+                LayoutInflater inflater = getLayoutInflater();//mediante esta clase se inflara el toast
                 View toast = inflater.inflate(R.layout.toast_personalizado, (ViewGroup) findViewById(R.id.toast));//inflamos el toast, 1er parametro es el nombre del layout, el 2do parametro es de tipo ViewGroup y es el id del toast
-                Toast t = new Toast(getApplicationContext());//clase que maneja el toast recibe el contexto donde se ejecutará
+                Toast t = new Toast(getApplicationContext());//clase que maneja el toast recibe el contexto donde se ejecutara
                 TextView txtFallo = (TextView) toast.findViewById(R.id.txtFallo);//referencia al texto fallo
                 TextView txtCorrecto = (TextView) toast.findViewById(R.id.txtCorrecto);//referencia al texto correcto
                 TextView txtAcierto = (TextView)toast.findViewById(R.id.txtAcierto);//referencia al texto nota
@@ -312,9 +312,9 @@ public class Actividad3 extends AppCompatActivity {
                     txtCorrecto.setVisibility(View.GONE);//oculta el txtCorrecto
                     txtFallo.setVisibility(View.VISIBLE);//pone visible el txtFallo
                 }
-                DecimalFormat df = new DecimalFormat("0.0");//formato para mostrar la nota, recibe el patron para el formato 0.0, el primer 0 es para mostrar cualquier cantidad de numeros antes del . y un 0 despues del . significa que mostrará solo 1 decimal
+                DecimalFormat df = new DecimalFormat("0.0");//formato para mostrar la nota, recibe el patron para el formato 0.0, el primer 0 es para mostrar cualquier cantidad de numeros antes del . y un 0 despues del . significa que mostrara solo 1 decimal
                 txtAcierto.setText(String.valueOf(df.format(miNota))+ "%");//establece el texto de txtAcierto y formatea cantidadCorrectas para que solo muestre un decimal
-                t.setDuration(Toast.LENGTH_LONG);//tiempo que estará visible el toast
+                t.setDuration(Toast.LENGTH_LONG);//tiempo que estara visible el toast
                 t.setView(toast);//estable la vista del toast, recibe el layout inflado
                 t.setGravity(Gravity.CENTER_VERTICAL, 0, 0);//posicion del toast en la pantalla, Center_Vertical es para decir al centro
                 t.show();//se muestra el Toast

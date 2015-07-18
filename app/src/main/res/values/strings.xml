@@ -9,4 +9,11 @@
     <string name="preguntatres">¿Qué hacia Paco con los pajaritos?</string>
     <string name="preguntacuatro">¿Qué hizo Paco con el gato?</string>
     <string name="preguntacinco">El perro del ciego se llamaba:</string>
+    <!--Texto para el card-->
+    <string name="card_title_resultado">Tus resultados</string>
+    <string name="card_intentos">Intento</string>
+    <string name="card_intento_correcto">Felicidades, lo lograstes</string>
+    <string name="card_fallo">Al parecer te equivocastes</string>
+    <string name="card_respuestas">Acertastes</string>
+    <string name="card_btn">volver</string>
 </resources>
