@@ -144,67 +144,81 @@ public class MainActivity extends AppCompatActivity {
         calificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intentos++;
-                //items pregunta 1
-                if(opcion1Pregunta1.isChecked()){
-                    cantidadCorrectas++;
+                if(intentos<=3){
+                    intentos++;
                 }
-                //items pregunta 2
-                if(opcion2Pregunta2.isChecked()){
-                    cantidadCorrectas++;
-                }
-                //items pregunta 3
-                if(opcion3Pregunta3.isChecked()){
-                    cantidadCorrectas++;
-                }
-                //items pregunta 4
-                if(opcion4Pregunta4.isChecked()){
-                    cantidadCorrectas++;
-                }
-                //items pregunta 5
-                if(opcion4Pregunta5.isChecked()){
-                    cantidadCorrectas++;
-                }
-                TextView txtFallastes, txtloLograstes;
-                txtFallastes = (TextView)child.findViewById(R.id.fallastes);
-                txtloLograstes = (TextView)child.findViewById(R.id.felicidades);
-                if(cantidadCorrectas == 5){
-                    txtFallastes.setVisibility(View.GONE);
-                    txtloLograstes.setVisibility(View.VISIBLE);
+                if(intentos > 3){
+                    Toast t = Toast.makeText(context,"Se te agotaron los intentos",Toast.LENGTH_SHORT);
+                    t.setGravity(Gravity.CENTER_VERTICAL,0,0);
+                    t.show();
                 }else{
-                    txtloLograstes.setVisibility(View.GONE);
-                    txtFallastes.setVisibility(View.VISIBLE);
-                }
-                TextView txtIntentos = (TextView)child.findViewById(R.id.cantidadIntentos);
-                txtIntentos.setText("Intento " + String.valueOf(intentos) + "/" + String.valueOf(3));
-                TextView txtAciertos = (TextView)child.findViewById(R.id.respuestas_correctas);
-                txtAciertos.setText( "Acertastes " + String.valueOf(cantidadCorrectas) + "/" + String.valueOf(5));
-                Button volver =  (Button)child.findViewById(R.id.card_btn_volver);
-                if(Build.VERSION.SDK_INT >= 21) {
-                    volver.setBackgroundTintList(getResources().getColorStateList(R.color.btn_calificar_presionado));
-                }else{
-                    //color sin animación
-                    volver.setBackgroundColor(getResources().getColor(R.color.btn_calificar_presionado));
-                }
-                volver.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        calificar.setEnabled(true);
-                        Animation salida = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.card_out);
-                        child.startAnimation(salida);
-                        child.setVisibility(View.GONE);
+                    //items pregunta 1
+                    if(opcion1Pregunta1.isChecked()){
+                        cantidadCorrectas++;
                     }
-                });
-                if(cantidadCorrectas == 5){
-                    cantidadCorrectas = 0;
+                    //items pregunta 2
+                    if(opcion2Pregunta2.isChecked()){
+                        cantidadCorrectas++;
+                    }
+                    //items pregunta 3
+                    if(opcion3Pregunta3.isChecked()){
+                        cantidadCorrectas++;
+                    }
+                    //items pregunta 4
+                    if(opcion4Pregunta4.isChecked()){
+                        cantidadCorrectas++;
+                    }
+                    //items pregunta 5
+                    if(opcion4Pregunta5.isChecked()){
+                        cantidadCorrectas++;
+                    }
                 }
-                child.setVisibility(View.VISIBLE);
-                Animation entrada;
-                entrada = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.card_in);
-                child.startAnimation(entrada);
-                for(int i = 0; i<contenedor.getChildCount(); i++){
-                    View hijo = contenedor.getChildAt(i);
-                    hijo.setEnabled(false);
+                if(intentos<=3){
+                    TextView txtFallastes, txtloLograstes, txtlasRespuestas;
+                    txtFallastes = (TextView)child.findViewById(R.id.fallastes);
+                    txtloLograstes = (TextView)child.findViewById(R.id.felicidades);
+                    txtlasRespuestas = (TextView)child.findViewById(R.id.lasRespuestas);
+                    if(intentos != 3){
+                        txtlasRespuestas.setVisibility(View.GONE);
+                    }else{
+                        txtlasRespuestas.setVisibility(View.VISIBLE);
+                        txtlasRespuestas.setText("Las respuestas eran:\n"+
+                                "Pregunta 1: Los pellizcaba y daba golpes.\n"+
+                                "Pregunta 2: Le lanzaba pedradas.\n"+
+                                "Pregunta 3: Les quitaba las plumas.\n"+
+                                "Pregunta 4: Le crotó la cola.\n"+
+                                "Pregunta 5: León");
+                    }
+                    if(cantidadCorrectas == 5){
+                        txtFallastes.setVisibility(View.GONE);
+                        txtloLograstes.setVisibility(View.VISIBLE);
+                    }else{
+                        txtloLograstes.setVisibility(View.GONE);
+                        txtFallastes.setVisibility(View.VISIBLE);
+                    }
+                    TextView txtIntentos = (TextView)child.findViewById(R.id.cantidadIntentos);
+                    txtIntentos.setText("Intento " + String.valueOf(intentos) + "/" + String.valueOf(3));
+                    TextView txtAciertos = (TextView)child.findViewById(R.id.respuestas_correctas);
+                    txtAciertos.setText( "Acertastes " + String.valueOf(cantidadCorrectas) + "/" + String.valueOf(5));
+                    cantidadCorrectas = 0;
+                    Button volver =  (Button)child.findViewById(R.id.card_btn_volver);
+                    volver.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            calificar.setEnabled(true);
+                            Animation salida = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.card_out);
+                            child.startAnimation(salida);
+                            child.setVisibility(View.GONE);
+                        }
+                    });
+                    child.setVisibility(View.VISIBLE);
+                    Animation entrada;
+                    entrada = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.card_in);
+                    child.startAnimation(entrada);
+                    for(int i = 0; i<contenedor.getChildCount(); i++){
+                        View hijo = contenedor.getChildAt(i);
+                        hijo.setEnabled(false);
+                    }
                 }
                 /*for (int i = 0; i<contenedorPreguntas.getChildCount(); i++){
                     View hijo = contenedorPreguntas.getChildAt(i);
@@ -222,37 +236,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-    }
-
-    public void cambiarColorPreguntas(){
-        //inicializacion del hilo
-        Thread th = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                //antes de cambiar el color el hilo debe dormirse 10 segundos, para que al usuario le de tiempo de ver en que
-                //preguntas se equivocó
-                try {
-                    Thread.sleep(10000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                //handler es una variable de tipo Handler, en android no se puede cambiar cualquier propiedad de un control desde un hilo que no lo creo
-                //el hilo encargado de crear la vista es UIThread, por tanto si se trata de cambiar el color del texto desde este hilo se lanzaria una excepcion
-                //para esto es la clase Handler que mediante el método post se tiene acceso al UIThread y dentro del run establecemos el color por defecto del texto
-                handler.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        pregunta1.setTextColor(colordefecto);
-                        pregunta2.setTextColor(colordefecto);
-                        pregunta3.setTextColor(colordefecto);
-                        pregunta4.setTextColor(colordefecto);
-                        pregunta5.setTextColor(colordefecto);
-                    }
-                });
-            }
-        });
-        //se iniciar el hilo
-        th.start();
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -16,4 +16,5 @@
     <string name="card_fallo">Al parecer te equivocastes</string>
     <string name="card_respuestas">Acertastes</string>
     <string name="card_btn">volver</string>
+    <string name="card_title_respuestas">Respuestas correctas</string>
 </resources>
