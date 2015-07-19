@@ -19,13 +19,14 @@
         android:layout_above="@+id/btnCalificar4">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <TextView android:id="@+id/text1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1.El cuento trata de sensibilizar a los niños, para que sean buenos y ayuden a los demás para que Dios los bendiga"
+                android:text="@string/vf_pregunta1"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                style="@style/estilo_preguntas_actividad4"/>
             <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -36,20 +37,21 @@
                     android:id="@+id/rdb1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Verdadero" />
+                    android:text="@string/vf_verdadero" />
                 <RadioButton
                     android:id="@+id/rdb2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Falso" />
+                    android:text="@string/vf_falso" />
             </RadioGroup>
             <TextView android:id="@+id/text2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2.El cuento explica que los niños no deben ser tan buenos con los demás"
+                android:text="@string/vf_pregunta2"
                 android:layout_below="@+id/contenedor1"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                style="@style/estilo_preguntas_actividad4"/>
             <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -60,19 +62,20 @@
                     android:id="@+id/rdb3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Verdadero" />
+                    android:text="@string/vf_verdadero" />
                 <RadioButton android:id="@+id/rdb4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Falso" />
+                    android:text="@string/vf_falso" />
             </RadioGroup>
             <TextView android:id="@+id/text3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="3.Paco se burlaba de los cojos, de los tuertos, de los jorobados y de los limosneros."
+                android:text="@string/vf_pregunta3"
                 android:layout_below="@+id/contenedor2"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                style="@style/estilo_preguntas_actividad4"/>
             <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -83,21 +86,22 @@
                     android:id="@+id/rdb5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Verdadero"
+                    android:text="@string/vf_verdadero"
                     />
                 <RadioButton android:id="@+id/rdb6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Falso" />
+                    android:text="@string/vf_falso" />
             </RadioGroup>
 
             <TextView android:id="@+id/text4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="4.Paco puso entre dos rebanadas de pan un gusano y se lo llevó al ciego para que se lo comiera"
+                android:text="@string/vf_pregunta4"
                 android:layout_below="@+id/contenedor3"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                style="@style/estilo_preguntas_actividad4"/>
             <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -108,19 +112,20 @@
                     android:id="@+id/rdb7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Verdadero" />
+                    android:text="@string/vf_verdadero" />
                 <RadioButton android:id="@+id/rdb8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Falso" />
+                    android:text="@string/vf_falso" />
             </RadioGroup>
             <TextView android:id="@+id/text5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="5.Paco ofendía a Dios y hacía llorar a su mamá."
+                android:text="@string/vf_pregunta5"
                 android:layout_below="@+id/contenedor4"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                style="@style/estilo_preguntas_actividad4"/>
             <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -131,20 +136,21 @@
                     android:id="@+id/rdb9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Verdadero" />
+                    android:text="@string/vf_verdadero" />
                 <RadioButton android:id="@+id/rdb10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Falso" />
+                    android:text="@string/vf_falso" />
 
             </RadioGroup>
             <TextView android:id="@+id/text6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="6.Cuando los niños se portan mal Dios ordena al ángel Gabriel que desate la peste."
+                android:text="@string/vf_pregunta6"
                 android:layout_below="@+id/contenedor5"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                style="@style/estilo_preguntas_actividad4"/>
             <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -155,16 +161,16 @@
                     android:id="@+id/rdb11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Verdadero" />
+                    android:text="@string/vf_verdadero" />
                 <RadioButton android:id="@+id/rdb12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Falso" />
+                    android:text="@string/vf_falso" />
             </RadioGroup>
             <TextView android:id="@+id/text7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="7.Los niños  acusan a Paco de la muerte del perro del ciego."
+                android:text="@string/vf_pregunta7"
                 android:layout_below="@+id/contenedor6"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
@@ -178,19 +184,20 @@
                     android:id="@+id/rdb13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Verdadero" />
+                    android:text="@string/vf_verdadero" />
                 <RadioButton android:id="@+id/rdb14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Falso" />
+                    android:text="@string/vf_falso" />
             </RadioGroup>
             <TextView android:id="@+id/text8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="8.Paco confiesa entre risas a ver dado muerte al perro del ciego."
+                android:text="@string/vf_pregunta8"
                 android:layout_below="@+id/contenedor7"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                style="@style/estilo_preguntas_actividad4"/>
             <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -201,19 +208,20 @@
                     android:id="@+id/rdb15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Verdadero" />
+                    android:text="@string/vf_verdadero" />
                 <RadioButton android:id="@+id/rdb16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Falso" />
+                    android:text="@string/vf_falso" />
             </RadioGroup>
             <TextView android:id="@+id/text9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="9.Paco es castigado con la enfermedad de la viruela y luego de tanto dolor muere."
+                android:text="@string/vf_pregunta9"
                 android:layout_below="@+id/contenedor8"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                style="@style/estilo_preguntas_actividad4"/>
             <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -224,11 +232,11 @@
                     android:id="@+id/rdb17"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Verdadero" />
+                    android:text="@string/vf_verdadero" />
                 <RadioButton android:id="@+id/rdb18"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Falso" />
+                    android:text="@string/vf_falso" />
             </RadioGroup>
         </RelativeLayout>
 
@@ -236,7 +244,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="calificar"
+        android:text="@string/calificar"
         android:id="@+id/btnCalificar4"
         android:layout_alignParentBottom="true"/>
 </RelativeLayout>

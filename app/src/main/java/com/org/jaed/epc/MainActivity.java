@@ -36,6 +36,8 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 
 public class MainActivity extends AppCompatActivity {
     private Button calificar;
@@ -178,15 +180,18 @@ public class MainActivity extends AppCompatActivity {
                     txtFallastes = (TextView)child.findViewById(R.id.fallastes);
                     txtloLograstes = (TextView)child.findViewById(R.id.felicidades);
                     txtlasRespuestas = (TextView)child.findViewById(R.id.lasRespuestas);
+                    TextView txtTitleRespuestas = (TextView)child.findViewById(R.id.titleRespuestas);
                     if(intentos != 3){
                         txtlasRespuestas.setVisibility(View.GONE);
+                        txtTitleRespuestas.setVisibility(View.GONE);
                     }else{
                         txtlasRespuestas.setVisibility(View.VISIBLE);
-                        txtlasRespuestas.setText("Las respuestas eran:\n"+
+                        txtTitleRespuestas.setVisibility(View.VISIBLE);
+                        txtlasRespuestas.setText(
                                 "Pregunta 1: Los pellizcaba y daba golpes.\n"+
                                 "Pregunta 2: Le lanzaba pedradas.\n"+
                                 "Pregunta 3: Les quitaba las plumas.\n"+
-                                "Pregunta 4: Le crotó la cola.\n"+
+                                "Pregunta 4: Le cortó la cola.\n"+
                                 "Pregunta 5: León");
                     }
                     if(cantidadCorrectas == 5){

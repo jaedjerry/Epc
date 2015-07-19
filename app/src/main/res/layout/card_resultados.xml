@@ -14,7 +14,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp">
+        android:layout_margin="5dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,13 +33,13 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:textColor="@color/rojo"
-            android:layout_marginTop="0dp"/>
+            android:layout_marginTop="5dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/felicidades"
             android:text="@string/card_intento_correcto"
-            android:textSize="18sp"
+            android:textSize="15sp"
             android:layout_below="@+id/title_card"
             android:layout_centerHorizontal="true"
             android:textColor="@color/negro"/>
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/fallastes"
             android:text="@string/card_fallo"
-            android:textSize="18sp"
+            android:textSize="15sp"
             android:layout_below="@+id/felicidades"
             android:layout_centerHorizontal="true"
             android:textColor="@color/negro"/>
@@ -76,8 +76,8 @@
             android:textSize="13sp"
             android:layout_below="@+id/titleRespuestas"/>
         <Button
-            android:layout_width="70dp"
-            android:layout_height="36dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"

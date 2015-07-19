@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar_shadow2"
-        android:text="Arratre las palabras de abajo con las de arriba según convenga."
+        android:text="@string/actividad3_title"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:textSize="17sp"
@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="Paco: Niño cruel"
+        android:text="@string/actividad3_niño_malo"
         android:textSize="15sp"
         android:id="@+id/pacoMalo"
         android:background="@color/fondoPalabrasBActividad3"
@@ -34,7 +34,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="El perro: Lazarillo de 4 patas"
+        android:text="@string/actividad3_perro"
         android:id="@+id/perro"
         android:layout_marginTop="170dp"
         android:textSize="15sp"
@@ -45,7 +45,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="El ciego: Dueño del perro"
+        android:text="@string/actividad3_ciego"
         android:layout_marginTop="220dp"
         android:background="@color/fondoPalabrasBActividad3"
         android:textColor="@android:color/white"
@@ -55,7 +55,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="Personaje antagónico"
+        android:text="@string/actividad3_antagonico"
         android:textSize="12sp"
         android:id="@+id/personajeAntagonico"
         android:background="@color/fondoPalabrasActividad3"
@@ -67,7 +67,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:text="Personaje Principal"
+        android:text="@string/actividad3_principal"
         android:textSize="12sp"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
@@ -79,7 +79,7 @@
     <TextView
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:text="Personaje secundario"
+        android:text="@string/actividad3_secundario"
         android:id="@+id/secundario"
         android:layout_marginTop="300dp"
         android:background="@color/fondoPalabrasActividad3"
@@ -92,7 +92,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Calificar"
+        android:text="@string/calificar"
         android:layout_alignParentBottom="true"
         android:id="@+id/btnCalificar3"/>
 </RelativeLayout>

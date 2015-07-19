@@ -31,25 +31,25 @@
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Los pellizcaba y les daba golpes."
+                        android:text="@string/pregunta_opcion1"
                         android:id="@+id/opcion1Pregunta1" />
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Les lanzaba pedradas."
+                        android:text="@string/pregunta_opcion2"
                         android:id="@+id/opcion2Pregunta1"
                         />
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Les quitaba las plumas."
+                        android:text="@string/pregunta_opcion3"
                         android:id="@+id/opcion3Pregunta1"/>
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Le corto la cola."
+                        android:text="@string/pregunta_opcion4"
                         android:id="@+id/opcion4Preguna1"/>
 
                 </RadioGroup>
@@ -77,24 +77,24 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Los pellizcaba y les daba golpes."
+                    android:text="@string/pregunta_opcion1"
                     android:id="@+id/opcion1Pregunta2"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Le lanzaba pedradas."
+                    android:text="@string/pregunta_opcion2"
                     android:id="@+id/opcion2Pregunta2"
                     />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Les quitaba las plumas."
+                    android:text="@string/pregunta_opcion3"
                     android:id="@+id/opcion3Pregunta2"
                      />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Le cortó la cola."
+                    android:text="@string/pregunta_opcion4"
                     android:id="@+id/opcion4Pregunta2"/>
             </RadioGroup>
             <TextView
@@ -120,24 +120,24 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Los pellizcaba y les daba golpes."
+                    android:text="@string/pregunta_opcion1"
                     android:id="@+id/opcion1Pregunta3"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Les lanzaba pedradas."
+                    android:text="@string/pregunta_opcion2"
                     android:id="@+id/opcion2Pregunta3"
                     />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Les quitaba las plumas."
+                    android:text="@string/pregunta_opcion3"
                     android:id="@+id/opcion3Pregunta3"
                     />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Le cortó la cola."
+                    android:text="@string/pregunta_opcion4"
                     android:id="@+id/opcion4Pregunta3"/>
             </RadioGroup>
             <TextView
@@ -163,22 +163,22 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Los pellizcaba y les daba golpes."
+                    android:text="@string/pregunta_opcion1"
                     android:id="@+id/opcion1Pregunta4"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Les lanzaba pedradas."
+                    android:text="@string/pregunta_opcion2"
                     android:id="@+id/opcion2Pregunta4"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Les quitaba las plumas."
+                    android:text="@string/pregunta_opcion3"
                     android:id="@+id/opcion3Pregunta4"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Le cortó la cola"
+                    android:text="@string/pregunta_opcion4"
                     android:id="@+id/opcion4Pregunta4"/>
 
             </RadioGroup>
@@ -205,22 +205,22 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Gato."
+                    android:text="@string/gato"
                     android:id="@+id/opcion1Pregunta5"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Alacrán."
+                    android:text="@string/alacran"
                     android:id="@+id/opcion2Pregunta5"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pajarito."
+                    android:text="@string/pajarito"
                     android:id="@+id/opcion3Pregunta5"/>
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="León."
+                    android:text="@string/leon"
                     android:id="@+id/opcion4Pregunta5"/>
 
             </RadioGroup>
