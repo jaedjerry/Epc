@@ -90,9 +90,6 @@ public class Actividad3 extends AppCompatActivity {
                         yDelta = y - Params.topMargin;
                         break;
                     case MotionEvent.ACTION_MOVE:
-                        txt2.setVisibility(View.VISIBLE);
-                        txt3.setVisibility(View.VISIBLE);
-                        txtCiego.setVisibility(View.VISIBLE);
                         txt1.setLayoutParams(paramsOriginalestxt1);
                         RelativeLayout.LayoutParams layoutParams =
                                 (RelativeLayout.LayoutParams) v.getLayoutParams();
@@ -101,17 +98,21 @@ public class Actividad3 extends AppCompatActivity {
                         layoutParams.rightMargin = -50;
                         layoutParams.bottomMargin = -50;
                         v.setLayoutParams(layoutParams);
-                        if(x>txt2.getX() && y > txt2.getY() && y < txt2.getY() + txt2.getHeight()){
+                        /*Log.e("posiciones", "posicion en y del target: "+String.valueOf(txt2.getY())+
+                        " alto del target con layout params: "+String.valueOf(txt2.getLayoutParams().height)+
+                                "Alto con getHeight: "+String.valueOf(txt2.getHeight())+" suma de y + alto: "+String.valueOf(txt2.getY() +txt2.getLayoutParams().height)+
+                        " posicion del arrastre: "+ String.valueOf(y));*/
+                        if(x>txt2.getX() && y > txt2.getY() + 30 && y < txt2.getY() + 30 + txt2.getLayoutParams().height){
                             txt2.setBackgroundResource(R.drawable.borde);
                         }else{
                             txt2.setBackgroundDrawable(original);
                         }
-                        if(x>txt3.getX() &&y > txt3.getY()  && y < txt3.getY() + txt3.getHeight()){
+                        if(x>txt3.getX() &&y > txt3.getY() + 30 && y < txt3.getY()+ 30 + txt3.getLayoutParams().height){
                             txt3.setBackgroundResource(R.drawable.borde);
                         }else{
                             txt3.setBackgroundDrawable(original2);
                         }
-                        if(x>txtCiego.getX() &&y>txtCiego.getY() && y < txtCiego.getY() + txtCiego.getHeight()){
+                        if(x>txtCiego.getX() &&y>txtCiego.getY()+ 30 && y < txtCiego.getY()+ 30 + txtCiego.getLayoutParams().height){
                             txtCiego.setBackgroundResource(R.drawable.borde);
                         }else{
                             txtCiego.setBackgroundDrawable(originalCiego);
@@ -119,23 +120,19 @@ public class Actividad3 extends AppCompatActivity {
                         break;
                     case MotionEvent.ACTION_UP:
                         txt1.setBackgroundDrawable(original1);
-                        if(x>txt2.getX() && y >  txt2.getY() && y < txt2.getY() + txt2.getHeight()){
-                            txt2.setVisibility(View.GONE);
+                        if(x>txt2.getX() && y >  txt2.getY() + 30 && y < txt2.getY()+ 30 + txt2.getLayoutParams().height){
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt2.getLayoutParams();
                             txt1.setLayoutParams(txtparams);
                             miNota = miNota + (double) 100/3;
                         }
-                        if(x>txt3.getX() && y > txt3.getY() && y < txt3.getY() + txt3.getHeight()) {
-                            Log.e("up", "entre en up de la condicion 2");
-                            txt3.setVisibility(View.GONE);
+                        if(x>txt3.getX() && y > txt3.getY() + 30 && y < txt3.getY()+ 30 + txt3.getLayoutParams().height) {
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt3.getLayoutParams();
                             txt1.setLayoutParams(txtparams);
                             if(miNota != 0){
                                 miNota = miNota - (double)100/3;
                             }
                         }
-                        if(x>txtCiego.getX() && y>txtCiego.getY() && y < txtCiego.getY() + txtCiego.getHeight()){
-                            txtCiego.setVisibility(View.GONE);
+                        if(x>txtCiego.getX() && y>txtCiego.getY() + 30 && y < txtCiego.getY()+ 30 + txtCiego.getLayoutParams().height){
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txtCiego.getLayoutParams();
                             txt1.setLayoutParams(txtparams);
                             if(miNota != 0){
@@ -163,9 +160,6 @@ public class Actividad3 extends AppCompatActivity {
                         yDelta = y - Params.topMargin;
                         break;
                     case MotionEvent.ACTION_MOVE:
-                        txt2.setVisibility(View.VISIBLE);
-                        txt3.setVisibility(View.VISIBLE);
-                        txtCiego.setVisibility(View.VISIBLE);
                         txtPrincipal.setLayoutParams(paramsOriginalesPrincipal);
                         RelativeLayout.LayoutParams layoutParams =
                                 (RelativeLayout.LayoutParams) v.getLayoutParams();
@@ -174,17 +168,17 @@ public class Actividad3 extends AppCompatActivity {
                         layoutParams.rightMargin = -50;
                         layoutParams.bottomMargin = -50;
                         v.setLayoutParams(layoutParams);
-                        if(x>txt2.getX() && y > txt2.getY() && y < txt2.getY() + txt2.getHeight()){
+                        if(x>txt2.getX() && y > txt2.getY() + 30 && y < txt2.getY()+ 30 + txt2.getLayoutParams().height){
                             txt2.setBackgroundResource(R.drawable.borde);
                         }else{
                             txt2.setBackgroundDrawable(original);
                         }
-                        if(x> txt3.getX() && y > txt3.getY()  && y < txt3.getY() + txt3.getHeight()){
+                        if(x> txt3.getX() && y > txt3.getY() + 30 && y < txt3.getY()+ 30 + txt3.getLayoutParams().height){
                             txt3.setBackgroundResource(R.drawable.borde);
                         }else{
                             txt3.setBackgroundDrawable(original2);
                         }
-                        if(x>txtCiego.getX() && y>txtCiego.getY()  && y < txtCiego.getY() + txtCiego.getHeight()){
+                        if(x>txtCiego.getX() && y>txtCiego.getY()+ 30  && y < txtCiego.getY()+ 30 + txtCiego.getLayoutParams().height){
                             txtCiego.setBackgroundResource(R.drawable.borde);
                         }else{
                             txtCiego.setBackgroundDrawable(originalCiego);
@@ -192,24 +186,21 @@ public class Actividad3 extends AppCompatActivity {
                         break;
                     case MotionEvent.ACTION_UP:
                         txtPrincipal.setBackgroundDrawable(originalPrincipal);
-                        if(x>txt2.getX() && y >  txt2.getY()  && y < txt2.getY() + txt2.getHeight()){
-                            txt2.setVisibility(View.GONE);
+                        if(x>txt2.getX() && y >  txt2.getY() + 30 && y < txt2.getY()+ 30 + txt2.getLayoutParams().height){
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt2.getLayoutParams();
                             txtPrincipal.setLayoutParams(txtparams);
                             if(miNota != 0){
                                 miNota = miNota - (double)100/3;
                             }
                         }
-                        if(x>txt3.getX() && y > txt3.getY() && y < txt3.getY() + txt3.getHeight()) {
+                        if(x>txt3.getX() && y > txt3.getY()+ 30 && y < txt3.getY()+ 30 + txt3.getLayoutParams().height) {
                             Log.e("up", "entre en up de la condicion 2");
-                            txt3.setVisibility(View.GONE);
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt3.getLayoutParams();
                             txtPrincipal.setLayoutParams(txtparams);
 
                             miNota = miNota + (double) 100/3;
                         }
-                        if(x>txtCiego.getX() && y>txtCiego.getY() && y < txtCiego.getY() + txtCiego.getHeight()){
-                            txtCiego.setVisibility(View.GONE);
+                        if(x>txtCiego.getX() && y>txtCiego.getY()+ 30 && y < txtCiego.getY()+ 30 + txtCiego.getLayoutParams().height){
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txtCiego.getLayoutParams();
                             txtPrincipal.setLayoutParams(txtparams);
                             if(miNota != 0){
@@ -237,9 +228,6 @@ public class Actividad3 extends AppCompatActivity {
                         yDelta = y - Params.topMargin;
                         break;
                     case MotionEvent.ACTION_MOVE:
-                        txt2.setVisibility(View.VISIBLE);
-                        txt3.setVisibility(View.VISIBLE);
-                        txtCiego.setVisibility(View.VISIBLE);
                         txtSecundario.setLayoutParams(paramsOriginalesSecundario);
                         RelativeLayout.LayoutParams layoutParams =
                                 (RelativeLayout.LayoutParams) v.getLayoutParams();
@@ -248,17 +236,17 @@ public class Actividad3 extends AppCompatActivity {
                         layoutParams.rightMargin = -50;
                         layoutParams.bottomMargin = -50;
                         v.setLayoutParams(layoutParams);
-                        if(x > txt2.getX() && y >  txt2.getY()  && y < txt2.getY() + txt2.getHeight()){
+                        if(x > txt2.getX() && y >  txt2.getY()+ 30  && y < txt2.getY()+ 30 + txt2.getLayoutParams().height){
                             txt2.setBackgroundResource(R.drawable.borde);
                         }else{
                             txt2.setBackgroundDrawable(original);
                         }
-                        if(x > txt3.getX() && y > txt3.getY() && y < txt3.getY() + txt3.getHeight()){
+                        if(x > txt3.getX() && y > txt3.getY()+ 30 && y < txt3.getY()+ 30 + txt3.getLayoutParams().height){
                             txt3.setBackgroundResource(R.drawable.borde);
                         }else{
                             txt3.setBackgroundDrawable(original2);
                         }
-                        if(x> txtCiego.getX() && y>txtCiego.getY() && y < txtCiego.getY() + txtCiego.getHeight()){
+                        if(x> txtCiego.getX() && y>txtCiego.getY()+ 30 && y < txtCiego.getY()+ 30 + txtCiego.getLayoutParams().height){
                             txtCiego.setBackgroundResource(R.drawable.borde);
                         }else{
                             txtCiego.setBackgroundDrawable(originalCiego);
@@ -266,24 +254,21 @@ public class Actividad3 extends AppCompatActivity {
                         break;
                     case MotionEvent.ACTION_UP:
                         txtSecundario.setBackgroundDrawable(originalSecundario);
-                        if(x > txt2.getX() && y >  txt2.getY()  && y < txt2.getY() + txt2.getHeight()){
-                            txt2.setVisibility(View.GONE);
+                        if(x > txt2.getX() && y >  txt2.getY()+ 30   && y < txt2.getY()+ 30 + txt2.getLayoutParams().height){
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt2.getLayoutParams();
                             txtSecundario.setLayoutParams(txtparams);
                             if(miNota != 0){
                                 miNota = miNota - (double)100/3;
                             }
                         }
-                        if(x > txt3.getX() && y > txt3.getY() && y < txt3.getY() + txt3.getHeight()) {
-                            txt3.setVisibility(View.GONE);
+                        if(x > txt3.getX() && y > txt3.getY()+ 30 && y < txt3.getY()+ 30 + txt3.getLayoutParams().height) {
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt3.getLayoutParams();
                             txtSecundario.setLayoutParams(txtparams);
                             if(miNota != 0){
                                 miNota = miNota - (double)100/3;
                             }
                         }
-                        if(x> txtCiego.getX() && y>txtCiego.getY() && y < txtCiego.getY() + txtCiego.getHeight()){
-                            txtCiego.setVisibility(View.GONE);
+                        if(x> txtCiego.getX() && y>txtCiego.getY() + 30 && y < txtCiego.getY()+ 30 + txtCiego.getLayoutParams().height){
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txtCiego.getLayoutParams();
                             txtSecundario.setLayoutParams(txtparams);
                             miNota = miNota + (double) 100/3;
