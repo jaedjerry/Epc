@@ -44,33 +44,12 @@ public class MainActivity extends AppCompatActivity {
     private ViewGroup contenedor, preguntas, contenedorPreguntas;
     private ScrollView scroll;
     private RadioButton opcion1Pregunta1;
-    private RadioButton opcion2Pregunta1;
-    private RadioButton opcion3Pregunta1;
-    private RadioButton opcion4Pregunta1;
-    private RadioButton opcion1Pregunta2;
     private RadioButton opcion2Pregunta2;
-    private RadioButton opcion3Pregunta2;
-    private RadioButton opcion4Pregunta2;
-    private RadioButton opcion1Pregunta3;
-    private RadioButton opcion2Pregunta3;
     private RadioButton opcion3Pregunta3;
-    private RadioButton opcion4Pregunta3;
-    private RadioButton opcion1Pregunta4;
-    private RadioButton opcion2Pregunta4;
-    private RadioButton opcion3Pregunta4;
     private RadioButton opcion4Pregunta4;
-    private RadioButton opcion1Pregunta5;
-    private RadioButton opcion2Pregunta5;
-    private RadioButton opcion3Pregunta5;
     private RadioButton opcion4Pregunta5;
     private int intentos, cantidadCorrectas;
-    private TextView pregunta1;
-    private TextView pregunta2;
-    private TextView pregunta3;
-    private TextView pregunta4;
-    private TextView pregunta5;
     private Context context;
-    private ColorStateList colordefecto;
     private Handler handler = new Handler();
     private Toolbar toolbar;
     private View child;
@@ -88,34 +67,14 @@ public class MainActivity extends AppCompatActivity {
         contenedorPreguntas = (ViewGroup)scroll.findViewById(R.id.contenedorPreguntas);
         //inicialización items pregunta 1
         opcion1Pregunta1 = (RadioButton)findViewById(R.id.opcion1Pregunta1);
-        opcion2Pregunta1 = (RadioButton)findViewById(R.id.opcion2Pregunta1);
-        opcion3Pregunta1 = (RadioButton)findViewById(R.id.opcion3Pregunta1);
-        opcion4Pregunta1 = (RadioButton)findViewById(R.id.opcion4Preguna1);
         //inicialización items pregunta 2
-        opcion1Pregunta2 = (RadioButton)findViewById(R.id.opcion1Pregunta2);
         opcion2Pregunta2 = (RadioButton)findViewById(R.id.opcion2Pregunta2);
-        opcion3Pregunta2 = (RadioButton)findViewById(R.id.opcion3Pregunta2);
-        opcion4Pregunta2 = (RadioButton)findViewById(R.id.opcion4Pregunta2);
         //inicialización items pregunta 3
-        opcion1Pregunta3 = (RadioButton)findViewById(R.id.opcion1Pregunta3);
-        opcion2Pregunta3 = (RadioButton)findViewById(R.id.opcion2Pregunta3);
         opcion3Pregunta3 = (RadioButton)findViewById(R.id.opcion3Pregunta3);
-        opcion4Pregunta3 = (RadioButton)findViewById(R.id.opcion4Pregunta3);
         //inicialización items pregunta 4
-        opcion1Pregunta4 = (RadioButton)findViewById(R.id.opcion1Pregunta4);
-        opcion2Pregunta4 = (RadioButton)findViewById(R.id.opcion2Pregunta4);
-        opcion3Pregunta4 = (RadioButton)findViewById(R.id.opcion3Pregunta4);
         opcion4Pregunta4 = (RadioButton)findViewById(R.id.opcion4Pregunta4);
         //inicialización items pregunta 5
-        opcion1Pregunta5 = (RadioButton)findViewById(R.id.opcion1Pregunta5);
-        opcion2Pregunta5 = (RadioButton)findViewById(R.id.opcion2Pregunta5);
-        opcion3Pregunta5 = (RadioButton)findViewById(R.id.opcion3Pregunta5);
         opcion4Pregunta5 = (RadioButton)findViewById(R.id.opcion4Pregunta5);
-        pregunta1 = (TextView)findViewById(R.id.pregunta1);
-        pregunta2 = (TextView)findViewById(R.id.pregunta2);
-        pregunta3 = (TextView)findViewById(R.id.pregunta3);
-        pregunta4 = (TextView)findViewById(R.id.pregunta4);
-        pregunta5 = (TextView)findViewById(R.id.pregunta5);
         setSupportActionBar(toolbar);//establece a esta pantalla cual será su toolbar, en este caso la referencia anterior
         getSupportActionBar().setHomeButtonEnabled(true);//habilitamos el boton home, el boton home está ubicado a la izaquierda del título del toolbar
         getSupportActionBar().setDisplayShowTitleEnabled(true);
@@ -130,8 +89,6 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-        //obtiene el color por defecto de las preguntas
-        colordefecto = pregunta1.getTextColors();
         context = this;
         //si la version de android es mayor o igual que la 21 el boton calificar recibira una animación de color al presionarlo
         if(Build.VERSION.SDK_INT >= 21) {

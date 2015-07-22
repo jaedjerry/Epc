@@ -15,6 +15,9 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -33,7 +36,8 @@ public class Actividad3 extends AppCompatActivity {
     private int xDelta;
     private int yDelta;
     private Button calificar;
-    private double miNota = 0;
+    private int aciertos, intentos;
+    private View child;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,21 +127,15 @@ public class Actividad3 extends AppCompatActivity {
                         if(x>txt2.getX() && y >  txt2.getY() + 30 && y < txt2.getY()+ 30 + txt2.getLayoutParams().height){
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt2.getLayoutParams();
                             txt1.setLayoutParams(txtparams);
-                            miNota = miNota + (double) 100/3;
+                            aciertos++;
                         }
                         if(x>txt3.getX() && y > txt3.getY() + 30 && y < txt3.getY()+ 30 + txt3.getLayoutParams().height) {
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt3.getLayoutParams();
                             txt1.setLayoutParams(txtparams);
-                            if(miNota != 0){
-                                miNota = miNota - (double)100/3;
-                            }
                         }
                         if(x>txtCiego.getX() && y>txtCiego.getY() + 30 && y < txtCiego.getY()+ 30 + txtCiego.getLayoutParams().height){
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txtCiego.getLayoutParams();
                             txt1.setLayoutParams(txtparams);
-                            if(miNota != 0){
-                                miNota = miNota - (double)100/3;
-                            }
                         }
                         break;
 
@@ -189,23 +187,16 @@ public class Actividad3 extends AppCompatActivity {
                         if(x>txt2.getX() && y >  txt2.getY() + 30 && y < txt2.getY()+ 30 + txt2.getLayoutParams().height){
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt2.getLayoutParams();
                             txtPrincipal.setLayoutParams(txtparams);
-                            if(miNota != 0){
-                                miNota = miNota - (double)100/3;
-                            }
                         }
                         if(x>txt3.getX() && y > txt3.getY()+ 30 && y < txt3.getY()+ 30 + txt3.getLayoutParams().height) {
                             Log.e("up", "entre en up de la condicion 2");
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt3.getLayoutParams();
                             txtPrincipal.setLayoutParams(txtparams);
-
-                            miNota = miNota + (double) 100/3;
+                            aciertos++;
                         }
                         if(x>txtCiego.getX() && y>txtCiego.getY()+ 30 && y < txtCiego.getY()+ 30 + txtCiego.getLayoutParams().height){
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txtCiego.getLayoutParams();
                             txtPrincipal.setLayoutParams(txtparams);
-                            if(miNota != 0){
-                                miNota = miNota - (double)100/3;
-                            }
                         }
                         break;
 
@@ -257,21 +248,15 @@ public class Actividad3 extends AppCompatActivity {
                         if(x > txt2.getX() && y >  txt2.getY()+ 30   && y < txt2.getY()+ 30 + txt2.getLayoutParams().height){
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt2.getLayoutParams();
                             txtSecundario.setLayoutParams(txtparams);
-                            if(miNota != 0){
-                                miNota = miNota - (double)100/3;
-                            }
                         }
                         if(x > txt3.getX() && y > txt3.getY()+ 30 && y < txt3.getY()+ 30 + txt3.getLayoutParams().height) {
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt3.getLayoutParams();
                             txtSecundario.setLayoutParams(txtparams);
-                            if(miNota != 0){
-                                miNota = miNota - (double)100/3;
-                            }
                         }
                         if(x> txtCiego.getX() && y>txtCiego.getY() + 30 && y < txtCiego.getY()+ 30 + txtCiego.getLayoutParams().height){
                             RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txtCiego.getLayoutParams();
                             txtSecundario.setLayoutParams(txtparams);
-                            miNota = miNota + (double) 100/3;
+                            aciertos++;
                         }
                         break;
 
@@ -280,28 +265,68 @@ public class Actividad3 extends AppCompatActivity {
                 return true;
             }
         });
+        child = getLayoutInflater().inflate(R.layout.card_resultados, marco, false);
+        marco.addView(child);
+        child.setVisibility(View.GONE);
         calificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LayoutInflater inflater = getLayoutInflater();//mediante esta clase se inflara el toast
-                View toast = inflater.inflate(R.layout.toast_personalizado, (ViewGroup) findViewById(R.id.toast));//inflamos el toast, 1er parametro es el nombre del layout, el 2do parametro es de tipo ViewGroup y es el id del toast
-                Toast t = new Toast(getApplicationContext());//clase que maneja el toast recibe el contexto donde se ejecutara
-                TextView txtFallo = (TextView) toast.findViewById(R.id.txtFallo);//referencia al texto fallo
-                TextView txtCorrecto = (TextView) toast.findViewById(R.id.txtCorrecto);//referencia al texto correcto
-                TextView txtAcierto = (TextView)toast.findViewById(R.id.txtAcierto);//referencia al texto nota
-                if(miNota == 100.0){//si la nota es 100
-                    txtCorrecto.setVisibility(View.VISIBLE);//pone visible el txtCorrecto
-                    txtFallo.setVisibility(View.GONE);//oculta el txtFallo
-                }else{
-                    txtCorrecto.setVisibility(View.GONE);//oculta el txtCorrecto
-                    txtFallo.setVisibility(View.VISIBLE);//pone visible el txtFallo
+                if(intentos<=3){
+                    intentos++;
                 }
-                DecimalFormat df = new DecimalFormat("0.0");//formato para mostrar la nota, recibe el patron para el formato 0.0, el primer 0 es para mostrar cualquier cantidad de numeros antes del . y un 0 despues del . significa que mostrara solo 1 decimal
-                txtAcierto.setText(String.valueOf(df.format(miNota))+ "%");//establece el texto de txtAcierto y formatea cantidadCorrectas para que solo muestre un decimal
-                t.setDuration(Toast.LENGTH_LONG);//tiempo que estara visible el toast
-                t.setView(toast);//estable la vista del toast, recibe el layout inflado
-                t.setGravity(Gravity.CENTER_VERTICAL, 0, 0);//posicion del toast en la pantalla, Center_Vertical es para decir al centro
-                t.show();//se muestra el Toast
+                if(intentos > 3){
+                    Toast t = Toast.makeText(context,"Se te agotaron los intentos",Toast.LENGTH_SHORT);
+                    t.setGravity(Gravity.CENTER_VERTICAL,0,0);
+                    t.show();
+                }
+                if(intentos<=3){
+                    TextView txtFallastes, txtloLograstes, txtlasRespuestas;
+                    txtFallastes = (TextView)child.findViewById(R.id.fallastes);
+                    txtloLograstes = (TextView)child.findViewById(R.id.felicidades);
+                    txtlasRespuestas = (TextView)child.findViewById(R.id.lasRespuestas);
+                    TextView txtTitleRespuestas = (TextView)child.findViewById(R.id.titleRespuestas);
+                    if(intentos != 3){
+                        txtlasRespuestas.setVisibility(View.GONE);
+                        txtTitleRespuestas.setVisibility(View.GONE);
+                    }else{
+                        txtlasRespuestas.setVisibility(View.VISIBLE);
+                        txtTitleRespuestas.setVisibility(View.VISIBLE);
+                        txtlasRespuestas.setText(
+                                "Personaje antagónico: Paco: Niño cruel.\n"+
+                                        "Personaje principal: El perro: Lazarillo de 4 patas.\n"+
+                                        "Personaje secundario: El ciego dueño del perro.");
+                    }
+                    if(aciertos == 3){
+                        txtFallastes.setVisibility(View.GONE);
+                        txtloLograstes.setVisibility(View.VISIBLE);
+                    }else{
+                        txtloLograstes.setVisibility(View.GONE);
+                        txtFallastes.setVisibility(View.VISIBLE);
+                    }
+                    TextView txtIntentos = (TextView)child.findViewById(R.id.cantidadIntentos);
+                    txtIntentos.setText("Intento " + String.valueOf(intentos) + "/" + String.valueOf(3));
+                    TextView txtAciertos = (TextView)child.findViewById(R.id.respuestas_correctas);
+                    txtAciertos.setText("Acertastes " + String.valueOf(aciertos) + "/" + String.valueOf(3));
+                    Button volver =  (Button)child.findViewById(R.id.card_btn_volver);
+                    volver.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            calificar.setEnabled(true);
+                            Animation salida = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.card_out);
+                            child.startAnimation(salida);
+                            child.setVisibility(View.GONE);
+                            if(aciertos != 3){
+                                marco.requestLayout();
+                                aciertos = 0;
+                            }
+
+                        }
+                    });
+                    child.setVisibility(View.VISIBLE);
+                    Animation entrada;
+                    entrada = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.card_in);
+                    child.startAnimation(entrada);
+                }
             }
         });
 
@@ -321,7 +346,7 @@ public class Actividad3 extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+            if (id == R.id.action_settings) {
             return true;
         }
         //si el id del item de menu que se presiono en pantalla es igual al id del item de menu declarado en menu_main.xml
