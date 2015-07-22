@@ -126,6 +126,7 @@ public class actividad2 extends AppCompatActivity {
         ArrayList<Linea> lineas = new ArrayList<>();//almacenará las lineas que se dibujen, solo aceptara objetos de tipo Linea
         Paint paint;//para pintar en el canvas
         String estado;
+        int tamaño = getResources().getDimensionPixelSize(R.dimen.canvasTextSize);
         public SpecialView(Context context) {
             super(context);
             paint= new Paint();//instancia de paint
@@ -179,7 +180,7 @@ public class actividad2 extends AppCompatActivity {
                 }
 
             }
-            paint.setTextSize(25) ;//tamaño del texto
+            paint.setTextSize(tamaño) ;//tamaño del texto
             paint.setColor(Color.BLACK);//color del texto
             canvas.drawText("A", 25, 30, paint);//dibuja el texto, recibe el texto, la posicion en x, y, de ultimo paint
             paint.setColor(Color.BLUE);
