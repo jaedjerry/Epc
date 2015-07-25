@@ -14,69 +14,6 @@
         android:layout_height="@dimen/toolbar_shadow"
         android:layout_below="@id/appbar2"
         android:background="@drawable/toolbar_dropshadow" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cruel"
-        android:layout_marginTop="70dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
-        android:background="@color/fondoPalabrasActividad3"
-        android:textColor="@android:color/white"
-        android:id="@+id/cruel" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/odioso"
-        android:layout_marginTop="120dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
-        android:background="@color/fondoPalabrasActividad3"
-        android:textColor="@android:color/white"
-        android:id="@+id/odioso"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/angustia"
-        android:layout_marginTop="170dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
-        android:background="@color/fondoPalabrasActividad3"
-        android:textColor="@android:color/white"
-        android:id="@+id/angustia"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/perro"
-        android:layout_marginTop="220dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
-        android:background="@color/fondoPalabrasActividad3"
-        android:textColor="@android:color/white"
-        android:id="@+id/Perro"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/caer"
-        android:layout_marginTop="270dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
-        android:background="@color/fondoPalabrasActividad3"
-        android:textColor="@android:color/white"
-        android:id="@+id/caer"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cascabeleando"
-        android:layout_marginTop="320dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
-        android:background="@color/fondoPalabrasActividad3"
-        android:textColor="@android:color/white"
-        android:id="@+id/cascabeleando"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/amiguito"
-        android:layout_marginTop="370dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
-        android:background="@color/fondoPalabrasActividad3"
-        android:textColor="@android:color/white"
-        android:id="@+id/amiguito" />
     <!--Columna 2-->
     <TextView
         android:layout_width="wrap_content"
@@ -155,6 +92,69 @@
         android:id="@+id/malo"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cruel"
+        android:layout_marginTop="70dp"
+        android:textSize="@dimen/canvasTextSizeNormal"
+        android:background="@color/fondoPalabrasActividad3"
+        android:textColor="@android:color/white"
+        android:id="@+id/cruel"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/odioso"
+        android:layout_marginTop="120dp"
+        android:textSize="@dimen/canvasTextSizeNormal"
+        android:background="@color/fondoPalabrasActividad3"
+        android:textColor="@android:color/white"
+        android:id="@+id/odioso"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/angustia"
+        android:layout_marginTop="170dp"
+        android:textSize="@dimen/canvasTextSizeNormal"
+        android:background="@color/fondoPalabrasActividad3"
+        android:textColor="@android:color/white"
+        android:id="@+id/angustia"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/perro"
+        android:layout_marginTop="220dp"
+        android:textSize="@dimen/canvasTextSizeNormal"
+        android:background="@color/fondoPalabrasActividad3"
+        android:textColor="@android:color/white"
+        android:id="@+id/Perro"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/caer"
+        android:layout_marginTop="270dp"
+        android:textSize="@dimen/canvasTextSizeNormal"
+        android:background="@color/fondoPalabrasActividad3"
+        android:textColor="@android:color/white"
+        android:id="@+id/caer"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cascabeleando"
+        android:layout_marginTop="320dp"
+        android:textSize="@dimen/canvasTextSizeNormal"
+        android:background="@color/fondoPalabrasActividad3"
+        android:textColor="@android:color/white"
+        android:id="@+id/cascabeleando"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/amiguito"
+        android:layout_marginTop="370dp"
+        android:textSize="@dimen/canvasTextSizeNormal"
+        android:background="@color/fondoPalabrasActividad3"
+        android:textColor="@android:color/white"
+        android:id="@+id/amiguito" />
 
     <Button
         android:layout_width="match_parent"
