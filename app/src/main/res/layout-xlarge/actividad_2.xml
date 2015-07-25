@@ -5,7 +5,7 @@
     tools:contex=".actividad2"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:id="@+id/contenedorActividad2"
-    android:layout_marginRight="2dp">
+    android:layout_marginRight="13dp">
     <include layout="@layout/app_bar"
         android:id="@+id/appbar2" />
     <View
@@ -18,17 +18,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cruel"
-        android:layout_marginTop="70dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:layout_marginTop="90dp"
+        android:textSize="@dimen/canvasTextSizeXlarge"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
-        android:id="@+id/cruel" />
+        android:id="@+id/cruel"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/odioso"
-        android:layout_marginTop="120dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:layout_marginTop="170dp"
+        android:textSize="@dimen/canvasTextSizeXlarge"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/odioso"/>
@@ -36,8 +36,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/angustia"
-        android:layout_marginTop="170dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:layout_marginTop="250dp"
+        android:textSize="@dimen/canvasTextSizeXlarge"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/angustia"/>
@@ -45,8 +45,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/perro"
-        android:layout_marginTop="220dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:layout_marginTop="330dp"
+        android:textSize="@dimen/canvasTextSizeXlarge"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/Perro"/>
@@ -54,8 +54,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/caer"
-        android:layout_marginTop="270dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:layout_marginTop="410dp"
+        android:textSize="@dimen/canvasTextSizeXlarge"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/caer"/>
@@ -63,8 +63,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cascabeleando"
-        android:layout_marginTop="320dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:layout_marginTop="490dp"
+        android:textSize="@dimen/canvasTextSizeXlarge"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/cascabeleando"/>
@@ -72,8 +72,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/amiguito"
-        android:layout_marginTop="370dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:layout_marginTop="570dp"
+        android:textSize="@dimen/canvasTextSizeXlarge"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/amiguito" />
@@ -82,8 +82,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/compañero"
-        android:layout_marginTop="70dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:layout_marginTop="90dp"
+        android:textSize="@dimen/canvasTextSizeXlarge"
         android:background="@color/fondoPalabrasBActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/compañero"
@@ -93,8 +93,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/alborotando"
-        android:layout_marginTop="120dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:layout_marginTop="170dp"
+        android:textSize="@dimen/canvasTextSizeXlarge"
         android:background="@color/fondoPalabrasBActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/alborotando"
@@ -104,8 +104,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/tropezar"
-        android:layout_marginTop="170dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:layout_marginTop="250dp"
+        android:textSize="@dimen/canvasTextSizeXlarge"
         android:background="@color/fondoPalabrasBActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/tropezar"
@@ -115,8 +115,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lazarillo"
-        android:layout_marginTop="220dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:layout_marginTop="330dp"
+        android:textSize="@dimen/canvasTextSizeXlarge"
         android:background="@color/fondoPalabrasBActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/lazarillo"
@@ -126,8 +126,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sufrimiento"
-        android:layout_marginTop="270dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:layout_marginTop="410dp"
+        android:textSize="@dimen/canvasTextSizeXlarge"
         android:background="@color/fondoPalabrasBActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/sufrimiento"
@@ -137,8 +137,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/iracundo"
-        android:layout_marginTop="320dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:layout_marginTop="490dp"
+        android:textSize="@dimen/canvasTextSizeXlarge"
         android:background="@color/fondoPalabrasBActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/iracundo"
@@ -148,14 +148,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/malo"
-        android:layout_marginTop="370dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:layout_marginTop="570dp"
+        android:textSize="@dimen/canvasTextSizeXlarge"
         android:background="@color/fondoPalabrasBActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/malo"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"/>
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -163,6 +162,7 @@
         android:text="@string/calificar"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        android:textSize="40sp"/>
 
 </RelativeLayout>

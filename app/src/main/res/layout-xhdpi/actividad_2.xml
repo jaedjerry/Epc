@@ -22,7 +22,7 @@
         android:textSize="@dimen/canvasTextSizeNormal"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
-        android:id="@+id/cruel" />
+        android:id="@+id/cruel"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -155,7 +155,6 @@
         android:id="@+id/malo"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"/>
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

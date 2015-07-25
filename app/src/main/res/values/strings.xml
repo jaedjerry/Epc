@@ -52,4 +52,20 @@
     <string name="actividad3_antagonico">Personaje antagónico</string>
     <string name="actividad3_principal">Personaje Principal</string>
     <string name="actividad3_secundario">Personaje secundario</string>
+
+    <!--Texto actividad 1-->
+    <string name="cruel">Cruel</string>
+    <string name="odioso">Odioso</string>
+    <string name="angustia">Angustia</string>
+    <string name="perro">Perro</string>
+    <string name="caer">Caer</string>
+    <string name="cascabeleando">Cascabeleando</string>
+    <string name="amiguito">Amiguito</string>
+    <string name="compañero">Compañero</string>
+    <string name="alborotando">Alborotando</string>
+    <string name="tropezar">Tropezar</string>
+    <string name="lazarillo">Lazarillo</string>
+    <string name="sufrimiento">Sufrimiento</string>
+    <string name="iracundo">Iracundo</string>
+    <string name="malo">Malo</string>
 </resources>

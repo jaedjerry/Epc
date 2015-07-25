@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:contex=".actividad2"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:id="@+id/contenedorActividad2"
-    android:layout_marginRight="2dp">
+    android:id="@+id/contenedorActividad2">
     <include layout="@layout/app_bar"
         android:id="@+id/appbar2" />
     <View
@@ -19,16 +18,16 @@
         android:layout_height="wrap_content"
         android:text="@string/cruel"
         android:layout_marginTop="70dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:textSize="@dimen/canvasTextSizeHdpi"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
-        android:id="@+id/cruel" />
+        android:id="@+id/cruel"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/odioso"
         android:layout_marginTop="120dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:textSize="@dimen/canvasTextSizeHdpi"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/odioso"/>
@@ -37,7 +36,7 @@
         android:layout_height="wrap_content"
         android:text="@string/angustia"
         android:layout_marginTop="170dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:textSize="@dimen/canvasTextSizeHdpi"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/angustia"/>
@@ -46,7 +45,7 @@
         android:layout_height="wrap_content"
         android:text="@string/perro"
         android:layout_marginTop="220dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:textSize="@dimen/canvasTextSizeHdpi"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/Perro"/>
@@ -55,7 +54,7 @@
         android:layout_height="wrap_content"
         android:text="@string/caer"
         android:layout_marginTop="270dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:textSize="@dimen/canvasTextSizeHdpi"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/caer"/>
@@ -64,7 +63,7 @@
         android:layout_height="wrap_content"
         android:text="@string/cascabeleando"
         android:layout_marginTop="320dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:textSize="@dimen/canvasTextSizeHdpi"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/cascabeleando"/>
@@ -73,7 +72,7 @@
         android:layout_height="wrap_content"
         android:text="@string/amiguito"
         android:layout_marginTop="370dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:textSize="@dimen/canvasTextSizeHdpi"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/amiguito" />
@@ -83,7 +82,7 @@
         android:layout_height="wrap_content"
         android:text="@string/compañero"
         android:layout_marginTop="70dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:textSize="@dimen/canvasTextSizeHdpi"
         android:background="@color/fondoPalabrasBActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/compañero"
@@ -94,7 +93,7 @@
         android:layout_height="wrap_content"
         android:text="@string/alborotando"
         android:layout_marginTop="120dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:textSize="@dimen/canvasTextSizeHdpi"
         android:background="@color/fondoPalabrasBActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/alborotando"
@@ -105,7 +104,7 @@
         android:layout_height="wrap_content"
         android:text="@string/tropezar"
         android:layout_marginTop="170dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:textSize="@dimen/canvasTextSizeHdpi"
         android:background="@color/fondoPalabrasBActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/tropezar"
@@ -116,7 +115,7 @@
         android:layout_height="wrap_content"
         android:text="@string/lazarillo"
         android:layout_marginTop="220dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:textSize="@dimen/canvasTextSizeHdpi"
         android:background="@color/fondoPalabrasBActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/lazarillo"
@@ -127,7 +126,7 @@
         android:layout_height="wrap_content"
         android:text="@string/sufrimiento"
         android:layout_marginTop="270dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:textSize="@dimen/canvasTextSizeHdpi"
         android:background="@color/fondoPalabrasBActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/sufrimiento"
@@ -138,7 +137,7 @@
         android:layout_height="wrap_content"
         android:text="@string/iracundo"
         android:layout_marginTop="320dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:textSize="@dimen/canvasTextSizeHdpi"
         android:background="@color/fondoPalabrasBActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/iracundo"
@@ -149,13 +148,12 @@
         android:layout_height="wrap_content"
         android:text="@string/malo"
         android:layout_marginTop="370dp"
-        android:textSize="@dimen/canvasTextSizeNormal"
+        android:textSize="@dimen/canvasTextSizeHdpi"
         android:background="@color/fondoPalabrasBActividad3"
         android:textColor="@android:color/white"
         android:id="@+id/malo"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"/>
-
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

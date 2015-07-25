@@ -3,5 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="toolbar_shadow">4dp</dimen>
-    <dimen name="canvasTextSize">20sp</dimen>
+    <dimen name="canvasTextSizeNormal">22sp</dimen>
+    <dimen name="canvasTextSizeHdpi">19sp</dimen>
+    <dimen name="canvasTextSizeXlarge">50sp</dimen>
 </resources>
