@@ -9,32 +9,28 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_title"
-            android:screenOrientation="portrait"
-            android:configChanges="orientation|keyboardHidden">
+            android:label="@string/app_title">
 
         </activity>
         <activity android:name=".actividad2"
-            android:label="@string/app_title"
-            android:screenOrientation="portrait"
-            android:configChanges="orientation|keyboardHidden">
+            android:label="@string/app_title">
+
+        </activity>
+        <activity android:name=".Actividad3"
+            android:label="@string/app_title">
+
+        </activity>
+        <activity android:name=".actividad4"
+            android:label="@string/app_title">
+
+        </activity>
+        <activity android:name=".splash"
+            android:label="@string/app_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".Actividad3"
-            android:label="@string/app_title"
-            android:screenOrientation="portrait"
-            android:configChanges="orientation|keyboardHidden">
-
-        </activity>
-        <activity android:name=".actividad4"
-            android:label="@string/app_title"
-            android:screenOrientation="portrait"
-            android:configChanges="orientation|keyboardHidden">
-
         </activity>
     </application>
 

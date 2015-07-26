@@ -5,6 +5,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="calificar">calificar</string>
+    <string name="objetivo">El objetivo de esta app es reforzar los conocimientos de los estudiantes</string>
 
     <!--Texto actividad2 -->
     <string name="pregunta1Sub">Selecciona una opción</string>
@@ -32,15 +33,15 @@
     <string name="card_title_respuestas">Respuestas correctas</string>
 
     <!--Texto actividad 4-->
-    <string name="vf_pregunta1">1.El cuento trata de sensibilizar a los niños, para que sean buenos y ayuden a los demás para que Dios los bendiga</string>
-    <string name="vf_pregunta2">2.El cuento explica que los niños no deben ser tan buenos con los demás</string>
-    <string name="vf_pregunta3">3.Paco se burlaba de los cojos, de los tuertos, de los jorobados y de los limosneros.</string>
-    <string name="vf_pregunta4">4.Paco puso entre dos rebanadas de pan un gusano y se lo llevó al ciego para que se lo comiera</string>
-    <string name="vf_pregunta5">5.Paco ofendía a Dios y hacía llorar a su mamá.</string>
-    <string name="vf_pregunta6">6.Cuando los niños se portan mal Dios ordena al ángel Gabriel que desate la peste.</string>
-    <string name="vf_pregunta7">7.Los niños acusan a Paco de la muerte del perro del ciego.</string>
-    <string name="vf_pregunta8">8.Paco confiesa entre risas a ver dado muerte al perro del ciego.</string>
-    <string name="vf_pregunta9">9.Paco es castigado con la enfermedad de la viruela y luego de tanto dolor muere.</string>
+    <string name="vf_pregunta1">El cuento trata de sensibilizar a los niños, para que sean buenos y ayuden a los demás para que Dios los bendiga</string>
+    <string name="vf_pregunta2">El cuento explica que los niños no deben ser tan buenos con los demás</string>
+    <string name="vf_pregunta3">Paco se burlaba de los cojos, de los tuertos, de los jorobados y de los limosneros.</string>
+    <string name="vf_pregunta4">Paco puso entre dos rebanadas de pan un gusano y se lo llevó al ciego para que se lo comiera</string>
+    <string name="vf_pregunta5">Paco ofendía a Dios y hacía llorar a su mamá.</string>
+    <string name="vf_pregunta6">Cuando los niños se portan mal Dios ordena al ángel Gabriel que desate la peste.</string>
+    <string name="vf_pregunta7">Los niños acusan a Paco de la muerte del perro del ciego.</string>
+    <string name="vf_pregunta8">Paco confiesa entre risas a ver dado muerte al perro del ciego.</string>
+    <string name="vf_pregunta9">Paco es castigado con la enfermedad de la viruela y luego de tanto dolor muere.</string>
     <string name="vf_verdadero">Verdadero</string>
     <string name="vf_falso">Falso</string>
     <!--Texto actividad 3 -->

@@ -6,4 +6,10 @@
     <dimen name="canvasTextSizeNormal">22sp</dimen>
     <dimen name="canvasTextSizeHdpi">19sp</dimen>
     <dimen name="canvasTextSizeXlarge">50sp</dimen>
+    <dimen name="canvasTextSizeXxxhdpi">25sp</dimen>
+    <dimen name="canvasTextSizeXhdpi">20sp</dimen>
+    <dimen name="RbTextSize">18sp</dimen>
+    <dimen name="xlargeActividad4">40sp</dimen>
+    <dimen name="RbXlargeText">38sp</dimen>
+    <dimen name="textSizeSubActividad2">15sp</dimen>
 </resources>
