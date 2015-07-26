@@ -1,5 +1,6 @@
 package com.org.jaed.epc;
 
+import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.DragEvent;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -29,27 +31,28 @@ import java.text.DecimalFormat;
  * Created by Jerry on 13/07/2015.
  */
 public class Actividad3 extends AppCompatActivity {
-    private TextView txt1, txt2, txt3, txtCiego, txtPrincipal, txtSecundario;
-    private Context context;
+    private TextView txtPersonajeAntagonico, txtPacoMalo, txtPerro, txtCiego, txtPrincipal, txtSecundario;
+    private  Context context;
     private RelativeLayout marco;
     private Toolbar toolbar;
-    private int xDelta;
-    private int yDelta;
     private Button calificar;
     private int aciertos, intentos;
     private View child;
+    private boolean ocupado1, ocupado2, ocupado3;
+    private View view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.actividad_3);
-        txt1 = (TextView)findViewById(R.id.personajeAntagonico);
-        txt2 = (TextView)findViewById(R.id.pacoMalo);
-        txt3 = (TextView)findViewById(R.id.perro);
+        txtPacoMalo = (TextView)findViewById(R.id.pacoMalo);
+        txtPerro = (TextView)findViewById(R.id.perro);
         txtCiego = (TextView)findViewById(R.id.ciego);
+        txtPersonajeAntagonico = (TextView)findViewById(R.id.personajeAntagonico);
         txtPrincipal = (TextView)findViewById(R.id.principal);
         txtSecundario = (TextView)findViewById(R.id.secundario);
         marco = (RelativeLayout)findViewById(R.id.marco);
         calificar = (Button)findViewById(R.id.btnCalificar3);
+        context = this;
         toolbar = (Toolbar)findViewById(R.id.appbar3);
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -70,198 +73,286 @@ public class Actividad3 extends AppCompatActivity {
                 finish();
             }
         });
-        final Drawable original = txt2.getBackground();
-        final Drawable original1 = txt1.getBackground();
-        final Drawable original2 = txt3.getBackground();
-        final Drawable originalCiego = txtCiego.getBackground();
-        final Drawable originalPrincipal = txtPrincipal.getBackground();
-        final Drawable originalSecundario = txtSecundario.getBackground();
-        final RelativeLayout.LayoutParams paramsOriginalestxt1 = (RelativeLayout.LayoutParams)txt1.getLayoutParams();
+        //Datos de arriba
+        final RelativeLayout.LayoutParams paramsOriginalesPaco = (RelativeLayout.LayoutParams)txtPacoMalo.getLayoutParams();
+        final Drawable bgPaco = txtPacoMalo.getBackground();
+        final RelativeLayout.LayoutParams paramsOriginalesPerro = (RelativeLayout.LayoutParams)txtPerro.getLayoutParams();
+        final Drawable bgPerro = txtPerro.getBackground();
+        final RelativeLayout.LayoutParams paramsOriginalesCiego = (RelativeLayout.LayoutParams)txtCiego.getLayoutParams();
+        final Drawable bgCiego = txtCiego.getBackground();
+
+        //Datos de abajo
+        final RelativeLayout.LayoutParams paramsOriginaleAntagonico = (RelativeLayout.LayoutParams)txtPersonajeAntagonico.getLayoutParams();
         final RelativeLayout.LayoutParams paramsOriginalesPrincipal = (RelativeLayout.LayoutParams)txtPrincipal.getLayoutParams();
         final RelativeLayout.LayoutParams paramsOriginalesSecundario = (RelativeLayout.LayoutParams)txtSecundario.getLayoutParams();
-        context = this;
-        txt1.setOnTouchListener(new View.OnTouchListener() {
+
+        txtPersonajeAntagonico.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                final int x = (int) event.getRawX();
-                final int y = (int) event.getRawY();
                 switch (event.getAction() & MotionEvent.ACTION_MASK){
                     case MotionEvent.ACTION_DOWN:
-                        txt1.setBackgroundResource(R.drawable.background_al_tocar_actividad3);
-                        RelativeLayout.LayoutParams Params =
-                                (RelativeLayout.LayoutParams) v.getLayoutParams();
-                        xDelta = x - Params.leftMargin;
-                        yDelta = y - Params.topMargin;
-                        break;
-                    case MotionEvent.ACTION_MOVE:
-                        txt1.setLayoutParams(paramsOriginalestxt1);
-                        RelativeLayout.LayoutParams layoutParams =
-                                (RelativeLayout.LayoutParams) v.getLayoutParams();
-                        layoutParams.leftMargin = x - xDelta;
-                        layoutParams.topMargin = y - yDelta;
-                        layoutParams.rightMargin = -50;
-                        layoutParams.bottomMargin = -50;
-                        v.setLayoutParams(layoutParams);
-                        /*Log.e("posiciones", "posicion en y del target: "+String.valueOf(txt2.getY())+
-                        " alto del target con layout params: "+String.valueOf(txt2.getLayoutParams().height)+
-                                "Alto con getHeight: "+String.valueOf(txt2.getHeight())+" suma de y + alto: "+String.valueOf(txt2.getY() +txt2.getLayoutParams().height)+
-                        " posicion del arrastre: "+ String.valueOf(y));*/
-                        if(x>txt2.getX() && y > txt2.getY() + 30 && y < txt2.getY() + 30 + txt2.getLayoutParams().height){
-                            txt2.setBackgroundResource(R.drawable.borde);
-                        }else{
-                            txt2.setBackgroundDrawable(original);
+                        if (v.getLayoutParams() == paramsOriginalesPaco){
+                            ocupado1 = false;
+                            v.setLayoutParams(paramsOriginaleAntagonico);
                         }
-                        if(x>txt3.getX() &&y > txt3.getY() + 30 && y < txt3.getY()+ 30 + txt3.getLayoutParams().height){
-                            txt3.setBackgroundResource(R.drawable.borde);
-                        }else{
-                            txt3.setBackgroundDrawable(original2);
+                        if (v.getLayoutParams() == paramsOriginalesPerro) {
+                            ocupado2 = false;
+                            v.setLayoutParams(paramsOriginaleAntagonico);
                         }
-                        if(x>txtCiego.getX() &&y>txtCiego.getY()+ 30 && y < txtCiego.getY()+ 30 + txtCiego.getLayoutParams().height){
-                            txtCiego.setBackgroundResource(R.drawable.borde);
-                        }else{
-                            txtCiego.setBackgroundDrawable(originalCiego);
+                        if (v.getLayoutParams() == paramsOriginalesCiego) {
+                            ocupado3 = false;
+                            v.setLayoutParams(paramsOriginaleAntagonico);
+                        }
+                        ClipData clipData = ClipData.newPlainText("antagonico", "antagonico");
+                        View.DragShadowBuilder dragShadowBuilder = new View.DragShadowBuilder(v);
+                        v.startDrag(clipData, dragShadowBuilder, v, 0);
+                        v.setVisibility(View.INVISIBLE);
+                        if (txtPacoMalo.getVisibility() == View.GONE && !ocupado1) {
+                            txtPacoMalo.setVisibility(View.VISIBLE);
+                            txtPacoMalo.setBackgroundDrawable(bgPaco);
+                        }
+                        if (txtPerro.getVisibility() == View.GONE && !ocupado2) {
+                            txtPerro.setVisibility(View.VISIBLE);
+                            txtPerro.setBackgroundDrawable(bgPerro);
+                        }
+                        if (txtCiego.getVisibility() == View.GONE && !ocupado3) {
+                            txtCiego.setVisibility(View.VISIBLE);
+                            txtCiego.setBackgroundDrawable(bgCiego);
                         }
                         break;
-                    case MotionEvent.ACTION_UP:
-                        txt1.setBackgroundDrawable(original1);
-                        if(x>txt2.getX() && y >  txt2.getY() + 30 && y < txt2.getY()+ 30 + txt2.getLayoutParams().height){
-                            RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt2.getLayoutParams();
-                            txt1.setLayoutParams(txtparams);
-                            aciertos++;
-                        }
-                        if(x>txt3.getX() && y > txt3.getY() + 30 && y < txt3.getY()+ 30 + txt3.getLayoutParams().height) {
-                            RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt3.getLayoutParams();
-                            txt1.setLayoutParams(txtparams);
-                        }
-                        if(x>txtCiego.getX() && y>txtCiego.getY() + 30 && y < txtCiego.getY()+ 30 + txtCiego.getLayoutParams().height){
-                            RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txtCiego.getLayoutParams();
-                            txt1.setLayoutParams(txtparams);
-                        }
-                        break;
-
                 }
-                marco.invalidate();
                 return true;
             }
         });
         txtPrincipal.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                final int x = (int) event.getRawX();
-                final int y = (int) event.getRawY();
                 switch (event.getAction() & MotionEvent.ACTION_MASK){
                     case MotionEvent.ACTION_DOWN:
-                        txtPrincipal.setBackgroundResource(R.drawable.background_al_tocar_actividad3);
-                        RelativeLayout.LayoutParams Params =
-                                (RelativeLayout.LayoutParams) v.getLayoutParams();
-                        xDelta = x - Params.leftMargin;
-                        yDelta = y - Params.topMargin;
-                        break;
-                    case MotionEvent.ACTION_MOVE:
-                        txtPrincipal.setLayoutParams(paramsOriginalesPrincipal);
-                        RelativeLayout.LayoutParams layoutParams =
-                                (RelativeLayout.LayoutParams) v.getLayoutParams();
-                        layoutParams.leftMargin = x - xDelta;
-                        layoutParams.topMargin = y - yDelta;
-                        layoutParams.rightMargin = -50;
-                        layoutParams.bottomMargin = -50;
-                        v.setLayoutParams(layoutParams);
-                        if(x>txt2.getX() && y > txt2.getY() + 30 && y < txt2.getY()+ 30 + txt2.getLayoutParams().height){
-                            txt2.setBackgroundResource(R.drawable.borde);
-                        }else{
-                            txt2.setBackgroundDrawable(original);
+                        if (v.getLayoutParams() == paramsOriginalesPaco){
+                            ocupado1 = false;
+                            v.setLayoutParams(paramsOriginalesPrincipal);
                         }
-                        if(x> txt3.getX() && y > txt3.getY() + 30 && y < txt3.getY()+ 30 + txt3.getLayoutParams().height){
-                            txt3.setBackgroundResource(R.drawable.borde);
-                        }else{
-                            txt3.setBackgroundDrawable(original2);
+                        if (v.getLayoutParams() == paramsOriginalesPerro) {
+                            ocupado2 = false;
+                            v.setLayoutParams(paramsOriginalesPrincipal);
                         }
-                        if(x>txtCiego.getX() && y>txtCiego.getY()+ 30  && y < txtCiego.getY()+ 30 + txtCiego.getLayoutParams().height){
-                            txtCiego.setBackgroundResource(R.drawable.borde);
-                        }else{
-                            txtCiego.setBackgroundDrawable(originalCiego);
+                        if (v.getLayoutParams() == paramsOriginalesCiego) {
+                            ocupado3 = false;
+                            v.setLayoutParams(paramsOriginalesPrincipal);
+                        }
+                        ClipData clipData = ClipData.newPlainText("principal", "principal");
+                        View.DragShadowBuilder dragShadowBuilder = new View.DragShadowBuilder(v);
+                        v.startDrag(clipData, dragShadowBuilder, v, 0);
+                        v.setVisibility(View.INVISIBLE);
+                        if (txtPacoMalo.getVisibility() == View.GONE && !ocupado1) {
+                            txtPacoMalo.setVisibility(View.VISIBLE);
+                            txtPacoMalo.setBackgroundDrawable(bgPaco);
+                        }
+                        if (txtPerro.getVisibility() == View.GONE && !ocupado2) {
+                            txtPerro.setVisibility(View.VISIBLE);
+                            txtPerro.setBackgroundDrawable(bgPerro);
+                        }
+                        if (txtCiego.getVisibility() == View.GONE && !ocupado3) {
+                            txtCiego.setVisibility(View.VISIBLE);
+                            txtCiego.setBackgroundDrawable(bgCiego);
                         }
                         break;
-                    case MotionEvent.ACTION_UP:
-                        txtPrincipal.setBackgroundDrawable(originalPrincipal);
-                        if(x>txt2.getX() && y >  txt2.getY() + 30 && y < txt2.getY()+ 30 + txt2.getLayoutParams().height){
-                            RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt2.getLayoutParams();
-                            txtPrincipal.setLayoutParams(txtparams);
-                        }
-                        if(x>txt3.getX() && y > txt3.getY()+ 30 && y < txt3.getY()+ 30 + txt3.getLayoutParams().height) {
-                            Log.e("up", "entre en up de la condicion 2");
-                            RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt3.getLayoutParams();
-                            txtPrincipal.setLayoutParams(txtparams);
-                            aciertos++;
-                        }
-                        if(x>txtCiego.getX() && y>txtCiego.getY()+ 30 && y < txtCiego.getY()+ 30 + txtCiego.getLayoutParams().height){
-                            RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txtCiego.getLayoutParams();
-                            txtPrincipal.setLayoutParams(txtparams);
-                        }
-                        break;
-
                 }
-                marco.invalidate();
                 return true;
             }
         });
         txtSecundario.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                final int x = (int) event.getRawX();
-                final int y = (int) event.getRawY();
                 switch (event.getAction() & MotionEvent.ACTION_MASK){
                     case MotionEvent.ACTION_DOWN:
-                        txtSecundario.setBackgroundResource(R.drawable.background_al_tocar_actividad3);
-                        RelativeLayout.LayoutParams Params =
-                                (RelativeLayout.LayoutParams) v.getLayoutParams();
-                        xDelta = x - Params.leftMargin;
-                        yDelta = y - Params.topMargin;
-                        break;
-                    case MotionEvent.ACTION_MOVE:
-                        txtSecundario.setLayoutParams(paramsOriginalesSecundario);
-                        RelativeLayout.LayoutParams layoutParams =
-                                (RelativeLayout.LayoutParams) v.getLayoutParams();
-                        layoutParams.leftMargin = x - xDelta;
-                        layoutParams.topMargin = y - yDelta;
-                        layoutParams.rightMargin = -50;
-                        layoutParams.bottomMargin = -50;
-                        v.setLayoutParams(layoutParams);
-                        if(x > txt2.getX() && y >  txt2.getY()+ 30  && y < txt2.getY()+ 30 + txt2.getLayoutParams().height){
-                            txt2.setBackgroundResource(R.drawable.borde);
-                        }else{
-                            txt2.setBackgroundDrawable(original);
+                        if (v.getLayoutParams() == paramsOriginalesPaco){
+                            ocupado1 = false;
+                            v.setLayoutParams(paramsOriginalesSecundario);
                         }
-                        if(x > txt3.getX() && y > txt3.getY()+ 30 && y < txt3.getY()+ 30 + txt3.getLayoutParams().height){
-                            txt3.setBackgroundResource(R.drawable.borde);
-                        }else{
-                            txt3.setBackgroundDrawable(original2);
+                        if (v.getLayoutParams() == paramsOriginalesPerro) {
+                            ocupado2 = false;
+                            v.setLayoutParams(paramsOriginalesSecundario);
                         }
-                        if(x> txtCiego.getX() && y>txtCiego.getY()+ 30 && y < txtCiego.getY()+ 30 + txtCiego.getLayoutParams().height){
-                            txtCiego.setBackgroundResource(R.drawable.borde);
-                        }else{
-                            txtCiego.setBackgroundDrawable(originalCiego);
+                        if (v.getLayoutParams() == paramsOriginalesCiego) {
+                            ocupado3 = false;
+                            v.setLayoutParams(paramsOriginalesSecundario);
+                        }
+                        ClipData clipData = ClipData.newPlainText("secundario", "secundario");
+                        View.DragShadowBuilder dragShadowBuilder = new View.DragShadowBuilder(v);
+                        v.startDrag(clipData, dragShadowBuilder, v, 0);
+                        v.setVisibility(View.INVISIBLE);
+                        if (txtPacoMalo.getVisibility() == View.GONE && !ocupado1) {
+                            txtPacoMalo.setVisibility(View.VISIBLE);
+                            txtPacoMalo.setBackgroundDrawable(bgPaco);
+                        }
+                        if (txtPerro.getVisibility() == View.GONE && !ocupado2) {
+                            txtPerro.setVisibility(View.VISIBLE);
+                            txtPerro.setBackgroundDrawable(bgPerro);
+                        }
+                        if (txtCiego.getVisibility() == View.GONE && !ocupado3) {
+                            txtCiego.setVisibility(View.VISIBLE);
+                            txtCiego.setBackgroundDrawable(bgCiego);
                         }
                         break;
-                    case MotionEvent.ACTION_UP:
-                        txtSecundario.setBackgroundDrawable(originalSecundario);
-                        if(x > txt2.getX() && y >  txt2.getY()+ 30   && y < txt2.getY()+ 30 + txt2.getLayoutParams().height){
-                            RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt2.getLayoutParams();
-                            txtSecundario.setLayoutParams(txtparams);
+                }
+                return true;
+            }
+        });
+        txtPacoMalo.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                view = (View) event.getLocalState();
+                switch (event.getAction()) {
+                    case DragEvent.ACTION_DRAG_STARTED:
+                        // do nothing
+                        break;
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        v.setBackgroundResource(R.drawable.borde_2);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        v.setBackgroundDrawable(bgPaco);
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        ocupado1 = true;
+                        if (ocupado1) {
+                            Log.e("ocupado", "estoy ocupado");
+                        } else {
+                            Log.e("libre", "estoy libre");
                         }
-                        if(x > txt3.getX() && y > txt3.getY()+ 30 && y < txt3.getY()+ 30 + txt3.getLayoutParams().height) {
-                            RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txt3.getLayoutParams();
-                            txtSecundario.setLayoutParams(txtparams);
-                        }
-                        if(x> txtCiego.getX() && y>txtCiego.getY() + 30 && y < txtCiego.getY()+ 30 + txtCiego.getLayoutParams().height){
-                            RelativeLayout.LayoutParams txtparams = (RelativeLayout.LayoutParams)txtCiego.getLayoutParams();
-                            txtSecundario.setLayoutParams(txtparams);
+                        // Dropped, reassign View to ViewGroup
+                        if (event.getClipData().getItemAt(0).getText().equals("antagonico")) {
+                            Log.e("acerte","arrastre antagonico con paco malo");
                             aciertos++;
                         }
+                        if (view != null) {
+                            view.setLayoutParams(paramsOriginalesPaco);
+                            view.setVisibility(View.VISIBLE);
+                        } else {
+                            Log.e("null drop", "el view es null");
+                        }
+                        v.setVisibility(View.GONE);
                         break;
-
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if (view != null) {
+                            view.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    view.setVisibility(View.VISIBLE);
+                                }
+                            });
+                        } else {
+                            Log.e("null ended", "el view es null");
+                        }
+                        break;
+                    default:
+                        break;
                 }
-                marco.invalidate();
+                return true;
+            }
+        });
+        txtPerro.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                view = (View) event.getLocalState();
+                switch (event.getAction()) {
+                    case DragEvent.ACTION_DRAG_STARTED:
+                        // do nothing
+                        break;
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        v.setBackgroundResource(R.drawable.borde_2);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        v.setBackgroundDrawable(bgPerro);
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        ocupado2 = true;
+                        if(ocupado2){
+                            Log.e("ocupado", "estoy ocupado");
+                        }else{
+                            Log.e("libre", "estoy libre");
+                        }
+                        // Dropped, reassign View to ViewGroup
+                        if (event.getClipData().getItemAt(0).getText().equals("principal")) {
+                            Log.e("acerte", "arrastre principal con perro");
+                            aciertos++;
+                        }
+                        if (view != null) {
+                            view.setLayoutParams(paramsOriginalesPerro);
+                            view.setVisibility(View.VISIBLE);
+                        } else {
+                            Log.e("null drop", "el view es null");
+                        }
+                        v.setVisibility(View.GONE);
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if (view != null) {
+                            view.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    view.setVisibility(View.VISIBLE);
+                                }
+                            });
+                        } else {
+                            Log.e("null ended", "el view es null");
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                return true;
+            }
+        });
+        txtCiego.setOnDragListener(new View.OnDragListener() {
+            @Override
+            public boolean onDrag(View v, DragEvent event) {
+                view = (View) event.getLocalState();
+                switch (event.getAction()) {
+                    case DragEvent.ACTION_DRAG_STARTED:
+                        // do nothing
+                        break;
+                    case DragEvent.ACTION_DRAG_ENTERED:
+                        v.setBackgroundResource(R.drawable.borde_2);
+                        break;
+                    case DragEvent.ACTION_DRAG_EXITED:
+                        v.setBackgroundDrawable(bgCiego);
+                        break;
+                    case DragEvent.ACTION_DROP:
+                        ocupado1 = true;
+                        if(ocupado3){
+                            Log.e("ocupado", "estoy ocupado");
+                        }else{
+                            Log.e("libre", "estoy libre");
+                        }
+                        // Dropped, reassign View to ViewGroup
+                        if (event.getClipData().getItemAt(0).getText().equals("secundario")) {
+                            Log.e("acerte", "arrastre secunfario con ciego");
+                            aciertos++;
+                        }
+                        if (view != null) {
+                            view.setLayoutParams(paramsOriginalesCiego);
+                            view.setVisibility(View.VISIBLE);
+                        } else {
+                            Log.e("null drop", "el view es null");
+                        }
+                        v.setVisibility(View.GONE);
+                        break;
+                    case DragEvent.ACTION_DRAG_ENDED:
+                        if (view != null) {
+                            view.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    view.setVisibility(View.VISIBLE);
+                                }
+                            });
+                        } else {
+                            Log.e("null ended", "el view es null");
+                        }
+                        break;
+                    default:
+                        break;
+                }
                 return true;
             }
         });
@@ -315,11 +406,19 @@ public class Actividad3 extends AppCompatActivity {
                             Animation salida = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.card_out);
                             child.startAnimation(salida);
                             child.setVisibility(View.GONE);
-                            if(aciertos != 3){
-                                marco.requestLayout();
-                                aciertos = 0;
-                            }
-
+                            txtPersonajeAntagonico.setLayoutParams(paramsOriginaleAntagonico);
+                            txtPrincipal.setLayoutParams(paramsOriginalesPrincipal);
+                            txtSecundario.setLayoutParams(paramsOriginalesSecundario);
+                            txtPacoMalo.setVisibility(View.VISIBLE);
+                            txtPerro.setVisibility(View.VISIBLE);
+                            txtCiego.setVisibility(View.VISIBLE);
+                            txtPacoMalo.setBackgroundDrawable(bgPaco);
+                            txtPerro.setBackgroundDrawable(bgPerro);
+                            txtCiego.setBackgroundDrawable(bgCiego);
+                            ocupado1 = false;
+                            ocupado2 = false;
+                            ocupado3 = false;
+                            aciertos = 0;
                         }
                     });
                     child.setVisibility(View.VISIBLE);
