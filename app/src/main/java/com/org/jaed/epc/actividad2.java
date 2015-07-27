@@ -1,27 +1,19 @@
 package com.org.jaed.epc;
 
 import android.content.ClipData;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.DragEvent;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -29,8 +21,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.DecimalFormat;
-import java.util.ArrayList;
 
 /**
  * Created by Jerry on 21/06/2015.
@@ -101,8 +91,12 @@ public class actividad2 extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction() & MotionEvent.ACTION_MASK) {
                     case MotionEvent.ACTION_DOWN:
-                        if (v.getLayoutParams() == paramsMalo)
+                        if (v.getLayoutParams() == paramsMalo){
                             ocupado1 = false;
+                            if(aciertos>0){
+                                aciertos--;
+                            }
+                        }
                         if (v.getLayoutParams() == paramsIracundo) {
                             ocupado2 = false;
                         }
@@ -169,6 +163,9 @@ public class actividad2 extends AppCompatActivity {
                             ocupado1 = false;
                         if (v.getLayoutParams() == paramsIracundo) {
                             ocupado2 = false;
+                            if(aciertos>0){
+                                aciertos--;
+                            }
                         }
                         if (v.getLayoutParams() == paramsSufrimiento) {
                             ocupado3 = false;
@@ -236,6 +233,9 @@ public class actividad2 extends AppCompatActivity {
                         }
                         if (v.getLayoutParams() == paramsSufrimiento) {
                             ocupado3 = false;
+                            if(aciertos>0){
+                                aciertos--;
+                            }
                         }
                         if (v.getLayoutParams() == paramsLazarillo) {
                             ocupado4 = false;
@@ -303,6 +303,9 @@ public class actividad2 extends AppCompatActivity {
                         }
                         if (v.getLayoutParams() == paramsLazarillo) {
                             ocupado4 = false;
+                            if(aciertos>0){
+                                aciertos--;
+                            }
                         }
                         if (v.getLayoutParams() == paramsTropezar) {
                             ocupado5 = false;
@@ -370,6 +373,9 @@ public class actividad2 extends AppCompatActivity {
                         }
                         if (v.getLayoutParams() == paramsTropezar) {
                             ocupado5 = false;
+                            if(aciertos>0){
+                                aciertos--;
+                            }
                         }
                         if (v.getLayoutParams() == paramsAlborotando) {
                             ocupado6 = false;
@@ -437,6 +443,9 @@ public class actividad2 extends AppCompatActivity {
                         }
                         if (v.getLayoutParams() == paramsAlborotando) {
                             ocupado6 = false;
+                            if(aciertos>0){
+                                aciertos--;
+                            }
                         }
                         if (v.getLayoutParams() == paramsCompañero) {
                             ocupado7 = false;
@@ -504,6 +513,9 @@ public class actividad2 extends AppCompatActivity {
                         }
                         if (v.getLayoutParams() == paramsCompañero) {
                             ocupado7 = false;
+                            if(aciertos>0){
+                                aciertos--;
+                            }
                         }
                         ClipData clipData = ClipData.newPlainText("amiguito","amiguito");
                         View.DragShadowBuilder dragShadowBuilder = new View.DragShadowBuilder(v);

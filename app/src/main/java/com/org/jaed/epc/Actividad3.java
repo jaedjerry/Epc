@@ -53,29 +53,29 @@ public class Actividad3 extends AppCompatActivity {
         marco = (RelativeLayout)findViewById(R.id.marco);
         calificar = (Button)findViewById(R.id.btnCalificar3);
         context = this;
-        toolbar = (Toolbar)findViewById(R.id.appbar3);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(true);
-        toolbar.setNavigationIcon(R.mipmap.ic_atras);
-        getSupportActionBar().setTitle("Arrastra");
+        toolbar = (Toolbar)findViewById(R.id.appbar3);// referencia al toolbar
+        setSupportActionBar(toolbar);//establecemos el toolbar de la actividad con nuestro toolbar personalizado
+        getSupportActionBar().setHomeButtonEnabled(true);//habilitamos el boton home del toolbar
+        getSupportActionBar().setDisplayShowTitleEnabled(true);//habilitamos el titulo de la actividad
+        toolbar.setNavigationIcon(R.mipmap.ic_atras);//establecemos el icono del boton home del toolbar
+        getSupportActionBar().setTitle("Arrastra");//titulo de la actividad
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-            calificar.setBackgroundTintList(getResources().getColorStateList(R.color.btn_calificar_presionado));
+            calificar.setBackgroundTintList(getResources().getColorStateList(R.color.btn_calificar_presionado));//establecemos un background con efecto
         }else{
-            calificar.setBackgroundColor(getResources().getColor(R.color.btn_calificar_presionado));
+            calificar.setBackgroundColor(getResources().getColor(R.color.btn_calificar_presionado));//establecemos un background sin efecto
         }
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {//habilitamos el evento click en el boton home del toolbar
             @Override
             public void onClick(View v) {
-                Intent localintent = new Intent().setClass(context, MainActivity.class);
-                startActivity(localintent);
-                overridePendingTransition(R.anim.right_in, R.anim.right_out);
-                finish();
+                Intent localintent = new Intent().setClass(context, MainActivity.class);//instancia de Intent para cambiar de actividad
+                startActivity(localintent);//iniciarmos la actividad, recibe el intent anterior
+                overridePendingTransition(R.anim.right_in, R.anim.right_out);//iniciamos una animacion de trancision, recibe la animacion de entrada y la de salida.
+                finish();//finalizamos esta actividad
             }
         });
         //Datos de arriba
-        final RelativeLayout.LayoutParams paramsOriginalesPaco = (RelativeLayout.LayoutParams)txtPacoMalo.getLayoutParams();
-        final Drawable bgPaco = txtPacoMalo.getBackground();
+        final RelativeLayout.LayoutParams paramsOriginalesPaco = (RelativeLayout.LayoutParams)txtPacoMalo.getLayoutParams();//parametros originales de txtPacoMalo
+        final Drawable bgPaco = txtPacoMalo.getBackground();//background original de txtPacoMalo
         final RelativeLayout.LayoutParams paramsOriginalesPerro = (RelativeLayout.LayoutParams)txtPerro.getLayoutParams();
         final Drawable bgPerro = txtPerro.getBackground();
         final RelativeLayout.LayoutParams paramsOriginalesCiego = (RelativeLayout.LayoutParams)txtCiego.getLayoutParams();
@@ -86,14 +86,18 @@ public class Actividad3 extends AppCompatActivity {
         final RelativeLayout.LayoutParams paramsOriginalesPrincipal = (RelativeLayout.LayoutParams)txtPrincipal.getLayoutParams();
         final RelativeLayout.LayoutParams paramsOriginalesSecundario = (RelativeLayout.LayoutParams)txtSecundario.getLayoutParams();
 
-        txtPersonajeAntagonico.setOnTouchListener(new View.OnTouchListener() {
+        txtPersonajeAntagonico.setOnTouchListener(new View.OnTouchListener() {//habilitamos la escuha del evento onTouch para txtPersonajeAntagonico (el que se va a arrastrar)
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction() & MotionEvent.ACTION_MASK){
-                    case MotionEvent.ACTION_DOWN:
-                        if (v.getLayoutParams() == paramsOriginalesPaco){
-                            ocupado1 = false;
-                            v.setLayoutParams(paramsOriginaleAntagonico);
+                //v es txtPersonajeAntagonico
+                switch (event.getAction() & MotionEvent.ACTION_MASK){//segun sea la accion del evento
+                    case MotionEvent.ACTION_DOWN://en caso de presionar txtPersonajeAntagonico
+                        if (v.getLayoutParams() == paramsOriginalesPaco){//si los parametros de txtPersonajeAntagonico son iguales a los de txtPacoMalo, es por que txtPersonajeAntagonico no esta en su poción inicial y esta sobre el target, y por tanto
+                            ocupado1 = false;                            //al momento de que se ejecuta el action down se esta saliendo del target y pone ocupado en false, que indica que el target está vacio.
+                            v.setLayoutParams(paramsOriginaleAntagonico);//establecemos los parametros de txtPersonajeAntagonico a sus valores originales
+                            if(aciertos>0){
+                                aciertos--;//restamos los aciertos ya que se salio de su target
+                            }
                         }
                         if (v.getLayoutParams() == paramsOriginalesPerro) {
                             ocupado2 = false;
@@ -103,13 +107,13 @@ public class Actividad3 extends AppCompatActivity {
                             ocupado3 = false;
                             v.setLayoutParams(paramsOriginaleAntagonico);
                         }
-                        ClipData clipData = ClipData.newPlainText("antagonico", "antagonico");
-                        View.DragShadowBuilder dragShadowBuilder = new View.DragShadowBuilder(v);
-                        v.startDrag(clipData, dragShadowBuilder, v, 0);
-                        v.setVisibility(View.INVISIBLE);
-                        if (txtPacoMalo.getVisibility() == View.GONE && !ocupado1) {
-                            txtPacoMalo.setVisibility(View.VISIBLE);
-                            txtPacoMalo.setBackgroundDrawable(bgPaco);
+                        ClipData clipData = ClipData.newPlainText("antagonico", "antagonico");//para identificar el textview que esta sobre el target por medio de un texto en este caso antagonico.
+                        View.DragShadowBuilder dragShadowBuilder = new View.DragShadowBuilder(v);//Crea una copia identica del control durante el proceso de drag and drop
+                        v.startDrag(clipData, dragShadowBuilder, v, 0);//iniciamos el arrastrado, recibe el clip data, la copia del control, la vista que llama a starDrag y un 0
+                        v.setVisibility(View.INVISIBLE);//ocultamos txtPersonajeAntagonico
+                        if (txtPacoMalo.getVisibility() == View.GONE && !ocupado1) {//si el target esta oculto y no esta ocupado
+                            txtPacoMalo.setVisibility(View.VISIBLE);//hacemos visible el target
+                            txtPacoMalo.setBackgroundDrawable(bgPaco);//establecmos su background original
                         }
                         if (txtPerro.getVisibility() == View.GONE && !ocupado2) {
                             txtPerro.setVisibility(View.VISIBLE);
@@ -136,6 +140,9 @@ public class Actividad3 extends AppCompatActivity {
                         if (v.getLayoutParams() == paramsOriginalesPerro) {
                             ocupado2 = false;
                             v.setLayoutParams(paramsOriginalesPrincipal);
+                            if(aciertos>0){
+                                aciertos--;
+                            }
                         }
                         if (v.getLayoutParams() == paramsOriginalesCiego) {
                             ocupado3 = false;
@@ -165,9 +172,9 @@ public class Actividad3 extends AppCompatActivity {
         txtSecundario.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction() & MotionEvent.ACTION_MASK){
+                switch (event.getAction() & MotionEvent.ACTION_MASK) {
                     case MotionEvent.ACTION_DOWN:
-                        if (v.getLayoutParams() == paramsOriginalesPaco){
+                        if (v.getLayoutParams() == paramsOriginalesPaco) {
                             ocupado1 = false;
                             v.setLayoutParams(paramsOriginalesSecundario);
                         }
@@ -178,6 +185,9 @@ public class Actividad3 extends AppCompatActivity {
                         if (v.getLayoutParams() == paramsOriginalesCiego) {
                             ocupado3 = false;
                             v.setLayoutParams(paramsOriginalesSecundario);
+                            if (aciertos > 0) {
+                                aciertos--;
+                            }
                         }
                         ClipData clipData = ClipData.newPlainText("secundario", "secundario");
                         View.DragShadowBuilder dragShadowBuilder = new View.DragShadowBuilder(v);
@@ -200,46 +210,45 @@ public class Actividad3 extends AppCompatActivity {
                 return true;
             }
         });
-        txtPacoMalo.setOnDragListener(new View.OnDragListener() {
+        txtPacoMalo.setOnDragListener(new View.OnDragListener() {//habilitamos la escucha del evento onDrag para el target
             @Override
             public boolean onDrag(View v, DragEvent event) {
-                view = (View) event.getLocalState();
+                //v es txtPacoMalo
+                view = (View) event.getLocalState();//obtenemos el TextView que llamó al método startDrag
                 switch (event.getAction()) {
-                    case DragEvent.ACTION_DRAG_STARTED:
-                        // do nothing
+                    case DragEvent.ACTION_DRAG_STARTED://no se ocupa
                         break;
-                    case DragEvent.ACTION_DRAG_ENTERED:
-                        v.setBackgroundResource(R.drawable.borde_2);
+                    case DragEvent.ACTION_DRAG_ENTERED://en caso de que el textView que se este arrastrando entre dentro del target
+                        v.setBackgroundResource(R.drawable.borde_2);//establecemos el borde punteado
                         break;
-                    case DragEvent.ACTION_DRAG_EXITED:
-                        v.setBackgroundDrawable(bgPaco);
+                    case DragEvent.ACTION_DRAG_EXITED://en caso de que el textView que se este arrastrando salga del target
+                        v.setBackgroundDrawable(bgPaco);//establecemos su background original
                         break;
-                    case DragEvent.ACTION_DROP:
-                        ocupado1 = true;
+                    case DragEvent.ACTION_DROP://en caso de que el textView que se este arrastrando se solto sobre el target
+                        ocupado1 = true;//indicamos que esta ocupado
                         if (ocupado1) {
                             Log.e("ocupado", "estoy ocupado");
                         } else {
                             Log.e("libre", "estoy libre");
                         }
-                        // Dropped, reassign View to ViewGroup
-                        if (event.getClipData().getItemAt(0).getText().equals("antagonico")) {
-                            Log.e("acerte","arrastre antagonico con paco malo");
-                            aciertos++;
+                        if (event.getClipData().getItemAt(0).getText().equals("antagonico")) {//si el texto del clip data que se recibe es igual a antagonico
+                            Log.e("acerte", "arrastre antagonico con paco malo");
+                            aciertos++;//aumentamos los aciertos en 1
                         }
-                        if (view != null) {
-                            view.setLayoutParams(paramsOriginalesPaco);
-                            view.setVisibility(View.VISIBLE);
+                        if (view != null) {//si el textView es distinto de null
+                            view.setLayoutParams(paramsOriginalesPaco);//establecemos los parametros con los del target
+                            view.setVisibility(View.VISIBLE);//lo volvemos visible
                         } else {
                             Log.e("null drop", "el view es null");
                         }
-                        v.setVisibility(View.GONE);
+                        v.setVisibility(View.GONE);//ocultamos el target
                         break;
-                    case DragEvent.ACTION_DRAG_ENDED:
+                    case DragEvent.ACTION_DRAG_ENDED://en caso de que el textView del arrastre se solto antes de llegar al target
                         if (view != null) {
-                            view.post(new Runnable() {
+                            view.post(new Runnable() {//es necesario hacer cualquier cambio por medio del metodo post para que no lance una excepcion, post accede al ui thread
                                 @Override
                                 public void run() {
-                                    view.setVisibility(View.VISIBLE);
+                                    view.setVisibility(View.VISIBLE);//volvemos visible el textView
                                 }
                             });
                         } else {
@@ -258,7 +267,6 @@ public class Actividad3 extends AppCompatActivity {
                 view = (View) event.getLocalState();
                 switch (event.getAction()) {
                     case DragEvent.ACTION_DRAG_STARTED:
-                        // do nothing
                         break;
                     case DragEvent.ACTION_DRAG_ENTERED:
                         v.setBackgroundResource(R.drawable.borde_2);
@@ -273,7 +281,6 @@ public class Actividad3 extends AppCompatActivity {
                         }else{
                             Log.e("libre", "estoy libre");
                         }
-                        // Dropped, reassign View to ViewGroup
                         if (event.getClipData().getItemAt(0).getText().equals("principal")) {
                             Log.e("acerte", "arrastre principal con perro");
                             aciertos++;
@@ -310,7 +317,6 @@ public class Actividad3 extends AppCompatActivity {
                 view = (View) event.getLocalState();
                 switch (event.getAction()) {
                     case DragEvent.ACTION_DRAG_STARTED:
-                        // do nothing
                         break;
                     case DragEvent.ACTION_DRAG_ENTERED:
                         v.setBackgroundResource(R.drawable.borde_2);
@@ -319,7 +325,7 @@ public class Actividad3 extends AppCompatActivity {
                         v.setBackgroundDrawable(bgCiego);
                         break;
                     case DragEvent.ACTION_DROP:
-                        ocupado1 = true;
+                        ocupado3 = true;
                         if(ocupado3){
                             Log.e("ocupado", "estoy ocupado");
                         }else{
@@ -356,75 +362,78 @@ public class Actividad3 extends AppCompatActivity {
                 return true;
             }
         });
-        child = getLayoutInflater().inflate(R.layout.card_resultados, marco, false);
-        marco.addView(child);
-        child.setVisibility(View.GONE);
-        calificar.setOnClickListener(new View.OnClickListener() {
+        child = getLayoutInflater().inflate(R.layout.card_resultados, marco, false);//inflamos el card (ventana flotante) desde un recurso xml, recibe el recurso xml, el viewGroup padre.
+        marco.addView(child);//añadimos al marco (viewGroup padre) el card inflado
+        child.setVisibility(View.GONE);//ocultamos el card
+        calificar.setOnClickListener(new View.OnClickListener() {//habilitamos la escucha del evento onClick para el boton calificar
             @Override
             public void onClick(View v) {
-                if(intentos<=3){
-                    intentos++;
+                if(intentos<=3){//si intentos es menor o igual a 3
+                    intentos++;//incrementamos los intentos en 1
                 }
-                if(intentos > 3){
-                    Toast t = Toast.makeText(context,"Se te agotaron los intentos",Toast.LENGTH_SHORT);
-                    t.setGravity(Gravity.CENTER_VERTICAL,0,0);
-                    t.show();
+                if(intentos > 3){//si intentos es mayor a 3
+                    Toast t = Toast.makeText(context,"Se te agotaron los intentos",Toast.LENGTH_SHORT);//creamos un toast, que le avise al usuario que se le agotaron los intentos
+                    t.setGravity(Gravity.CENTER_VERTICAL,0,0);//establecemos la locacion en donde aparecera el toast, en este caso en el centro
+                    t.show();//mostramos el toast
                 }
-                if(intentos<=3){
+                if(intentos<=3){//si intentos es menos o igual que 3
                     TextView txtFallastes, txtloLograstes, txtlasRespuestas;
+                    //referencias a los textView dentro de la ventan flotante
                     txtFallastes = (TextView)child.findViewById(R.id.fallastes);
                     txtloLograstes = (TextView)child.findViewById(R.id.felicidades);
                     txtlasRespuestas = (TextView)child.findViewById(R.id.lasRespuestas);
                     TextView txtTitleRespuestas = (TextView)child.findViewById(R.id.titleRespuestas);
-                    if(intentos != 3){
-                        txtlasRespuestas.setVisibility(View.GONE);
-                        txtTitleRespuestas.setVisibility(View.GONE);
+                    TextView txtIntentos = (TextView)child.findViewById(R.id.cantidadIntentos);
+                    TextView txtAciertos = (TextView)child.findViewById(R.id.respuestas_correctas);
+                    if(intentos != 3){//si intenos es distinto de 3
+                        txtlasRespuestas.setVisibility(View.GONE);//ocultamos el textview que contiene las respuestas correctas
+                        txtTitleRespuestas.setVisibility(View.GONE);//ocultamos el textview del titulo de las respuestas
                     }else{
-                        txtlasRespuestas.setVisibility(View.VISIBLE);
-                        txtTitleRespuestas.setVisibility(View.VISIBLE);
+                        txtlasRespuestas.setVisibility(View.VISIBLE);//hacemos visibles las respuestas
+                        txtTitleRespuestas.setVisibility(View.VISIBLE);//hacemos visibles el titulo
                         txtlasRespuestas.setText(
                                 "Personaje antagónico: Paco: Niño cruel.\n"+
                                         "Personaje principal: El perro: Lazarillo de 4 patas.\n"+
-                                        "Personaje secundario: El ciego dueño del perro.");
+                                        "Personaje secundario: El ciego dueño del perro.");//establecemos las respuestas
                     }
-                    if(aciertos == 3){
-                        txtFallastes.setVisibility(View.GONE);
-                        txtloLograstes.setVisibility(View.VISIBLE);
+                    if(aciertos == 3){//si acierto es igual a 3
+                        txtFallastes.setVisibility(View.GONE);//ocultamos el texto de fallastes
+                        txtloLograstes.setVisibility(View.VISIBLE);//hacemos visible el texto lo lograstes
                     }else{
-                        txtloLograstes.setVisibility(View.GONE);
-                        txtFallastes.setVisibility(View.VISIBLE);
+                        txtloLograstes.setVisibility(View.GONE);//ocultamos el texto lo lograstes
+                        txtFallastes.setVisibility(View.VISIBLE);//hacemos visible el texto fallastes
                     }
-                    TextView txtIntentos = (TextView)child.findViewById(R.id.cantidadIntentos);
-                    txtIntentos.setText("Intento " + String.valueOf(intentos) + "/" + String.valueOf(3));
-                    TextView txtAciertos = (TextView)child.findViewById(R.id.respuestas_correctas);
-                    txtAciertos.setText("Acertastes " + String.valueOf(aciertos) + "/" + String.valueOf(3));
-                    Button volver =  (Button)child.findViewById(R.id.card_btn_volver);
+                    txtIntentos.setText("Intento " + String.valueOf(intentos) + "/" + String.valueOf(3));//establecemos el texto de los intentos, para indicar cuantos intentos lleva
+                    txtAciertos.setText("Acertastes " + String.valueOf(aciertos) + "/" + String.valueOf(3));//establecemos la cantidad de aciertos
+                    Button volver =  (Button)child.findViewById(R.id.card_btn_volver);//boton volver del card
                     volver.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            calificar.setEnabled(true);
-                            Animation salida = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.card_out);
-                            child.startAnimation(salida);
-                            child.setVisibility(View.GONE);
+                            Animation salida = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.card_out);//cargamos la animacion desde un recurso xml
+                            child.startAnimation(salida);//iniciamos la animacion de salidad con la animacion que cargamos
+                            child.setVisibility(View.GONE);//ocultamos el card
+                            //los textview arrastrados vuelven a su posición original.
                             txtPersonajeAntagonico.setLayoutParams(paramsOriginaleAntagonico);
                             txtPrincipal.setLayoutParams(paramsOriginalesPrincipal);
                             txtSecundario.setLayoutParams(paramsOriginalesSecundario);
+                            //volvemos visibles los textview targets y establecemos su background original
                             txtPacoMalo.setVisibility(View.VISIBLE);
                             txtPerro.setVisibility(View.VISIBLE);
                             txtCiego.setVisibility(View.VISIBLE);
                             txtPacoMalo.setBackgroundDrawable(bgPaco);
                             txtPerro.setBackgroundDrawable(bgPerro);
                             txtCiego.setBackgroundDrawable(bgCiego);
+                            //indicamos quelos target se desocuparon
                             ocupado1 = false;
                             ocupado2 = false;
                             ocupado3 = false;
-                            aciertos = 0;
+                            aciertos = 0;//reestablecmos los aciertos
                         }
                     });
-                    child.setVisibility(View.VISIBLE);
+                    child.setVisibility(View.VISIBLE);//volvemos visible el card
                     Animation entrada;
-                    entrada = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.card_in);
-                    child.startAnimation(entrada);
+                    entrada = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.card_in);//cargamos la animacion de entrada desde un recurso xml
+                    child.startAnimation(entrada);//inicamos la animacion
                 }
             }
         });
