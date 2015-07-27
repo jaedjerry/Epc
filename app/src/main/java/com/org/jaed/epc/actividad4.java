@@ -173,7 +173,10 @@ public class actividad4 extends AppCompatActivity {
         }
         //si el id del item de menu que se presiono en pantalla es igual al id del item de menu declarado en menu_main.xml
         if(id == R.id.siguiente){
-
+            Intent intent = new Intent().setClass(getApplicationContext(), actividad5.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.left_in, R.anim.left_out);
+            finish();
         }
 
         return super.onOptionsItemSelected(item);
