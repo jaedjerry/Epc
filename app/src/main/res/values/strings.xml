@@ -69,4 +69,12 @@
     <string name="sufrimiento">Sufrimiento</string>
     <string name="iracundo">Iracundo</string>
     <string name="malo">Malo</string>
+
+    <!--Texto actividad 5-->
+    <string name="idea1">Paco maltrataba a todos los animales</string>
+    <string name="idea2">El niño pícaro pellizcaba a los niños menores</string>
+    <string name="idea3">El ciego contaba cuentos y cantaba canciones a los niños</string>
+    <string name="idea4">El ciego llegaba a la puerta del colegio con su perro</string>
+    <string name="idea5">Paco agarró viruelas y murió</string>
+    <string name="idea6">Paco le dio vidrio molido al perro y se murió</string>
 </resources>
