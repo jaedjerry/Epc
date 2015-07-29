@@ -82,7 +82,7 @@
             android:text="@string/card_btn"
             android:id="@+id/card_btn_volver"
             android:textColor="@color/calificarFonfo"
-            android:textSize="20sp"
+            android:textSize="40sp"
             android:padding="8dp"
             style="@android:style/Widget.Holo.Light.Button.Borderless.Small" />
     </RelativeLayout>

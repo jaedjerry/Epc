@@ -59,10 +59,10 @@ public class Actividad3 extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(true);//habilitamos el titulo de la actividad
         toolbar.setNavigationIcon(R.mipmap.ic_atras);//establecemos el icono del boton home del toolbar
         getSupportActionBar().setTitle("Arrastra");//titulo de la actividad
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+        if(Build.VERSION.SDK_INT > 20){
             calificar.setBackgroundTintList(getResources().getColorStateList(R.color.btn_calificar_presionado));//establecemos un background con efecto
         }else{
-            calificar.setBackgroundColor(getResources().getColor(R.color.btn_calificar_presionado));//establecemos un background sin efecto
+            calificar.setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_calificar_presionado));
         }
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {//habilitamos el evento click en el boton home del toolbar
             @Override

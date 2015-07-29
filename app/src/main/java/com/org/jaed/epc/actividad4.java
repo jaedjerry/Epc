@@ -57,10 +57,10 @@ public class actividad4 extends AppCompatActivity {
                 finish();
             }
         });
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+        if(Build.VERSION.SDK_INT > 20){
             calificar.setBackgroundTintList(getResources().getColorStateList(R.color.btn_calificar_presionado));
         }else{
-            calificar.setBackgroundColor(getResources().getColor(R.color.btn_calificar_presionado));
+            calificar.setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_calificar_presionado));
         }
         child = getLayoutInflater().inflate(R.layout.card_resultados, contenedor, false);
         contenedor.addView(child);

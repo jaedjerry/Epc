@@ -1,24 +1,12 @@
 package com.org.jaed.epc;
 
-import android.animation.Animator;
-import android.animation.AnimatorInflater;
-import android.animation.StateListAnimator;
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.content.res.Resources;
-import android.graphics.Rect;
-import android.graphics.drawable.AnimationDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,17 +14,11 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -50,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton opcion4Pregunta5;
     private int intentos, cantidadCorrectas;
     private Context context;
-    private Handler handler = new Handler();
     private Toolbar toolbar;
     private View child;
     @Override
@@ -91,11 +72,11 @@ public class MainActivity extends AppCompatActivity {
         });
         context = this;
         //si la version de android es mayor o igual que la 21 el boton calificar recibira una animación de color al presionarlo
-        if(Build.VERSION.SDK_INT >= 21) {
+        if(Build.VERSION.SDK_INT > 20) {
             calificar.setBackgroundTintList(getResources().getColorStateList(R.color.btn_calificar_presionado));
         }else{
             //color sin animación
-            calificar.setBackgroundColor(getResources().getColor(R.color.btn_calificar_presionado));
+            calificar.setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_calificar_presionado));
         }
         child = getLayoutInflater().inflate(R.layout.card_resultados, contenedor, false);
         contenedor.addView(child);
@@ -177,25 +158,7 @@ public class MainActivity extends AppCompatActivity {
                     Animation entrada;
                     entrada = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.card_in);
                     child.startAnimation(entrada);
-                    for(int i = 0; i<contenedor.getChildCount(); i++){
-                        View hijo = contenedor.getChildAt(i);
-                        hijo.setEnabled(false);
-                    }
                 }
-                /*for (int i = 0; i<contenedorPreguntas.getChildCount(); i++){
-                    View hijo = contenedorPreguntas.getChildAt(i);
-                    Log.e("mis hijos", hijo.toString());
-                    if(hijo instanceof RadioGroup){
-                        RadioGroup rg = (RadioGroup) hijo;
-                        for(int j = 0; j<rg.getChildCount(); j++){
-                            rg.getChildAt(j).setEnabled(false);
-                        }
-                    }else{
-                        Log.e("falle", "jamas entre");
-                    }
-                }*/
-                //cambiarColorPreguntas();
-
             }
         });
     }

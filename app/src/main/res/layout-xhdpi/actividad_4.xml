@@ -12,10 +12,22 @@
         android:layout_height="@dimen/toolbar_shadow"
         android:layout_below="@id/appbar4"
         android:background="@drawable/toolbar_dropshadow" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/toolbar_shadow3"
+        android:background="@color/fondo_toast"
+        android:text="@string/indicaciones_actividad4"
+        android:textColor="@android:color/white"
+        android:paddingLeft="80dp"
+        android:paddingRight="80dp"
+        android:paddingTop="10dp"
+        android:id="@+id/txtObjetivo4"
+        android:textSize="17sp"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar_shadow3"
+        android:layout_below="@+id/txtObjetivo4"
         android:layout_above="@+id/btnCalificar4">
         <RelativeLayout
             android:layout_width="match_parent"

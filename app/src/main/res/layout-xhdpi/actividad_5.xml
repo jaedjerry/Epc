@@ -18,8 +18,9 @@
         android:textColor="@android:color/white"
         android:paddingLeft="55dp"
         android:paddingRight="55dp"
-        android:paddingTop="5dp"
-        android:id="@+id/txtObjetivo5"/>
+        android:paddingTop="1dp"
+        android:id="@+id/txtObjetivo5"
+        android:textSize="17sp"/>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,7 +34,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/idea1"
-                android:id="@+id/idea_1"/>
+                android:id="@+id/idea_1"
+                android:textSize="@dimen/canvasTextSizeXhdpi"/>
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,7 +46,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/idea2"
                 android:layout_below="@+id/spinner_idea1"
-                android:id="@+id/idea_2"/>
+                android:id="@+id/idea_2"
+                android:textSize="@dimen/canvasTextSizeXhdpi"/>
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -55,7 +58,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/idea3"
                 android:layout_below="@+id/spinner_idea2"
-                android:id="@+id/idea_3"/>
+                android:id="@+id/idea_3"
+                android:textSize="@dimen/canvasTextSizeXhdpi"/>
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -66,7 +70,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/idea4"
                 android:layout_below="@+id/spinner_idea3"
-                android:id="@+id/idea_4"/>
+                android:id="@+id/idea_4"
+                android:textSize="@dimen/canvasTextSizeXhdpi"/>
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -77,23 +82,25 @@
                 android:layout_height="wrap_content"
                 android:text="@string/idea5"
                 android:layout_below="@+id/spinner_idea4"
-                android:id="@+id/idea_5" />
+                android:id="@+id/idea_5"
+                android:textSize="@dimen/canvasTextSizeXhdpi"/>
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/spinner_idea5"
-                android:layout_below="@+id/idea_5" />
+                android:layout_below="@+id/idea_5"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/idea6"
                 android:layout_below="@+id/spinner_idea5"
-                android:id="@+id/idea_6"/>
+                android:id="@+id/idea_6"
+                android:textSize="@dimen/canvasTextSizeXhdpi"/>
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/spinner_idea6"
-                android:layout_below="@+id/idea_6" />
+                android:layout_below="@+id/idea_6"/>
         </RelativeLayout>
     </ScrollView>
     <Button

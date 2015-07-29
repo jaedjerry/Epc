@@ -22,6 +22,7 @@
     <string name="alacran">Alacrán.</string>
     <string name="pajarito">Pajarito.</string>
     <string name="leon">León.</string>
+    <string name="indicaciones_actividad2">Seleccione la respuesta correcta</string>
 
     <!--Texto para el card-->
     <string name="card_title_resultado">Tus resultados</string>
@@ -33,10 +34,10 @@
     <string name="card_title_respuestas">Respuestas correctas</string>
 
     <!--Texto actividad 4-->
-    <string name="vf_pregunta1">El cuento trata de sensibilizar a los niños, para que sean buenos y ayuden a los demás para que Dios los bendiga</string>
-    <string name="vf_pregunta2">El cuento explica que los niños no deben ser tan buenos con los demás</string>
+    <string name="vf_pregunta1">El cuento trata de sensibilizar a los niños, para que sean buenos y ayuden a los demás para que Dios los bendiga.</string>
+    <string name="vf_pregunta2">El cuento explica que los niños no deben ser tan buenos con los demás.</string>
     <string name="vf_pregunta3">Paco se burlaba de los cojos, de los tuertos, de los jorobados y de los limosneros.</string>
-    <string name="vf_pregunta4">Paco puso entre dos rebanadas de pan un gusano y se lo llevó al ciego para que se lo comiera</string>
+    <string name="vf_pregunta4">Paco puso entre dos rebanadas de pan un gusano y se lo llevó al ciego para que se lo comiera.</string>
     <string name="vf_pregunta5">Paco ofendía a Dios y hacía llorar a su mamá.</string>
     <string name="vf_pregunta6">Cuando los niños se portan mal Dios ordena al ángel Gabriel que desate la peste.</string>
     <string name="vf_pregunta7">Los niños acusan a Paco de la muerte del perro del ciego.</string>
@@ -44,6 +45,7 @@
     <string name="vf_pregunta9">Paco es castigado con la enfermedad de la viruela y luego de tanto dolor muere.</string>
     <string name="vf_verdadero">Verdadero</string>
     <string name="vf_falso">Falso</string>
+    <string name="indicaciones_actividad4">Responde verdadero o falso</string>
     <!--Texto actividad 3 -->
 
     <string name="actividad3_title">Arratre las palabras de abajo con las de arriba según convenga.</string>
@@ -69,6 +71,7 @@
     <string name="sufrimiento">Sufrimiento</string>
     <string name="iracundo">Iracundo</string>
     <string name="malo">Malo</string>
+    <string name="indicacion_actividad1">Arrstre las palabras de la columna A con su sinónimo correspondiente en la columna B</string>
 
     <!--Texto actividad 5-->
     <string name="idea1">Paco maltrataba a todos los animales</string>
@@ -77,4 +80,5 @@
     <string name="idea4">El ciego llegaba a la puerta del colegio con su perro</string>
     <string name="idea5">Paco agarró viruelas y murió</string>
     <string name="idea6">Paco le dio vidrio molido al perro y se murió</string>
+    <string name="indicaciones_actividad5">Ordene las ideas relevantes como suceden en el cuento</string>
 </resources>

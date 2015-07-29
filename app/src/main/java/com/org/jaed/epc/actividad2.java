@@ -58,10 +58,10 @@ public class actividad2 extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(true);
         getSupportActionBar().setTitle("Arrastra de A a B");
         calificar = (Button)findViewById(R.id.btnCalificar2);//referencia al boton calificar
-        if(Build.VERSION.SDK_INT >=21){//si la version del dispositivo es mayor o igual que la 21 (android 5 y superiores)
+        if(Build.VERSION.SDK_INT > 20){//si la version del dispositivo es mayor o igual que la 21 (android 5 y superiores)
             calificar.setBackgroundTintList(getResources().getColorStateList(R.color.btn_calificar_presionado));//establecemos el background con efecto a calificar
         }else{
-            calificar.setBackgroundColor(getResources().getColor(R.color.btn_calificar_presionado));//establecemos solamente un background sin efecto para dispositivos menores a android 5
+            calificar.setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_calificar_presionado));
         }
         //Datos por default de la columna A
         final RelativeLayout.LayoutParams paramsCruel = (RelativeLayout.LayoutParams)cruel.getLayoutParams();

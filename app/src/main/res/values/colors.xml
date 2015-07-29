@@ -10,5 +10,7 @@
     <color name="fondoPalabrasActividad3">#795548</color>
     <color name="fondoPalabrasBActividad3">#ff5722</color>
     <color name="title_card">#673ab7</color>
+    <color name="btn_normal">#009688</color>
+    <color name="btn_pressed">#00796b</color>
 
 </resources>

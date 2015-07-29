@@ -11,14 +11,16 @@
         android:layout_below="@id/appbar3"
         android:background="@drawable/toolbar_dropshadow" />
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar_shadow2"
         android:layout_centerHorizontal="true"
         android:text="@string/actividad3_title"
         android:textSize="40sp"
-        android:textStyle="bold"
-        android:background="@android:drawable/dialog_holo_light_frame"/>
+        android:background="@color/fondo_toast"
+        android:textColor="@android:color/white"
+        android:paddingLeft="70sp"
+        android:paddingRight="70sp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="80dp"
