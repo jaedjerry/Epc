@@ -3,18 +3,16 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:src="@mipmap/portada3"
         android:scaleType="centerCrop"
-        android:layout_above="@+id/txtobjetivo" />
-    <TextView
-        android:layout_width="wrap_content"
+        android:layout_above="@+id/btnEntrar" />
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/objetivo"
-        android:layout_alignParentBottom="true"
-        android:textSize="@dimen/canvasTextSizeNormal"
-        android:textStyle="bold"
-        android:id="@+id/txtobjetivo"/>
+        android:id="@+id/btnEntrar"
+        android:text="@string/entrar"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

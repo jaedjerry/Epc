@@ -1,4 +1,0 @@
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@android:drawable/dialog_holo_light_frame"/>
-    <item android:drawable="@color/fondoPalabrasActividad3"/>
-</layer-list>

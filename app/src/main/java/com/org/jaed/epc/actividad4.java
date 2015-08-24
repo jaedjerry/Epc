@@ -1,6 +1,7 @@
 package com.org.jaed.epc;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +14,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +29,7 @@ public class actividad4 extends AppCompatActivity {
     private RadioButton rb1, rb2, rb3, rb4, rb5, rb6, rb7, rb8, rb9;
     private int aciertos, intentos;
     private View child;
-    private RelativeLayout contenedor;
+    private RelativeLayout contenedor, contenedorVf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,10 +37,8 @@ public class actividad4 extends AppCompatActivity {
         toolbar = (Toolbar)findViewById(R.id.appbar4);
         calificar = (Button)findViewById(R.id.btnCalificar4);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(true);
-        toolbar.setNavigationIcon(R.mipmap.ic_atras);
-        getSupportActionBar().setTitle("Resuelva");
+        getSupportActionBar().setTitle("Seleccione");
         rb1 = (RadioButton) findViewById(R.id.rdb1);
         rb2 = (RadioButton)findViewById(R.id.rdb4);
         rb3 = (RadioButton)findViewById(R.id.rdb5);
@@ -48,23 +49,43 @@ public class actividad4 extends AppCompatActivity {
         rb8 = (RadioButton)findViewById(R.id.rdb15);
         rb9 = (RadioButton)findViewById(R.id.rdb17);
         contenedor = (RelativeLayout)findViewById(R.id.contenedorActividad4);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent localintent = new Intent().setClass(getApplicationContext(), Actividad3.class);
-                startActivity(localintent);
-                overridePendingTransition(R.anim.right_in, R.anim.right_out);
-                finish();
-            }
-        });
-        if(Build.VERSION.SDK_INT > 20){
-            calificar.setBackgroundTintList(getResources().getColorStateList(R.color.btn_calificar_presionado));
-        }else{
-            calificar.setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_calificar_presionado));
-        }
+        contenedorVf = (RelativeLayout)findViewById(R.id.contenedorVf);
+        calificar.setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_calificar_presionado));
+        Typeface font = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Medium.ttf");
         child = getLayoutInflater().inflate(R.layout.card_resultados, contenedor, false);
+        final RelativeLayout cardContenedor = (RelativeLayout)child.findViewById(R.id.cardContenedor);
+        for (int i = 0; i<=cardContenedor.getChildCount(); i++){
+            View v = cardContenedor.getChildAt(i);
+            if(v instanceof TextView){
+                ((TextView) v).setTypeface(font);
+            }
+            if(v instanceof Button){
+                ((Button) v).setTypeface(font);
+            }
+        }
         contenedor.addView(child);
         child.setVisibility(View.GONE);
+        for(int i = 0; i<=contenedor.getChildCount(); i++){
+            View v = contenedor.getChildAt(i);
+            if(v instanceof TextView){
+                ((TextView) v).setTypeface(font);
+            }
+            if(v instanceof Button){
+                ((Button) v).setTypeface(font);
+            }
+        }
+        for(int i = 0; i<=contenedorVf.getChildCount(); i++){
+            View view = contenedorVf.getChildAt(i);
+            if(view instanceof TextView){
+                ((TextView) view).setTypeface(font);
+            }
+            if(view instanceof RadioGroup){
+                for(int j = 0; j< ((RadioGroup) view).getChildCount(); j++){
+                    RadioButton rb = (RadioButton)((RadioGroup) view).getChildAt(j);
+                    rb.setTypeface(font);
+                }
+            }
+        }
         calificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -167,15 +188,13 @@ public class actividad4 extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if(id == R.id.alEjercicio){
+            startActivity(new Intent().setClass(getApplicationContext(), MenuEjercicios.class));
         }
-        //si el id del item de menu que se presiono en pantalla es igual al id del item de menu declarado en menu_main.xml
-        if(id == R.id.siguiente){
-            Intent intent = new Intent().setClass(getApplicationContext(), actividad5.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.left_in, R.anim.left_out);
+        if(id == R.id.alPrincipal){
+            startActivity(new Intent().setClass(getApplicationContext(),MainMenu.class));
+        }
+        if(id == R.id.salir){
             finish();
         }
 

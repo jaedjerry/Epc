@@ -4,9 +4,9 @@
     <string name="app_title">El perro del ciego</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="calificar">calificar</string>
+    <string name="calificar">verificar</string>
     <string name="objetivo">El objetivo de esta app es reforzar los conocimientos de los estudiantes</string>
-
+    <string name="entrar">Entrar</string>
     <!--Texto actividad2 -->
     <string name="pregunta1Sub">Selecciona una opción</string>
     <string name="preguntauno">¿Qué hacia Paco con los niños menores?</string>
@@ -17,12 +17,13 @@
     <string name="pregunta_opcion1">Los pellizcaba y les daba golpes.</string>
     <string name="pregunta_opcion2">Les lanzaba pedradas.</string>
     <string name="pregunta_opcion3">Les quitaba las plumas.</string>
-    <string name="pregunta_opcion4">Le corto la cola.</string>
+    <string name="pregunta_opcion4">Le cortó la cola.</string>
     <string name="gato">Gato.</string>
     <string name="alacran">Alacrán.</string>
     <string name="pajarito">Pajarito.</string>
     <string name="leon">León.</string>
     <string name="indicaciones_actividad2">Seleccione la respuesta correcta</string>
+
 
     <!--Texto para el card-->
     <string name="card_title_resultado">Tus resultados</string>
@@ -34,7 +35,7 @@
     <string name="card_title_respuestas">Respuestas correctas</string>
 
     <!--Texto actividad 4-->
-    <string name="vf_pregunta1">El cuento trata de sensibilizar a los niños, para que sean buenos y ayuden a los demás para que Dios los bendiga.</string>
+    <string name="vf_pregunta1">El cuento trata de sensibilizar a los niños para que sean buenos y ayuden a los demás para que Dios los bendiga.</string>
     <string name="vf_pregunta2">El cuento explica que los niños no deben ser tan buenos con los demás.</string>
     <string name="vf_pregunta3">Paco se burlaba de los cojos, de los tuertos, de los jorobados y de los limosneros.</string>
     <string name="vf_pregunta4">Paco puso entre dos rebanadas de pan un gusano y se lo llevó al ciego para que se lo comiera.</string>
@@ -48,7 +49,7 @@
     <string name="indicaciones_actividad4">Responde verdadero o falso</string>
     <!--Texto actividad 3 -->
 
-    <string name="actividad3_title">Arratre las palabras de abajo con las de arriba según convenga.</string>
+    <string name="actividad3_title">Arrastre los enunciados de abajo hacia arriba según convenga.</string>
     <string name="actividad3_niño_malo">Paco: Niño cruel</string>
     <string name="actividad3_perro">El perro: Lazarillo de 4 patas</string>
     <string name="actividad3_ciego">El ciego: Dueño del perro</string>
@@ -56,29 +57,72 @@
     <string name="actividad3_principal">Personaje Principal</string>
     <string name="actividad3_secundario">Personaje secundario</string>
 
-    <!--Texto actividad 1-->
-    <string name="cruel">Cruel</string>
-    <string name="odioso">Odioso</string>
-    <string name="angustia">Angustia</string>
-    <string name="perro">Perro</string>
-    <string name="caer">Caer</string>
-    <string name="cascabeleando">Cascabeleando</string>
-    <string name="amiguito">Amiguito</string>
-    <string name="compañero">Compañero</string>
-    <string name="alborotando">Alborotando</string>
-    <string name="tropezar">Tropezar</string>
-    <string name="lazarillo">Lazarillo</string>
-    <string name="sufrimiento">Sufrimiento</string>
-    <string name="iracundo">Iracundo</string>
-    <string name="malo">Malo</string>
-    <string name="indicacion_actividad1">Arrstre las palabras de la columna A con su sinónimo correspondiente en la columna B</string>
 
     <!--Texto actividad 5-->
-    <string name="idea1">Paco maltrataba a todos los animales</string>
-    <string name="idea2">El niño pícaro pellizcaba a los niños menores</string>
-    <string name="idea3">El ciego contaba cuentos y cantaba canciones a los niños</string>
-    <string name="idea4">El ciego llegaba a la puerta del colegio con su perro</string>
-    <string name="idea5">Paco agarró viruelas y murió</string>
-    <string name="idea6">Paco le dio vidrio molido al perro y se murió</string>
+    <string name="idea1">Paco maltrataba a todos los animales.</string>
+    <string name="idea2">El niño pícaro pellizcaba a los niños menores.</string>
+    <string name="idea3">El ciego contaba cuentos y cantaba canciones a los niños.</string>
+    <string name="idea4">El ciego llegaba a la puerta del colegio con su perro.</string>
+    <string name="idea5">Paco agarró viruelas y murió.</string>
+    <string name="idea6">Paco le dio vidrio molido al perro y se murió.</string>
     <string name="indicaciones_actividad5">Ordene las ideas relevantes como suceden en el cuento</string>
+
+    <!--Texto Menu-->
+    <string name="leerCuento">Cuento</string>
+    <string name="realizar">Actividades</string>
+    <string name="creditos">Créditos</string>
+    <string name="actividadArrastrar">Arrastra</string>
+    <string name="actividadResolver">Selecciona</string>
+    <string name="actividadLenguaje">Sopa de letras</string>
+    <string name="ordena">Ordena las ideas</string>
+    <string name="vf">Verdadero o falso</string>
+    <string name="regresarAlPrincipal">Volver al menú principal</string>
+    <string name="volverAEjercicios">Volver al menú Ejercicios</string>
+    <string name="alPrincipal">Volver al menú principal</string>
+    <string name="salir">Salir</string>
+
+    <!--texto sopa-->
+    <string name="a">A</string>
+    <string name="b">B</string>
+    <string name="c">C</string>
+    <string name="d">D</string>
+    <string name="i">I</string>
+    <string name="o">O</string>
+    <string name="s">S</string>
+    <string name="m">M</string>
+    <string name="l">L</string>
+    <string name="e">E</string>
+    <string name="g">G</string>
+    <string name="r">R</string>
+    <string name="n">N</string>
+    <string name="p">P</string>
+    <string name="j">J</string>
+    <string name="t">T</string>
+    <string name="indicacionesSopa">Busca los nombres del cuento, seleccionando la letra inicial y final o viceversa</string>
+    <string name="amable">AMABLE</string>
+    <string name="gabriel">GABRIEL</string>
+    <string name="dios">DIOS</string>
+    <string name="paco">PACO</string>
+    <string name="pajaritoSopa">PAJARITO</string>
+    <string name="perroSopa">PERRO</string>
+    <string name="picaro">PICARO</string>
+    <string name="pillin">PILLIN</string>
+
+    <!--Texto cuento-->
+    <string name="pagina1">Cuando yo era chico tuve un amiguito muy cruel. No le quería bien ninguno de los compañeros porque con todos era áspero y malo.</string>
+    <string name="pagina2">A los menores les pellizcaba y daba golpes; con los grandes se las entendía a pedradas.</string>
+    <string name="pagina3">Cuando el profesor le castigaba no lloraba nunca. A veces, iracundo, se hacía sangre en los labios y se arrancaba el pelo a puños. Niño odioso.</string>
+    <string name="pagina4">Con los animales no era menos cruel que con los muchachos. ¿Os gustan a vosotros los pajaritos? Pues él los que encontraba en los nidos los aprisionaba, les quitaba las plumas, les rompía los huevos y les sacaba los ojos.</string>
+    <string name="pagina5">En casa del niño malo había un gato. Un día al pobre animal le cortó la cola, como hizo con su perro el griego Alcibíades, aquel de quien habéis oído hablar al señor profesor en la clase de historia.</string>
+    <string name="pagina6">Paco —así se llamaba aquel pillín— se burlaba de los cojos, de los tuertos, de los jorobados, de los limosneros que andaban pidiendo a veces en nombre de su negra miseria ridícula.</string>
+    <string name="pagina7">Por aquellos días llegaba a la puerta del colegio un pobre ciego viejo, con su alforja, su escudilla y su perro, Se le daba pan; en la cocina se le llenaba su escudilla, y nunca faltaba un hueso para el buen lazarillo de cuatro patas que tenía por nombre León.</string>
+    <string name="pagina8">León era manso; todos le acariciábamos; y él, al sentir la mano de un niño que le tocaba el lomo o le sobaba la cabeza, cerraba los ojos y devolvía halagos con la lengua.</string>
+    <string name="pagina9">El ciego agradecía el amor a su guía, y en pago él contaba cuentos o cantaba canciones.</string>
+    <string name="pagina10">Paco llegó una tarde a la hora de recreo, riendo con todas ganas. Había hecho una cosa muy divertida.</string>
+    <string name="pagina11">Vosotros debéis saber lo que son los alacranes: unos animales feos, asquerosos, negros, que tienen una especie de rabo que remata en un garfio. Este garfio les sirve para picar. Cuando un alacrán pica, envenena la herida y uno se enferma.</string>
+    <string name="pagina12">Paco había encontrado un alacrán vivo; lo puso entre dos rebanadas de pan y se lo llevó al ciego para que comiese. El animal le picó en la boca al pobrecito, que estuvo casi a las puertas de la muerte.</string>
+    <string name="pagina13">Un día no llegó el ciego a las puertas del colegio, y en el recreo no tuvimos cuentos ni canciones. Ya estábamos pensando que estuviese enfermo el viejecito, cuando, apoyado en su bordón, tropezando y cayendo, le vimos aparecer. León no venía con él.</string>
+    <string name="pagina14">—¿Y León?\n—¡Ay! Mi León, mi hijo, mi compañero, mi perro, ¡ha muerto! \nY el ciego lloraba a lágrima viva, con su dolor
+inmenso, crudo, hondo.</string>
 </resources>
+

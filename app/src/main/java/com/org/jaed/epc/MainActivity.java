@@ -2,6 +2,7 @@ package com.org.jaed.epc;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,6 +16,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private Context context;
     private Toolbar toolbar;
     private View child;
+    private TextView objetivo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         contenedor = (ViewGroup)findViewById(R.id.contenedor);
         preguntas = (ViewGroup)findViewById(R.id.preguntas);
         scroll = (ScrollView)preguntas.findViewById(R.id.scroll);
+        objetivo = (TextView)findViewById(R.id.txtObjetivo2);
         contenedorPreguntas = (ViewGroup)scroll.findViewById(R.id.contenedorPreguntas);
         //inicialización items pregunta 1
         opcion1Pregunta1 = (RadioButton)findViewById(R.id.opcion1Pregunta1);
@@ -57,28 +62,36 @@ public class MainActivity extends AppCompatActivity {
         //inicialización items pregunta 5
         opcion4Pregunta5 = (RadioButton)findViewById(R.id.opcion4Pregunta5);
         setSupportActionBar(toolbar);//establece a esta pantalla cual será su toolbar, en este caso la referencia anterior
-        getSupportActionBar().setHomeButtonEnabled(true);//habilitamos el boton home, el boton home está ubicado a la izaquierda del título del toolbar
         getSupportActionBar().setDisplayShowTitleEnabled(true);
-        getSupportActionBar().setTitle("Resuelva");
-        toolbar.setNavigationIcon(R.mipmap.ic_atras);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {//evento click del boton home del toolbar
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(getApplicationContext(), actividad2.class);//intento para cambiar de actividad, 1er parametro el contexto actual, 2do parametro es la clase que maneja la actividad a donde queremos ir
-                startActivityForResult(myIntent, 0);//inicia la actividad mediante el intento anterior
-                overridePendingTransition(R.anim.right_in, R.anim.right_out);//animación del cambio de actividad
-                finish();
-            }
-        });
+        getSupportActionBar().setTitle("Seleccione");
         context = this;
-        //si la version de android es mayor o igual que la 21 el boton calificar recibira una animación de color al presionarlo
-        if(Build.VERSION.SDK_INT > 20) {
-            calificar.setBackgroundTintList(getResources().getColorStateList(R.color.btn_calificar_presionado));
-        }else{
-            //color sin animación
-            calificar.setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_calificar_presionado));
+        Typeface font = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Medium.ttf");
+        objetivo.setTypeface(font);
+        for(int i = 0; i<=contenedorPreguntas.getChildCount(); i++){
+            View v = contenedorPreguntas.getChildAt(i);
+            if(v instanceof TextView){
+                ((TextView) v).setTypeface(font);
+            }
+            if(v instanceof RadioGroup){
+                for(int j = 0; j<((RadioGroup) v).getChildCount(); j++){
+                    RadioButton rb = (RadioButton)((RadioGroup) v).getChildAt(j);
+                    rb.setTypeface(font);
+                }
+            }
         }
+        calificar.setTypeface(font);
+        calificar.setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_calificar_presionado));
         child = getLayoutInflater().inflate(R.layout.card_resultados, contenedor, false);
+        final RelativeLayout cardContenedor = (RelativeLayout)child.findViewById(R.id.cardContenedor);
+        for (int i = 0; i<=cardContenedor.getChildCount(); i++){
+            View v = cardContenedor.getChildAt(i);
+            if(v instanceof TextView){
+                ((TextView) v).setTypeface(font);
+            }
+            if(v instanceof Button){
+                ((Button) v).setTypeface(font);
+            }
+        }
         contenedor.addView(child);
         child.setVisibility(View.GONE);
         calificar.setOnClickListener(new View.OnClickListener() {
@@ -175,18 +188,14 @@ public class MainActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if(id == R.id.alEjercicio){
+            startActivity(new Intent().setClass(getApplicationContext(), MenuEjercicios.class));
         }
-        //si el id del item de menu que se presionó en pantalla es igual al id del item de menu declarado en menu_main.xml
-        if(id == R.id.siguiente){
-            Intent localintent = new Intent().setClass(context, Actividad3.class);
-            startActivity(localintent);
-            overridePendingTransition(R.anim.left_in, R.anim.left_out);
+        if(id == R.id.alPrincipal){
+            startActivity(new Intent().setClass(getApplicationContext(),MainMenu.class));
+        }
+        if(id == R.id.salir){
             finish();
-
         }
 
         return super.onOptionsItemSelected(item);

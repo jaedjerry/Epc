@@ -19,8 +19,7 @@
         android:textSize="40sp"
         android:background="@color/fondo_toast"
         android:textColor="@android:color/white"
-        android:paddingLeft="70sp"
-        android:paddingRight="70sp"/>
+        android:gravity="center|center_vertical"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -28,67 +27,64 @@
         android:textSize="40sp"
         android:id="@+id/pacoMalo"
         android:background="@color/fondoPalabrasBActividad3"
-        android:paddingTop="12dp"
         android:textColor="@android:color/white"
-        android:layout_marginTop="140dp"
-        android:paddingLeft="470dp" />
+        android:layout_marginTop="180dp"
+        android:gravity="center|center_vertical" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="@string/actividad3_perro"
         android:id="@+id/perro"
-        android:layout_marginTop="340dp"
+        android:layout_marginTop="380dp"
         android:textSize="40sp"
         android:background="@color/fondoPalabrasBActividad3"
         android:textColor="@android:color/white"
-        android:paddingTop="12dp"
-        android:paddingLeft="350dp" />
+        android:gravity="center|center_vertical"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:text="@string/actividad3_ciego"
-        android:layout_marginTop="240dp"
+        android:layout_marginTop="280dp"
         android:background="@color/fondoPalabrasBActividad3"
         android:textColor="@android:color/white"
-        android:paddingTop="12dp"
-        android:paddingLeft="400dp"
         android:id="@+id/ciego"
-        android:textSize="40sp"/>
+        android:textSize="40sp"
+        android:gravity="center|center_vertical"/>
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_width="210dp"
+        android:layout_height="130dp"
         android:text="@string/actividad3_antagonico"
         android:textSize="40sp"
         android:id="@+id/personajeAntagonico"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
-        android:paddingTop="15dp"
+        android:gravity="center|center_vertical"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="450dp"/>
+        android:layout_marginTop="520dp"/>
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_width="210dp"
+        android:layout_height="130dp"
         android:text="@string/actividad3_principal"
         android:textSize="40sp"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
-        android:paddingTop="15dp"
+        android:gravity="center|center_vertical"
         android:id="@+id/principal"
-        android:layout_marginTop="450dp"
-        android:layout_marginLeft="460dp"
-        android:layout_marginStart="460dp"/>
+        android:layout_marginTop="520dp"
+        android:layout_marginLeft="300dp"
+        android:layout_marginStart="300dp"/>
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_width="210dp"
+        android:layout_height="130dp"
         android:text="@string/actividad3_secundario"
         android:id="@+id/secundario"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="520dp"
         android:background="@color/fondoPalabrasActividad3"
         android:textColor="@android:color/white"
-        android:paddingTop="6dp"
-        android:layout_marginLeft="883dp"
-        android:layout_marginStart="883dp"
+        android:gravity="center|center_vertical"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:textSize="40sp"
         />
     <Button

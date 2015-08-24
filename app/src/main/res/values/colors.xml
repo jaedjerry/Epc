@@ -3,6 +3,7 @@
     <color name="app_bar_fondo">#2196F3</color>
     <color name="app_bar_dark">#1976d2</color>
     <color name="accent">#e91e63</color>
+    <color name="accentDark">#c2185b</color>
     <color name="calificarFonfo">#009688</color>
     <color name="fondo_toast">#3f51b5</color>
     <color name="rojo">#f44336</color>
@@ -12,5 +13,9 @@
     <color name="title_card">#673ab7</color>
     <color name="btn_normal">#009688</color>
     <color name="btn_pressed">#00796b</color>
-
+    <color name="backgroundMenu">#8bc34a</color>
+    <color name="backgroundDarkMenu">#689f38</color>
+    <color name="bgSpinner">#689f38</color>
+    <color name="defaultC">#ffefedff</color>
+    <color name="preguntasColor">#ED2E2E2E</color>
 </resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/app_bar"
+        android:id="@+id/appbarMenu" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_shadow"
+        android:background="@drawable/toolbar_dropshadow" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:drawableLeft="@mipmap/ic_arrastrar"
+        android:gravity="left|center_vertical"
+        android:text="@string/actividadArrastrar"
+        android:drawablePadding="5dp"
+        android:id="@+id/btnArrastrar"
+        android:textSize="30sp"
+        android:layout_marginTop="20dp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="left|center_vertical"
+        android:text="@string/actividadResolver"
+        android:drawableLeft="@mipmap/ic_seleccione"
+        android:drawablePadding="5dp"
+        android:id="@+id/btnResolver"
+        android:layout_marginTop="20dp"
+        android:textSize="30sp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="left|center_vertical"
+        android:drawableLeft="@mipmap/ic_sopa"
+        android:text="@string/actividadLenguaje"
+        android:drawablePadding="5dp"
+        android:id="@+id/btnLenguaje"
+        android:layout_marginTop="20dp"
+        android:textSize="30sp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="left|center_vertical"
+        android:text="@string/vf"
+        android:drawableLeft="@mipmap/ic_vf"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btnVf"
+        android:drawablePadding="5dp"
+        android:textSize="30sp"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:gravity="left|center_vertical"
+        android:text="@string/ordena"
+        android:drawableLeft="@mipmap/ic_ordena"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btnOrdena"
+        android:drawablePadding="5dp"
+        android:textSize="30sp"/>
+</LinearLayout>

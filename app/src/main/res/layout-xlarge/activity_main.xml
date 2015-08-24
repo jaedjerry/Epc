@@ -17,9 +17,7 @@
         android:background="@color/fondo_toast"
         android:text="@string/indicaciones_actividad2"
         android:textColor="@android:color/white"
-        android:paddingLeft="350dp"
-        android:paddingRight="350dp"
-        android:paddingTop="15dp"
+        android:gravity="center|center_vertical"
         android:id="@+id/txtObjetivo2"
         android:textSize="40sp"/>
     <include layout="@layout/pregunta1"

@@ -1,6 +1,7 @@
 package com.org.jaed.epc;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +24,7 @@ import android.widget.Toast;
  */
 public class actividad5 extends AppCompatActivity {
     private Toolbar toolbar;
-    private RelativeLayout contenedor;
+    private RelativeLayout contenedor, contenedor2;
     private Button calificar;
     private Spinner sIdea1, sIdea2, sIdea3, sIdea4, sIdea5, sIdea6;
     private int intentos, aciertos;
@@ -40,37 +41,47 @@ public class actividad5 extends AppCompatActivity {
         sIdea4 = (Spinner)findViewById(R.id.spinner_idea4);
         sIdea5 = (Spinner)findViewById(R.id.spinner_idea5);
         sIdea6 = (Spinner)findViewById(R.id.spinner_idea6);
+        Typeface font = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Medium.ttf");
         if(toolbar != null){
             setSupportActionBar(toolbar);
-            getSupportActionBar().setHomeButtonEnabled(true);
             getSupportActionBar().setDisplayShowTitleEnabled(true);
-            toolbar.setNavigationIcon(R.mipmap.ic_atras);
             getSupportActionBar().setTitle("Ordena");
         }
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent localintent = new Intent().setClass(getApplicationContext(), actividad4.class);
-                startActivity(localintent);
-                overridePendingTransition(R.anim.right_in, R.anim.right_out);
-                finish();
-            }
-        });
-        contenedor = (RelativeLayout)findViewById(R.id.contenedorActividad5);
+        contenedor = (RelativeLayout)findViewById(R.id.contenedorPrincipal5);
+        contenedor2 = (RelativeLayout)findViewById(R.id.contenedorActividad5);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getApplicationContext(),R.array.valores_ideas, R.layout.spinner_style);
-        for(int i = 0; i<=contenedor.getChildCount(); i++){
+        for(int i = 0; i<= contenedor.getChildCount(); i++){
             View v = contenedor.getChildAt(i);
+            if(v instanceof TextView){
+                ((TextView) v).setTypeface(font);
+            }
+            if(v instanceof Button){
+                ((Button) v).setTypeface(font);
+            }
+        }
+        for(int i = 0; i<=contenedor2.getChildCount(); i++){
+            View v = contenedor2.getChildAt(i);
+            if(v instanceof TextView){
+                ((TextView) v).setTypeface(font);
+                ((TextView) v).setTextColor(getResources().getColorStateList(R.color.preguntasColor));
+            }
             if(v instanceof Spinner){
                 ((Spinner) v).setAdapter(adapter);
+                v.setBackgroundColor(getResources().getColor(R.color.backgroundMenu));
             }
         }
-        if(Build.VERSION.SDK_INT > 20) {
-            calificar.setBackgroundTintList(getResources().getColorStateList(R.color.btn_calificar_presionado));
-        }else{
-            //color sin animación
-            calificar.setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_calificar_presionado));
-        }
+        calificar.setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_calificar_presionado));
         child = getLayoutInflater().inflate(R.layout.card_resultados, contenedor, false);
+        final RelativeLayout cardContenedor = (RelativeLayout)child.findViewById(R.id.cardContenedor);
+        for (int i = 0; i<=cardContenedor.getChildCount(); i++){
+            View v = cardContenedor.getChildAt(i);
+            if(v instanceof TextView){
+                ((TextView) v).setTypeface(font);
+            }
+            if(v instanceof Button){
+                ((Button) v).setTypeface(font);
+            }
+        }
         contenedor.addView(child);
         child.setVisibility(View.GONE);
         calificar.setOnClickListener(new View.OnClickListener() {
@@ -165,14 +176,14 @@ public class actividad5 extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if(id == R.id.alEjercicio){
+            startActivity(new Intent().setClass(getApplicationContext(), MenuEjercicios.class));
         }
-        //si el id del item de menu que se presiono en pantalla es igual al id del item de menu declarado en menu_main.xml
-        if(id == R.id.siguiente){
-            return true;
+        if(id == R.id.alPrincipal){
+            startActivity(new Intent().setClass(getApplicationContext(),MainMenu.class));
+        }
+        if(id == R.id.salir){
+            finish();
         }
 
         return super.onOptionsItemSelected(item);

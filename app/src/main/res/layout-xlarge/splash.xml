@@ -7,14 +7,13 @@
         android:layout_height="fill_parent"
         android:src="@mipmap/portada3"
         android:scaleType="fitXY"
-        android:layout_above="@+id/txtobjetivo" />
-    <TextView
-        android:layout_width="wrap_content"
+        android:layout_above="@+id/btnEntrar" />
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/objetivo"
+        android:id="@+id/btnEntrar"
+        android:text="@string/entrar"
         android:layout_alignParentBottom="true"
-        android:textSize="@dimen/canvasTextSizeXlarge"
-        android:textStyle="bold"
-        android:id="@+id/txtobjetivo"/>
+        android:textSize="40sp"/>
 
 </RelativeLayout>

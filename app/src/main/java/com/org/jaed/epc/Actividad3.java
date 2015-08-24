@@ -3,6 +3,7 @@ package com.org.jaed.epc;
 import android.content.ClipData;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -55,24 +56,9 @@ public class Actividad3 extends AppCompatActivity {
         context = this;
         toolbar = (Toolbar)findViewById(R.id.appbar3);// referencia al toolbar
         setSupportActionBar(toolbar);//establecemos el toolbar de la actividad con nuestro toolbar personalizado
-        getSupportActionBar().setHomeButtonEnabled(true);//habilitamos el boton home del toolbar
         getSupportActionBar().setDisplayShowTitleEnabled(true);//habilitamos el titulo de la actividad
-        toolbar.setNavigationIcon(R.mipmap.ic_atras);//establecemos el icono del boton home del toolbar
         getSupportActionBar().setTitle("Arrastra");//titulo de la actividad
-        if(Build.VERSION.SDK_INT > 20){
-            calificar.setBackgroundTintList(getResources().getColorStateList(R.color.btn_calificar_presionado));//establecemos un background con efecto
-        }else{
-            calificar.setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_calificar_presionado));
-        }
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {//habilitamos el evento click en el boton home del toolbar
-            @Override
-            public void onClick(View v) {
-                Intent localintent = new Intent().setClass(context, MainActivity.class);//instancia de Intent para cambiar de actividad
-                startActivity(localintent);//iniciarmos la actividad, recibe el intent anterior
-                overridePendingTransition(R.anim.right_in, R.anim.right_out);//iniciamos una animacion de trancision, recibe la animacion de entrada y la de salida.
-                finish();//finalizamos esta actividad
-            }
-        });
+        calificar.setBackgroundDrawable(getResources().getDrawable(R.drawable.btn_calificar_presionado));
         //Datos de arriba
         final RelativeLayout.LayoutParams paramsOriginalesPaco = (RelativeLayout.LayoutParams)txtPacoMalo.getLayoutParams();//parametros originales de txtPacoMalo
         final Drawable bgPaco = txtPacoMalo.getBackground();//background original de txtPacoMalo
@@ -85,17 +71,26 @@ public class Actividad3 extends AppCompatActivity {
         final RelativeLayout.LayoutParams paramsOriginaleAntagonico = (RelativeLayout.LayoutParams)txtPersonajeAntagonico.getLayoutParams();
         final RelativeLayout.LayoutParams paramsOriginalesPrincipal = (RelativeLayout.LayoutParams)txtPrincipal.getLayoutParams();
         final RelativeLayout.LayoutParams paramsOriginalesSecundario = (RelativeLayout.LayoutParams)txtSecundario.getLayoutParams();
-
+        Typeface font = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Medium.ttf");
+        for(int i = 0; i<=marco.getChildCount();i++){
+            View v = marco.getChildAt(i);
+            if(v instanceof TextView){
+                ((TextView) v).setTypeface(font);
+            }
+            if(v instanceof Button){
+                ((Button) v).setTypeface(font);
+            }
+        }
         txtPersonajeAntagonico.setOnTouchListener(new View.OnTouchListener() {//habilitamos la escuha del evento onTouch para txtPersonajeAntagonico (el que se va a arrastrar)
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 //v es txtPersonajeAntagonico
-                switch (event.getAction() & MotionEvent.ACTION_MASK){//segun sea la accion del evento
+                switch (event.getAction() & MotionEvent.ACTION_MASK) {//segun sea la accion del evento
                     case MotionEvent.ACTION_DOWN://en caso de presionar txtPersonajeAntagonico
-                        if (v.getLayoutParams() == paramsOriginalesPaco){//si los parametros de txtPersonajeAntagonico son iguales a los de txtPacoMalo, es por que txtPersonajeAntagonico no esta en su poción inicial y esta sobre el target, y por tanto
+                        if (v.getLayoutParams() == paramsOriginalesPaco) {//si los parametros de txtPersonajeAntagonico son iguales a los de txtPacoMalo, es por que txtPersonajeAntagonico no esta en su poción inicial y esta sobre el target, y por tanto
                             ocupado1 = false;                            //al momento de que se ejecuta el action down se esta saliendo del target y pone ocupado en false, que indica que el target está vacio.
                             v.setLayoutParams(paramsOriginaleAntagonico);//establecemos los parametros de txtPersonajeAntagonico a sus valores originales
-                            if(aciertos>0){
+                            if (aciertos > 0) {
                                 aciertos--;//restamos los aciertos ya que se salio de su target
                             }
                         }
@@ -131,16 +126,16 @@ public class Actividad3 extends AppCompatActivity {
         txtPrincipal.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction() & MotionEvent.ACTION_MASK){
+                switch (event.getAction() & MotionEvent.ACTION_MASK) {
                     case MotionEvent.ACTION_DOWN:
-                        if (v.getLayoutParams() == paramsOriginalesPaco){
+                        if (v.getLayoutParams() == paramsOriginalesPaco) {
                             ocupado1 = false;
                             v.setLayoutParams(paramsOriginalesPrincipal);
                         }
                         if (v.getLayoutParams() == paramsOriginalesPerro) {
                             ocupado2 = false;
                             v.setLayoutParams(paramsOriginalesPrincipal);
-                            if(aciertos>0){
+                            if (aciertos > 0) {
                                 aciertos--;
                             }
                         }
@@ -226,20 +221,12 @@ public class Actividad3 extends AppCompatActivity {
                         break;
                     case DragEvent.ACTION_DROP://en caso de que el textView que se este arrastrando se solto sobre el target
                         ocupado1 = true;//indicamos que esta ocupado
-                        if (ocupado1) {
-                            Log.e("ocupado", "estoy ocupado");
-                        } else {
-                            Log.e("libre", "estoy libre");
-                        }
                         if (event.getClipData().getItemAt(0).getText().equals("antagonico")) {//si el texto del clip data que se recibe es igual a antagonico
-                            Log.e("acerte", "arrastre antagonico con paco malo");
                             aciertos++;//aumentamos los aciertos en 1
                         }
                         if (view != null) {//si el textView es distinto de null
                             view.setLayoutParams(paramsOriginalesPaco);//establecemos los parametros con los del target
                             view.setVisibility(View.VISIBLE);//lo volvemos visible
-                        } else {
-                            Log.e("null drop", "el view es null");
                         }
                         v.setVisibility(View.GONE);//ocultamos el target
                         break;
@@ -251,8 +238,6 @@ public class Actividad3 extends AppCompatActivity {
                                     view.setVisibility(View.VISIBLE);//volvemos visible el textView
                                 }
                             });
-                        } else {
-                            Log.e("null ended", "el view es null");
                         }
                         break;
                     default:
@@ -276,20 +261,12 @@ public class Actividad3 extends AppCompatActivity {
                         break;
                     case DragEvent.ACTION_DROP:
                         ocupado2 = true;
-                        if(ocupado2){
-                            Log.e("ocupado", "estoy ocupado");
-                        }else{
-                            Log.e("libre", "estoy libre");
-                        }
                         if (event.getClipData().getItemAt(0).getText().equals("principal")) {
-                            Log.e("acerte", "arrastre principal con perro");
                             aciertos++;
                         }
                         if (view != null) {
                             view.setLayoutParams(paramsOriginalesPerro);
                             view.setVisibility(View.VISIBLE);
-                        } else {
-                            Log.e("null drop", "el view es null");
                         }
                         v.setVisibility(View.GONE);
                         break;
@@ -301,8 +278,6 @@ public class Actividad3 extends AppCompatActivity {
                                     view.setVisibility(View.VISIBLE);
                                 }
                             });
-                        } else {
-                            Log.e("null ended", "el view es null");
                         }
                         break;
                     default:
@@ -326,21 +301,12 @@ public class Actividad3 extends AppCompatActivity {
                         break;
                     case DragEvent.ACTION_DROP:
                         ocupado3 = true;
-                        if(ocupado3){
-                            Log.e("ocupado", "estoy ocupado");
-                        }else{
-                            Log.e("libre", "estoy libre");
-                        }
-                        // Dropped, reassign View to ViewGroup
                         if (event.getClipData().getItemAt(0).getText().equals("secundario")) {
-                            Log.e("acerte", "arrastre secunfario con ciego");
                             aciertos++;
                         }
                         if (view != null) {
                             view.setLayoutParams(paramsOriginalesCiego);
                             view.setVisibility(View.VISIBLE);
-                        } else {
-                            Log.e("null drop", "el view es null");
                         }
                         v.setVisibility(View.GONE);
                         break;
@@ -352,8 +318,6 @@ public class Actividad3 extends AppCompatActivity {
                                     view.setVisibility(View.VISIBLE);
                                 }
                             });
-                        } else {
-                            Log.e("null ended", "el view es null");
                         }
                         break;
                     default:
@@ -363,6 +327,16 @@ public class Actividad3 extends AppCompatActivity {
             }
         });
         child = getLayoutInflater().inflate(R.layout.card_resultados, marco, false);//inflamos el card (ventana flotante) desde un recurso xml, recibe el recurso xml, el viewGroup padre.
+        final RelativeLayout cardContenedor = (RelativeLayout)child.findViewById(R.id.cardContenedor);
+        for (int i = 0; i<=cardContenedor.getChildCount(); i++){
+            View v = cardContenedor.getChildAt(i);
+            if(v instanceof TextView){
+                ((TextView) v).setTypeface(font);
+            }
+            if(v instanceof Button){
+                ((Button) v).setTypeface(font);
+            }
+        }
         marco.addView(child);//añadimos al marco (viewGroup padre) el card inflado
         child.setVisibility(View.GONE);//ocultamos el card
         calificar.setOnClickListener(new View.OnClickListener() {//habilitamos la escucha del evento onClick para el boton calificar
@@ -453,15 +427,13 @@ public class Actividad3 extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-            if (id == R.id.action_settings) {
-            return true;
+        if(id == R.id.alEjercicio){
+            startActivity(new Intent().setClass(getApplicationContext(), MenuEjercicios.class));
         }
-        //si el id del item de menu que se presiono en pantalla es igual al id del item de menu declarado en menu_main.xml
-        if(id == R.id.siguiente){
-            Intent intent = new Intent().setClass(getApplicationContext(),actividad4.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.left_in, R.anim.left_out);
+        if(id == R.id.alPrincipal) {
+            startActivity(new Intent().setClass(getApplicationContext(), MainMenu.class));
+        }
+        if(id == R.id.salir){
             finish();
         }
 

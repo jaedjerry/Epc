@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/contenedorSopa">
+    <include layout="@layout/app_bar"
+        android:id="@+id/appbarSopa" />
+    <View
+        android:id="@+id/toolbar_shadowSopa"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_shadow"
+        android:layout_below="@id/appbarSopa"
+        android:background="@drawable/toolbar_dropshadow" />
+    <!--<GridView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnWidth="65dp"
+        android:numColumns="7"
+        android:gravity="center"
+        android:layout_below="@+id/toolbar_shadowSopa"
+        android:id="@+id/gridView"
+        android:padding="3dp"/>-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/toolbar_shadowSopa"
+        android:background="@color/fondo_toast"
+        android:text="@string/indicacionesSopa"
+        android:textColor="@android:color/white"
+        android:id="@+id/txtObjetivoSopa"
+        android:gravity="center|center_vertical"
+        android:textSize="17sp"/>
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtObjetivoSopa"
+        android:id="@+id/sopa"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <TableRow
+            android:layout_width="@dimen/cellAnchoXxhdpi"
+            android:layout_height="@dimen/cellAltoXxhdpi"
+            android:background="@drawable/celdas">
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/a"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="0"
+                android:id="@+id/amable1"
+                android:background="@drawable/celdas"/>
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/b"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="1"
+                android:background="@drawable/celdas"/>
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/c"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="2"
+                android:background="@drawable/celdas"/>
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/d"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="3"
+                android:background="@drawable/celdas"
+                android:id="@+id/dios1" />
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/i"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="4"
+                android:background="@drawable/celdas"
+                android:id="@+id/picaro7" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/o"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/perro5"
+                android:layout_column="5"
+                android:background="@drawable/celdas" />
+
+            <TextView
+                android:layout_height="@dimen/cellAlto"
+                android:layout_width="@dimen/cellAncho"
+                android:text="@string/p"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/pajarito1"
+                android:layout_column="6"
+                android:background="@drawable/celdas" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="@dimen/cellAnchoXxhdpi"
+            android:layout_height="@dimen/cellAltoXxhdpi"
+            android:background="@drawable/celdas">
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/m"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="0"
+                android:id="@+id/amable2"
+                android:background="@drawable/celdas" />
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/g"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="1"
+                android:background="@drawable/celdas"
+                android:id="@+id/gabriel1" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/p"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/pillin1"
+                android:layout_column="2"
+                android:background="@drawable/celdas" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/i"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="3"
+                android:background="@drawable/celdas"
+                android:id="@+id/dios2" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/o"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/picaro6"
+                android:layout_column="4"
+                android:background="@drawable/celdas" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/r"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/perro4"
+                android:layout_column="5"
+                android:background="@drawable/celdas" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/a"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/pajarito2"
+                android:layout_column="6"
+                android:background="@drawable/celdas" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="@dimen/cellAnchoXxhdpi"
+            android:layout_height="@dimen/cellAltoXxhdpi">
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/a"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="0"
+                android:id="@+id/amable3"
+                android:background="@drawable/celdas" />
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/a"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:background="@drawable/celdas"
+                android:id="@+id/gabriel2" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/i"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/pillin2"
+                android:layout_column="2"
+                android:background="@drawable/celdas" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/o"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="3"
+                android:background="@drawable/celdas"
+                android:id="@+id/dios3" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/r"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="4"
+                android:background="@drawable/celdas"
+                android:id="@+id/picaro5" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/r"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/perro3"
+                android:layout_column="5"
+                android:background="@drawable/celdas" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/j"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/pajarito3"
+                android:layout_column="6"
+                android:background="@drawable/celdas" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="@dimen/cellAnchoXxhdpi"
+            android:layout_height="@dimen/cellAltoXxhdpi">
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/b"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="0"
+                android:id="@+id/amable4"
+                android:background="@drawable/celdas" />
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/b"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:background="@drawable/celdas"
+                android:id="@+id/gabriel3" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/l"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/pillin3"
+                android:layout_column="2"
+                android:background="@drawable/celdas" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/s"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="3"
+                android:background="@drawable/celdas"
+                android:id="@+id/dios4" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/a"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/picaro4"
+                android:layout_column="4"
+                android:background="@drawable/celdas" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/e"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="5"
+                android:background="@drawable/celdas"
+                android:id="@+id/perro2" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/a"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="6"
+                android:background="@drawable/celdas"
+                android:id="@+id/pajarito4" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="@dimen/cellAnchoXxhdpi"
+            android:layout_height="@dimen/cellAltoXxhdpi"
+            android:background="@drawable/celdas">
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/l"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="0"
+                android:id="@+id/amable5"
+                android:background="@drawable/celdas" />
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/r"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:background="@drawable/celdas"
+                android:id="@+id/gabriel4" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/l"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/pillin4"
+                android:layout_column="2"
+                android:background="@drawable/celdas" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/p"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="3"
+                android:background="@drawable/celdas"
+                android:id="@+id/paco1" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/c"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/picaro3"
+                android:layout_column="4"
+                android:background="@drawable/celdas" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/p"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="5"
+                android:background="@drawable/celdas"
+                android:id="@+id/perro1" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/r"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/pajarito5"
+                android:layout_column="6"
+                android:background="@drawable/celdas" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="@dimen/cellAnchoXxhdpi"
+            android:layout_height="@dimen/cellAltoXxhdpi"
+            android:background="@drawable/celdas">
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/e"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="0"
+                android:id="@+id/amable6"
+                android:background="@drawable/celdas" />
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/i"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:background="@drawable/celdas"
+                android:id="@+id/gabriel5" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/i"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/pillin5"
+                android:layout_column="2"
+                android:background="@drawable/celdas" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/a"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="3"
+                android:background="@drawable/celdas"
+                android:id="@+id/paco2" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/i"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/picaro2"
+                android:layout_column="4"
+                android:background="@drawable/celdas" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/b"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="5"
+                android:background="@drawable/celdas" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/i"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/pajarito6"
+                android:layout_column="6"
+                android:background="@drawable/celdas" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="@dimen/cellAnchoXxhdpi"
+            android:layout_height="@dimen/cellAltoXxhdpi"
+            android:background="@drawable/celdas">
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/a"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="0"
+                android:background="@drawable/celdas" />
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/e"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:background="@drawable/celdas"
+                android:id="@+id/gabriel6" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/n"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/pillin6"
+                android:layout_column="2"
+                android:background="@drawable/celdas" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/c"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="3"
+                android:background="@drawable/celdas"
+                android:id="@+id/paco3" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/p"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/picaro1"
+                android:layout_column="4"
+                android:background="@drawable/celdas" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/s"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="5"
+                android:background="@drawable/celdas" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/t"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/pajarito7"
+                android:layout_column="6"
+                android:background="@drawable/celdas" />
+
+        </TableRow>
+        <TableRow
+            android:layout_width="@dimen/cellAnchoXxhdpi"
+            android:layout_height="@dimen/cellAltoXxhdpi"
+            android:background="@drawable/celdas">
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/d"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:layout_column="0"
+                android:background="@drawable/celdas" />
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/l"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:background="@drawable/celdas"
+                android:id="@+id/gabriel7" />
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/m"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:background="@drawable/celdas"
+                android:id="@+id/leon1" />
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/o"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:background="@drawable/celdas"
+                android:id="@+id/leon2" />
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/n"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:background="@drawable/celdas"
+                android:id="@+id/leon3" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/a"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/textView2"
+                android:layout_column="5"
+                android:background="@drawable/celdas" />
+
+            <TextView
+                android:layout_height="@dimen/cellAltoXxhdpi"
+                android:layout_width="@dimen/cellAnchoXxhdpi"
+                android:text="@string/o"
+                android:gravity="center|center_vertical"
+                android:textSize="20sp"
+                android:id="@+id/pajarito8"
+                android:layout_column="6"
+                android:background="@drawable/celdas" />
+
+        </TableRow>
+    </TableLayout>
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/amable"
+        android:id="@+id/chAmable"
+        android:layout_above="@+id/chGabriel"
+        android:layout_marginLeft="5dp"
+        android:textSize="13sp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gabriel"
+        android:layout_above="@+id/btnCalificarSopa"
+        android:id="@+id/chGabriel"
+        android:layout_marginLeft="5dp"
+        android:textSize="13sp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dios"
+        android:layout_above="@+id/chGabriel"
+        android:layout_toRightOf="@+id/chAmable"
+        android:layout_toEndOf="@+id/chAmable"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/chDios"
+        android:textSize="13sp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/paco"
+        android:id="@+id/chPaco"
+        android:layout_below="@+id/chDios"
+        android:layout_toRightOf="@+id/chGabriel"
+        android:layout_marginLeft="10dp"
+        android:textSize="13sp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pajaritoSopa"
+        android:layout_above="@+id/chPaco"
+        android:layout_toRightOf="@+id/chPaco"
+        android:layout_toEndOf="@+id/chPaco"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/chPajarito"
+        android:textSize="13sp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/perroSopa"
+        android:layout_below="@+id/chPajarito"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/chPaco"
+        android:id="@+id/chPerro"
+        android:textSize="13sp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/picaro"
+        android:layout_above="@+id/chPerro"
+        android:layout_toRightOf="@+id/chPajarito"
+        android:layout_toEndOf="@+id/chPajarito"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/chPicaro"
+        android:textSize="13sp" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pillin"
+        android:layout_below="@+id/chPicaro"
+        android:layout_marginLeft="32dp"
+        android:layout_toRightOf="@+id/chPerro"
+        android:textSize="13sp"
+        android:id="@+id/chPillin"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCalificarSopa"
+        android:text="@string/calificar"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

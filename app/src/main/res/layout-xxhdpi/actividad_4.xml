@@ -19,9 +19,7 @@
         android:background="@color/fondo_toast"
         android:text="@string/indicaciones_actividad4"
         android:textColor="@android:color/white"
-        android:paddingLeft="60dp"
-        android:paddingRight="60dp"
-        android:paddingTop="10dp"
+        android:gravity="center|center_vertical"
         android:id="@+id/txtObjetivo4"
         android:textSize="18sp"/>
     <ScrollView
@@ -30,6 +28,7 @@
         android:layout_below="@+id/txtObjetivo4"
         android:layout_above="@+id/btnCalificar4">
         <RelativeLayout
+            android:id="@+id/contenedorVf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView android:id="@+id/text1"

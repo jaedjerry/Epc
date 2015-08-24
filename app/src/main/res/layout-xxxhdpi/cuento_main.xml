@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_marginLeft="1dp"
+    android:layout_marginRight="1dp">
+    <include layout="@layout/app_bar"
+        android:id="@+id/appbarCuento" />
+    <View
+        android:id="@+id/toolbar_shadowCuento"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_shadow"
+        android:layout_below="@id/appbarCuento"
+        android:background="@drawable/toolbar_dropshadow" />
+    <ViewFlipper android:id="@+id/viewFlipper"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/toolbar_shadowCuento"
+        android:background="@drawable/borde_cuento"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:layout_marginBottom="7dp">
+        <include layout="@layout/cuento_pagina1"/>
+        <include layout="@layout/cuento_pagina2"/>
+        <include layout="@layout/cuento_pagina3"/>
+        <include layout="@layout/cuento_pagina4"/>
+        <include layout="@layout/cuento_pagina5"/>
+        <include layout="@layout/cuento_pagina6"/>
+        <include layout="@layout/cuento_pagina7"/>
+        <include layout="@layout/cuento_pagina8"/>
+        <include layout="@layout/cuento_pagina9"/>
+        <include layout="@layout/cuento_pagina10"/>
+        <include layout="@layout/cuento_pagina11"/>
+        <include layout="@layout/cuento_pagina12"/>
+        <include layout="@layout/cuento_pagina13"/>
+        <include layout="@layout/cuento_pagina14"/>
+    </ViewFlipper>
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:id="@+id/Gifpagina"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_above="@+id/fabAtras"/>
+    <android.support.design.widget.FloatingActionButton
+        xmlns:app = "http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="200dp"
+        android:layout_marginLeft="3dp"
+        android:src="@mipmap/ic_atras"
+        app:fabSize="normal"
+        app:borderWidth="0dp"
+        android:id="@+id/fabAtras"/>
+
+    <android.support.design.widget.FloatingActionButton
+        xmlns:app = "http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="3dp"
+        android:layout_alignParentBottom="true"
+        android:src="@mipmap/ic_sig"
+        app:fabSize="normal"
+        app:borderWidth="0dp"
+        android:id="@+id/fabSig"
+        android:layout_marginBottom="200dp"
+        android:layout_alignParentRight="true"/>
+</RelativeLayout>

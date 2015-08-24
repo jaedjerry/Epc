@@ -12,4 +12,14 @@
     <dimen name="xlargeActividad4">40sp</dimen>
     <dimen name="RbXlargeText">38sp</dimen>
     <dimen name="textSizeSubActividad2">15sp</dimen>
+    <dimen name="cellAncho">40dp</dimen>
+    <dimen name="cellAlto">40dp</dimen>
+    <dimen name="cellAnchoHdpi">35dp</dimen>
+    <dimen name="cellAltoHdpi">35dp</dimen>
+    <dimen name="cellAnchoXxhdpi">42dp</dimen>
+    <dimen name="cellAltoXxhdpi">42dp</dimen>
+    <dimen name="cellAnchoXxxhdpi">70dp</dimen>
+    <dimen name="cellAltoXxxhdpi">70dp</dimen>
+    <dimen name="cellAnchoXlarge">80dp</dimen>
+    <dimen name="cellAltoXlarge">80dp</dimen>
 </resources>
