@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:layout_marginLeft="1dp"
     android:layout_marginRight="1dp">
@@ -33,10 +34,24 @@
         <include layout="@layout/cuento_pagina12"/>
         <include layout="@layout/cuento_pagina13"/>
         <include layout="@layout/cuento_pagina14"/>
+        <include layout="@layout/cuento_pagina15"/>
+        <include layout="@layout/cuento_pagina16"/>
+        <include layout="@layout/cuento_pagina17"/>
+        <include layout="@layout/cuento_pagina18"/>
+        <include layout="@layout/cuento_pagina19"/>
+        <include layout="@layout/cuento_pagina20"/>
+        <include layout="@layout/cuento_pagina21"/>
+        <include layout="@layout/cuento_pagina22"/>
+        <include layout="@layout/cuento_pagina23"/>
+        <include layout="@layout/cuento_pagina24"/>
+        <include layout="@layout/cuento_pagina25"/>
+        <include layout="@layout/cuento_pagina26"/>
+        <include layout="@layout/cuento_pagina27"/>
+        <include layout="@layout/cuento_pagina28"/>
     </ViewFlipper>
     <WebView
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="175dp"
         android:id="@+id/Gifpagina"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
@@ -46,11 +61,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="10dp"
         android:layout_marginLeft="3dp"
         android:src="@mipmap/ic_atras"
         app:fabSize="normal"
         app:borderWidth="0dp"
+        style="@style/estilo_fab"
         android:id="@+id/fabAtras"/>
 
     <android.support.design.widget.FloatingActionButton
@@ -63,6 +78,7 @@
         app:fabSize="normal"
         app:borderWidth="0dp"
         android:id="@+id/fabSig"
-        android:layout_marginBottom="10dp"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentRight="true"
+        tools:ignore="RelativeOverlap"
+        style="@style/estilo_fab"/>
 </RelativeLayout>

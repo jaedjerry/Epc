@@ -33,6 +33,20 @@
         <include layout="@layout/cuento_pagina12"/>
         <include layout="@layout/cuento_pagina13"/>
         <include layout="@layout/cuento_pagina14"/>
+        <include layout="@layout/cuento_pagina15"/>
+        <include layout="@layout/cuento_pagina16"/>
+        <include layout="@layout/cuento_pagina17"/>
+        <include layout="@layout/cuento_pagina18"/>
+        <include layout="@layout/cuento_pagina19"/>
+        <include layout="@layout/cuento_pagina20"/>
+        <include layout="@layout/cuento_pagina21"/>
+        <include layout="@layout/cuento_pagina22"/>
+        <include layout="@layout/cuento_pagina23"/>
+        <include layout="@layout/cuento_pagina24"/>
+        <include layout="@layout/cuento_pagina25"/>
+        <include layout="@layout/cuento_pagina26"/>
+        <include layout="@layout/cuento_pagina27"/>
+        <include layout="@layout/cuento_pagina28"/>
     </ViewFlipper>
     <WebView
         android:layout_width="match_parent"
@@ -46,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="15dp"
+        style="@style/estilo_fab_Xhdpi"
         android:layout_marginLeft="3dp"
         android:src="@mipmap/ic_atras"
         app:fabSize="normal"
@@ -63,6 +77,6 @@
         app:fabSize="normal"
         app:borderWidth="0dp"
         android:id="@+id/fabSig"
-        android:layout_marginBottom="15dp"
+        style="@style/estilo_fab_Xhdpi"
         android:layout_alignParentRight="true"/>
 </RelativeLayout>
