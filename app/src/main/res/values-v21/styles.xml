@@ -18,4 +18,20 @@
     <style name="estilo_preguntas_actividad4">
         <item name="android:textColor">@color/preguntasColor</item>
     </style>
+    <style name="estilo_fab">
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+    <style name="estilo_fab_560">
+        <item name="android:layout_marginBottom">7dp</item>
+    </style>
+    <style name="webview_estilo_560">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">240dp</item>
+    </style>
+    <style name="estilo_fab_Xhdpi">
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+    <style name="estilo_fab_Xxhdpi">
+        <item name="android:layout_marginBottom">28dp</item>
+    </style>
 </resources>
