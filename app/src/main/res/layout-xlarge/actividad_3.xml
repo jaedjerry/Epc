@@ -72,8 +72,7 @@
         android:gravity="center|center_vertical"
         android:id="@+id/principal"
         android:layout_marginTop="520dp"
-        android:layout_marginLeft="300dp"
-        android:layout_marginStart="300dp"/>
+        android:layout_centerHorizontal="true"/>
     <TextView
         android:layout_width="210dp"
         android:layout_height="130dp"

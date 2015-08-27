@@ -5,7 +5,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="calificar">verificar</string>
-    <string name="objetivo">El objetivo de esta app es reforzar los conocimientos de los estudiantes</string>
     <string name="entrar">Entrar</string>
     <!--Texto actividad2 -->
     <string name="pregunta1Sub">Selecciona una opción</string>
@@ -138,5 +137,10 @@ inmenso, crudo, hondo.</string>
     <string name="pagina26">Paco ese mismo día agarró unas viruelas que dieron con él en la sepultura después que sufrió dolorosamente y se puso muy feo.</string>
     <string name="pagina27">¿Preguntáis por el ciego? Desde aquel día se le vio pedir su limosna solo, sufriendo contusiones y caídas, arriesgando atropellamientos, con su bastón torcido que sonaba sobre las piedras. Pero no quiso otro guía que su León, su animal querido, su compañero a quien siempre lloró.</string>
     <string name="pagina28">Niños, sed buenos.\nEl perro del ciego es manso, es triste, es humilde; amadle, niños. No le procuréis nunca mal, y cuando pase por la puerta de vuestra casa, dadle algo de comer.</string>
+
+    <!--Texto créditos-->
+    <string name="titleCreditos">Créditos</string>
+    <string name="objetivo">Esta es una aplicación que presenta el contenido del cuento El perro del ciego y actividades educativas sobre el mismo. Dirigido a estudiantes de 3 grado de educación primaria.</string>
+    <string name="autores">Autores:\n-Jerry José Rivera Toruño\n-Carlos Roberto Montalván Velasquez\n-Enoc Ezequiel Jiménez Miranda\n-Rommel José</string>
 </resources>
 

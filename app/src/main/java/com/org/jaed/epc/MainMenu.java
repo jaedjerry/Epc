@@ -38,7 +38,7 @@ public class MainMenu extends AppCompatActivity {
         btnLeer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent  = new Intent().setClass(getApplicationContext(), Cuento.class);
+                Intent intent = new Intent().setClass(getApplicationContext(), Cuento.class);
                 startActivity(intent);
             }
         });
@@ -46,6 +46,13 @@ public class MainMenu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent().setClass(getApplicationContext(),MenuEjercicios.class);
+                startActivity(intent);
+            }
+        });
+        btnCreditos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent().setClass(getApplicationContext(),creditos.class);
                 startActivity(intent);
             }
         });
