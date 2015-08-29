@@ -29,7 +29,7 @@
         android:textColor="@android:color/white"
         android:id="@+id/txtObjetivoSopa"
         android:gravity="center|center_vertical"
-        android:textSize="40sp"/>
+        android:textSize="35sp"/>
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -617,7 +617,7 @@
         android:id="@+id/chAmable"
         android:layout_above="@+id/chGabriel"
         android:layout_marginLeft="5dp"
-        android:textSize="43sp" />
+        android:textSize="40sp" />
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -625,7 +625,7 @@
         android:layout_above="@+id/btnCalificarSopa"
         android:id="@+id/chGabriel"
         android:layout_marginLeft="5dp"
-        android:textSize="43sp" />
+        android:textSize="40sp" />
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -635,7 +635,7 @@
         android:layout_toEndOf="@+id/chAmable"
         android:layout_marginLeft="10dp"
         android:id="@+id/chDios"
-        android:textSize="43sp" />
+        android:textSize="40sp" />
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -644,7 +644,7 @@
         android:layout_below="@+id/chDios"
         android:layout_toRightOf="@+id/chGabriel"
         android:layout_marginLeft="10dp"
-        android:textSize="43sp" />
+        android:textSize="40sp" />
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -654,7 +654,7 @@
         android:layout_toEndOf="@+id/chPaco"
         android:layout_marginLeft="10dp"
         android:id="@+id/chPajarito"
-        android:textSize="43sp" />
+        android:textSize="40sp" />
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -663,7 +663,7 @@
         android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/chPaco"
         android:id="@+id/chPerro"
-        android:textSize="43sp" />
+        android:textSize="40sp" />
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -673,16 +673,16 @@
         android:layout_toEndOf="@+id/chPajarito"
         android:layout_marginLeft="10dp"
         android:id="@+id/chPicaro"
-        android:textSize="43sp" />
+        android:textSize="40sp" />
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/pillin"
+        android:textSize="40sp"
+        android:id="@+id/chPillin"
         android:layout_below="@+id/chPicaro"
-        android:layout_marginLeft="32dp"
-        android:layout_toRightOf="@+id/chPerro"
-        android:textSize="43sp"
-        android:id="@+id/chPillin"/>
+        android:layout_alignLeft="@+id/chPicaro"
+        android:layout_alignStart="@+id/chPicaro" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

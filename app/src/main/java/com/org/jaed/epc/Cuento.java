@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.webkit.WebView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
 /**
@@ -24,10 +25,11 @@ public class Cuento extends AppCompatActivity {
     private ViewFlipper vf;
     private TextView txtPagina1, txtPagina2, txtPagina3, txtPagina4, txtPagina5, txtPagina6, txtPagina7, txtPagina8, txtPagina9, txtPagina10, txtPagina11;
     private TextView txtPagina12, txtPagina13, txtPagina14, txtPagina15, txtPagina16, txtPagina17, txtPagina18, txtPagina19, txtPagina20, txtPagina21;
-    private TextView txtPagina22, txtPagina23, txtPagina24, txtPagina25,txtPagina26,txtPagina27,txtPagina28;
+    private TextView txtPagina22, txtPagina23, txtPagina24, txtPagina25,txtPagina26,txtPagina27,txtPagina28, txtfin;
     private FloatingActionButton fabAtras, fabSiguiente;
     private Sonido snd;
     private boolean pause;
+    private RelativeLayout.LayoutParams paramsVf;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,10 +64,12 @@ public class Cuento extends AppCompatActivity {
         txtPagina26 = (TextView)findViewById(R.id.txtPagina26);
         txtPagina27 = (TextView)findViewById(R.id.txtPagina27);
         txtPagina28 = (TextView)findViewById(R.id.txtPagina28);
+        txtfin = (TextView)findViewById(R.id.txtFin);
         vf = (ViewFlipper)findViewById(R.id.viewFlipper);
         webView = (WebView)findViewById(R.id.Gifpagina);
         fabAtras = (FloatingActionButton)findViewById(R.id.fabAtras);
         fabSiguiente = (FloatingActionButton)findViewById(R.id.fabSig);
+        RelativeLayout contenedorCuento = (RelativeLayout)findViewById(R.id.contenedorCuento);
         Typeface font = Typeface.createFromAsset(getAssets(),"fonts/Roboto-Medium.ttf");
         txtPagina1.setTypeface(font);
         txtPagina2.setTypeface(font);
@@ -95,10 +99,13 @@ public class Cuento extends AppCompatActivity {
         txtPagina26.setTypeface(font);
         txtPagina27.setTypeface(font);
         txtPagina28.setTypeface(font);
+        txtfin.setTypeface(font);
+        paramsVf = (RelativeLayout.LayoutParams)vf.getLayoutParams();
         vf.setOnTouchListener(new pasarPagina());
         webView.setOnTouchListener(new pasarPagina());
         fabAtras.setOnClickListener(new onClickfab());
         fabSiguiente.setOnClickListener(new onClickfab());
+        contenedorCuento.setOnTouchListener(new pasarPagina());
         fabAtras.setBackgroundTintList(getResources().getColorStateList(R.color.fab_presionado));
         fabSiguiente.setBackgroundTintList(getResources().getColorStateList(R.color.fab_presionado));
         snd = new Sonido(getApplicationContext());
@@ -200,6 +207,10 @@ public class Cuento extends AppCompatActivity {
     }
     public void setAnimPaginaActual(int id){
         if(id == 0){
+            if(webView.getVisibility() == View.GONE){
+                webView.setVisibility(View.VISIBLE);
+                vf.setLayoutParams(paramsVf);
+            }
             webView.loadUrl("file:///android_asset/anim5.html");
             snd.setResid(R.raw.p1);
             snd.play();
@@ -335,9 +346,19 @@ public class Cuento extends AppCompatActivity {
             snd.play();
         }
         if(id == 27){
+            if(webView.getVisibility() == View.GONE){
+                webView.setVisibility(View.VISIBLE);
+                vf.setLayoutParams(paramsVf);
+            }
             webView.loadUrl("file:///android_asset/anim32.html");
             snd.setResid(R.raw.p28);
             snd.play();
+        }
+        if(id == 28){
+            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT);
+            vf.setLayoutParams(params);
+            webView.setVisibility(View.GONE);
+            snd.stop();
         }
     }
 }

@@ -23,7 +23,7 @@
         <item name="android:layout_marginBottom">-13dp</item>
     </style>
     <style name="estilo_fab_560">
-        <item name="android:layout_marginBottom">-13dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
     </style>
     <style name="webview_estilo_560">
         <item name="android:layout_width">match_parent</item>

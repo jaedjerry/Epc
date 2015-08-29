@@ -5,8 +5,8 @@
     <dimen name="toolbar_shadow">7dp</dimen>
     <dimen name="canvasTextSizeNormal">22sp</dimen>
     <dimen name="canvasTextSizeHdpi">19sp</dimen>
-    <dimen name="canvasTextSizeXlarge">50sp</dimen>
-    <dimen name="canvasTextSizeXxxhdpi">25sp</dimen>
+    <dimen name="canvasTextSizeXlarge">40sp</dimen>
+    <dimen name="canvasTextSizeXxxhdpi">35sp</dimen>
     <dimen name="canvasTextSizeXhdpi">20sp</dimen>
     <dimen name="RbTextSize">18sp</dimen>
     <dimen name="xlargeActividad4">40sp</dimen>
@@ -20,6 +20,6 @@
     <dimen name="cellAltoXxhdpi">42dp</dimen>
     <dimen name="cellAnchoXxxhdpi">70dp</dimen>
     <dimen name="cellAltoXxxhdpi">70dp</dimen>
-    <dimen name="cellAnchoXlarge">80dp</dimen>
-    <dimen name="cellAltoXlarge">80dp</dimen>
+    <dimen name="cellAnchoXlarge">70dp</dimen>
+    <dimen name="cellAltoXlarge">70dp</dimen>
 </resources>

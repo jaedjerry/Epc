@@ -11,71 +11,81 @@
         android:layout_height="@dimen/toolbar_shadow"
         android:layout_below="@id/appbarCuento"
         android:background="@drawable/toolbar_dropshadow" />
-    <ViewFlipper android:id="@+id/viewFlipper"
-        android:layout_height="fill_parent"
-        android:layout_width="fill_parent"
-        android:layout_below="@+id/toolbar_shadowCuento"
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/contenedorCuento"
         android:background="@drawable/borde_cuento"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
+        android:layout_below="@+id/toolbar_shadowCuento"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
         android:layout_marginBottom="7dp">
-        <include layout="@layout/cuento_pagina1"/>
-        <include layout="@layout/cuento_pagina2"/>
-        <include layout="@layout/cuento_pagina3"/>
-        <include layout="@layout/cuento_pagina4"/>
-        <include layout="@layout/cuento_pagina5"/>
-        <include layout="@layout/cuento_pagina6"/>
-        <include layout="@layout/cuento_pagina7"/>
-        <include layout="@layout/cuento_pagina8"/>
-        <include layout="@layout/cuento_pagina9"/>
-        <include layout="@layout/cuento_pagina10"/>
-        <include layout="@layout/cuento_pagina11"/>
-        <include layout="@layout/cuento_pagina12"/>
-        <include layout="@layout/cuento_pagina13"/>
-        <include layout="@layout/cuento_pagina14"/>
-        <include layout="@layout/cuento_pagina15"/>
-        <include layout="@layout/cuento_pagina16"/>
-        <include layout="@layout/cuento_pagina17"/>
-        <include layout="@layout/cuento_pagina18"/>
-        <include layout="@layout/cuento_pagina19"/>
-        <include layout="@layout/cuento_pagina20"/>
-        <include layout="@layout/cuento_pagina21"/>
-        <include layout="@layout/cuento_pagina22"/>
-        <include layout="@layout/cuento_pagina23"/>
-        <include layout="@layout/cuento_pagina24"/>
-        <include layout="@layout/cuento_pagina25"/>
-        <include layout="@layout/cuento_pagina26"/>
-        <include layout="@layout/cuento_pagina27"/>
-        <include layout="@layout/cuento_pagina28"/>
-    </ViewFlipper>
-    <WebView
-        style="@style/webview_estilo_560"
-        android:id="@+id/Gifpagina"
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_above="@+id/fabAtras"/>
-    <android.support.design.widget.FloatingActionButton
-        xmlns:app = "http://schemas.android.com/apk/res-auto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        style="@style/estilo_fab_560"
-        android:layout_marginLeft="3dp"
-        android:src="@mipmap/ic_atras"
-        app:fabSize="normal"
-        app:borderWidth="0dp"
-        android:id="@+id/fabAtras"/>
+        <ViewFlipper android:id="@+id/viewFlipper"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp">
+            <include layout="@layout/cuento_pagina1"/>
+            <include layout="@layout/cuento_pagina2"/>
+            <include layout="@layout/cuento_pagina3"/>
+            <include layout="@layout/cuento_pagina4"/>
+            <include layout="@layout/cuento_pagina5"/>
+            <include layout="@layout/cuento_pagina6"/>
+            <include layout="@layout/cuento_pagina7"/>
+            <include layout="@layout/cuento_pagina8"/>
+            <include layout="@layout/cuento_pagina9"/>
+            <include layout="@layout/cuento_pagina10"/>
+            <include layout="@layout/cuento_pagina11"/>
+            <include layout="@layout/cuento_pagina12"/>
+            <include layout="@layout/cuento_pagina13"/>
+            <include layout="@layout/cuento_pagina14"/>
+            <include layout="@layout/cuento_pagina15"/>
+            <include layout="@layout/cuento_pagina16"/>
+            <include layout="@layout/cuento_pagina17"/>
+            <include layout="@layout/cuento_pagina18"/>
+            <include layout="@layout/cuento_pagina19"/>
+            <include layout="@layout/cuento_pagina20"/>
+            <include layout="@layout/cuento_pagina21"/>
+            <include layout="@layout/cuento_pagina22"/>
+            <include layout="@layout/cuento_pagina23"/>
+            <include layout="@layout/cuento_pagina24"/>
+            <include layout="@layout/cuento_pagina25"/>
+            <include layout="@layout/cuento_pagina26"/>
+            <include layout="@layout/cuento_pagina27"/>
+            <include layout="@layout/cuento_pagina28"/>
+            <include layout="@layout/fin"/>
+        </ViewFlipper>
+        <WebView
+            style="@style/webview_estilo_560"
+            android:id="@+id/Gifpagina"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/viewFlipper"
+            android:layout_above="@+id/fabAtras"/>
+        <android.support.design.widget.FloatingActionButton
+            xmlns:app = "http://schemas.android.com/apk/res-auto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            style="@style/estilo_fab_560"
+            android:layout_marginLeft="3dp"
+            android:src="@mipmap/ic_atras"
+            app:fabSize="normal"
+            app:borderWidth="0dp"
+            android:id="@+id/fabAtras"/>
 
-    <android.support.design.widget.FloatingActionButton
-        xmlns:app = "http://schemas.android.com/apk/res-auto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="3dp"
-        android:layout_alignParentBottom="true"
-        android:src="@mipmap/ic_sig"
-        app:fabSize="normal"
-        app:borderWidth="0dp"
-        android:id="@+id/fabSig"
-        style="@style/estilo_fab_560"
-        android:layout_alignParentRight="true"/>
+        <android.support.design.widget.FloatingActionButton
+            xmlns:app = "http://schemas.android.com/apk/res-auto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:layout_alignParentBottom="true"
+            android:src="@mipmap/ic_sig"
+            app:fabSize="normal"
+            app:borderWidth="0dp"
+            android:id="@+id/fabSig"
+            style="@style/estilo_fab_560"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
 </RelativeLayout>
