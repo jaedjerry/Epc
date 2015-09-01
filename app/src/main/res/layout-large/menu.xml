@@ -17,7 +17,7 @@
         android:drawablePadding="5dp"
         android:id="@+id/btnLeer"
         android:textSize="35sp"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="20dp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="70dp"
@@ -27,7 +27,7 @@
         android:drawablePadding="5dp"
         android:id="@+id/btnEjercicios"
         android:textSize="35sp"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="20dp"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="70dp"
@@ -37,10 +37,10 @@
         android:drawablePadding="5dp"
         android:id="@+id/btnCreditos"
         android:textSize="35sp"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="20dp"/>
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="500dp"
         android:src="@mipmap/dario_3"
-        android:scaleType="fitXY"/>
+        android:scaleType="centerCrop"/>
 </LinearLayout>
