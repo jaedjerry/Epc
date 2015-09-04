@@ -22,4 +22,5 @@
     <dimen name="cellAltoXxxhdpi">70dp</dimen>
     <dimen name="cellAnchoXlarge">70dp</dimen>
     <dimen name="cellAltoXlarge">70dp</dimen>
+    <dimen name="canvasTextSizeXxhdpi">25sp</dimen>
 </resources>

@@ -16,17 +16,10 @@
                 style="@style/estilo_preguntas"
                 android:id="@+id/pregunta1"
                 android:textSize="@dimen/canvasTextSizeXlarge"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/pregunta1Sub"
-                android:layout_below="@+id/pregunta1"
-                android:id="@+id/textView"
-                android:textSize="@dimen/xlargeActividad4"/>
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/textView"
+                android:layout_below="@+id/pregunta1"
                 android:id="@+id/grupo1">
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -65,17 +58,10 @@
                 android:id="@+id/pregunta2"
                 android:layout_below="@+id/grupo1"
                 android:textSize="@dimen/canvasTextSizeXlarge"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/pregunta1Sub"
-                android:layout_below="@+id/pregunta2"
-                android:id="@+id/textview2"
-                android:textSize="@dimen/xlargeActividad4"/>
             <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/textview2"
+                android:layout_below="@+id/pregunta2"
                 android:id="@+id/grupo2">
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -110,17 +96,10 @@
                 android:id="@+id/pregunta3"
                 android:layout_below="@+id/grupo2"
                 android:textSize="@dimen/canvasTextSizeXlarge"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/pregunta1Sub"
-                android:layout_below="@+id/pregunta3"
-                android:id="@+id/txtsub1"
-                android:textSize="@dimen/xlargeActividad4"/>
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txtsub1"
+                android:layout_below="@+id/pregunta3"
                 android:id="@+id/grupo3">
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -155,17 +134,10 @@
                 android:id="@+id/pregunta4"
                 android:layout_below="@+id/grupo3"
                 android:textSize="@dimen/canvasTextSizeXlarge"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/pregunta1Sub"
-                android:layout_below="@+id/pregunta4"
-                android:id="@+id/txtsub2"
-                android:textSize="@dimen/xlargeActividad4"/>
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txtsub2"
+                android:layout_below="@+id/pregunta4"
                 android:id="@+id/grupo4">
                 <RadioButton
                     android:layout_width="wrap_content"
@@ -201,17 +173,10 @@
                 android:text="@string/preguntacinco"
                 style="@style/estilo_preguntas"
                 android:textSize="@dimen/canvasTextSizeXlarge"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/pregunta5"
-                android:id="@+id/pregunta5sub"
-                android:text="@string/pregunta1Sub"
-                android:textSize="@dimen/xlargeActividad4"/>
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/pregunta5sub"
+                android:layout_below="@+id/pregunta5"
                 android:id="@+id/grupo5">
                 <RadioButton
                     android:layout_width="wrap_content"
